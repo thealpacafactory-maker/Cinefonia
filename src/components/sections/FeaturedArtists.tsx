@@ -4,6 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { User, Music } from "lucide-react";
 
+import artistasData from "@/data/artistas.json";
+
 interface Artist {
   name: string;
   role: string;
@@ -11,38 +13,7 @@ interface Artist {
   bio: string;
 }
 
-const ARTISTS: Artist[] = [
-  {
-    name: "María Lucía Roca Gamarra",
-    role: "Dirección Artística / Piano",
-    instrument: "Piano",
-    bio: "Pianista y directora con trayectoria en la difusión de música de cámara. Lidera la curaduría artística del ensamble CINEFONÍA.",
-  },
-  {
-    name: "Julián Enríquez",
-    role: "Dirección Musical / Flauta",
-    instrument: "Flauta Traversa",
-    bio: "Flautista destacado especializado en arreglos musicales para bandas sonoras. Dirige la ejecución instrumental y el ritmo dramático.",
-  },
-  {
-    name: "Lucho Vera",
-    role: "Violinista I",
-    instrument: "Violín I",
-    bio: "Primer violín del ensamble, responsable de los pasajes líricos y melódicos de mayor intensidad emotiva en escena.",
-  },
-  {
-    name: "Mijael Jesús Cuarite Cáceres",
-    role: "Violista",
-    instrument: "Viola",
-    bio: "Músico de viola con amplia versatilidad, aportando la calidez y el rango medio fundamental para la armonía del quinteto.",
-  },
-  {
-    name: "Ederson Maquito Velarde",
-    role: "Violonchelista",
-    instrument: "Violonchelo",
-    bio: "Violonchelista con experiencia en música sinfónica y orquestas de cámara. Provee el soporte y la profundidad de los bajos del concierto.",
-  },
-];
+const ARTISTS = artistasData as Artist[];
 
 export default function FeaturedArtists() {
   return (

@@ -6,6 +6,8 @@ import { ArrowLeft, Clock, Search, FileText } from "lucide-react";
 import Link from "next/link";
 import DevBadge from "@/components/ui/DevBadge";
 
+import noticiasData from "@/data/noticias.json";
+
 interface NewsPlaceholder {
   slug: string;
   title: string;
@@ -15,32 +17,7 @@ interface NewsPlaceholder {
   description: string;
 }
 
-const NEWS_PLACEHOLDERS: NewsPlaceholder[] = [
-  {
-    slug: "estreno-arequipa-2026",
-    title: "CINEFONÍA Nights prepara su gran estreno en el Teatro Municipal de Arequipa",
-    category: "Gira Oficial",
-    date: "2026-08-01",
-    readTime: "4 min",
-    description: "Conoce los detalles logísticos y artísticos detrás del recital de cámara que busca revivir la época dorada del cine de culto este 22 de agosto.",
-  },
-  {
-    slug: "ensamble-cuba-invitado",
-    title: "Músicos invitados se suman al quinteto de cámara para el estreno de agosto",
-    category: "Artística",
-    date: "2026-07-28",
-    readTime: "5 min",
-    description: "La directora artística confirma la incorporación de solistas adicionales para enriquecer la textura sonora del violín y violonchelo en escena.",
-  },
-  {
-    slug: "boleteria-habilitada",
-    title: "Boletería digital oficial queda formalmente inaugurada para CINEFONÍA Nights",
-    category: "Entradas",
-    date: "2026-07-15",
-    readTime: "3 min",
-    description: "Toda la información sobre los precios de las zonas preferente, VIP y general, y el proceso de validación en la puerta del Teatro Municipal.",
-  },
-];
+const NEWS_PLACEHOLDERS = noticiasData as NewsPlaceholder[];
 
 export default function NoticiasPage() {
   return (

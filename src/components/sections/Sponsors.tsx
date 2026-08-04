@@ -4,28 +4,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Award, Briefcase, HeartHandshake, HelpCircle } from "lucide-react";
 
+import patrocinadoresData from "@/data/patrocinadores.json";
+
 interface Sponsor {
   name: string;
   level: "principal" | "estrategico" | "cultural" | "aliado";
   tag: string;
 }
 
-const SPONSORS: Sponsor[] = [
-  // Socio Principal
-  { name: "Fundación Cultural Arequipa", level: "principal", tag: "Socio Principal" },
-  // Socio Estratégico
-  { name: "Andina Medios & Difusión", level: "estrategico", tag: "Socio Estratégico" },
-  { name: "CineSur Distribución", level: "estrategico", tag: "Socio Estratégico" },
-  // Socio Cultural
-  { name: "Banco del Sur", level: "cultural", tag: "Socio Cultural" },
-  { name: "Hoteles del Misti", level: "cultural", tag: "Socio Cultural" },
-  { name: "Cámara de Comercio Arequipa", level: "cultural", tag: "Socio Cultural" },
-  // Aliado Cultural
-  { name: "Imprenta El Heraldo", level: "aliado", tag: "Aliado Cultural" },
-  { name: "Café de la Ópera", level: "aliado", tag: "Aliado Cultural" },
-  { name: "Radio Melodía Arequipa", level: "aliado", tag: "Aliado Cultural" },
-  { name: "Asociación Bellas Artes", level: "aliado", tag: "Aliado Cultural" },
-];
+const SPONSORS = patrocinadoresData as Sponsor[];
 
 export default function Sponsors() {
   const principal = SPONSORS.filter(s => s.level === "principal");

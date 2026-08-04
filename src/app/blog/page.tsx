@@ -6,6 +6,8 @@ import { ArrowLeft, BookOpen, Clock, Search } from "lucide-react";
 import Link from "next/link";
 import DevBadge from "@/components/ui/DevBadge";
 
+import blogData from "@/data/blog.json";
+
 interface BlogPlaceholder {
   slug: string;
   title: string;
@@ -15,32 +17,7 @@ interface BlogPlaceholder {
   excerpt: string;
 }
 
-const BLOG_PLACEHOLDERS: BlogPlaceholder[] = [
-  {
-    slug: "el-violonchelo-en-el-cine-dramatico",
-    title: "El Violonchelo: La voz de la melancolía en el cine de Christopher Nolan",
-    category: "Análisis Musical",
-    date: "2026-07-20",
-    readTime: "6 min",
-    excerpt: "Un análisis del rol fundamental del violonchelo en la creación de tensión psicológica y melancolía dramática en bandas sonoras icónicas.",
-  },
-  {
-    slug: "entrevista-maria-lucia-roca",
-    title: "Detrás de las partituras: Entrevista con la Directora Artística María Lucía Roca",
-    category: "Entrevistas",
-    date: "2026-07-15",
-    readTime: "8 min",
-    excerpt: "Conversamos con la fundadora del quinteto sobre los desafíos de adaptar arreglos orquestales a un formato íntimo de música de cámara.",
-  },
-  {
-    slug: "origen-musica-de-cine",
-    title: "De la pianola al sintetizador: La evolución de los recitales de cine en vivo",
-    category: "Historia del Cine",
-    date: "2026-07-02",
-    readTime: "7 min",
-    excerpt: "Una mirada histórica a la tradición de sonorizar películas en vivo y cómo las tecnologías acústicas modernas potencian la experiencia inmersiva.",
-  },
-];
+const BLOG_PLACEHOLDERS = blogData as BlogPlaceholder[];
 
 export default function BlogPage() {
   return (

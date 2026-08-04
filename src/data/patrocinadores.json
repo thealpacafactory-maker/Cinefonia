@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Fundación Cultural Arequipa",
+    "level": "principal",
+    "tag": "Socio Principal",
+    "logo": "/images/sponsors/fundacion-cultural.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "Andina Medios & Difusión",
+    "level": "estrategico",
+    "tag": "Socio Estratégico",
+    "logo": "/images/sponsors/andina-medios.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "CineSur Distribución",
+    "level": "estrategico",
+    "tag": "Socio Estratégico",
+    "logo": "/images/sponsors/cinesur.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "Banco del Sur",
+    "level": "cultural",
+    "tag": "Socio Cultural",
+    "logo": "/images/sponsors/banco-del-sur.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "Hoteles del Misti",
+    "level": "cultural",
+    "tag": "Socio Cultural",
+    "logo": "/images/sponsors/hoteles-misti.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "Cámara de Comercio Arequipa",
+    "level": "cultural",
+    "tag": "Socio Cultural",
+    "logo": "/images/sponsors/camara-comercio.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "Imprenta El Heraldo",
+    "level": "aliado",
+    "tag": "Aliado Cultural",
+    "logo": "/images/sponsors/el-heraldo.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "Café de la Ópera",
+    "level": "aliado",
+    "tag": "Aliado Cultural",
+    "logo": "/images/sponsors/cafe-opera.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "Radio Melodía Arequipa",
+    "level": "aliado",
+    "tag": "Aliado Cultural",
+    "logo": "/images/sponsors/radio-melodia.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  },
+  {
+    "name": "Asociación Bellas Artes",
+    "level": "aliado",
+    "tag": "Aliado Cultural",
+    "logo": "/images/sponsors/bellas-artes.png",
+    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
+  }
+]

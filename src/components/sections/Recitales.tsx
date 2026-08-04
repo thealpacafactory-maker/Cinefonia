@@ -5,6 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Ticket } from "lucide-react";
 
+import eventosData from "@/data/eventos.json";
+
 interface Recital {
   id: string;
   title: string;
@@ -16,36 +18,7 @@ interface Recital {
   isFeatured?: boolean;
 }
 
-const EVENTS: Recital[] = [
-  {
-    id: "aqp-2026",
-    title: "CINEFONÍA Nights - Estreno Arequipa",
-    date: "2026-08-22",
-    time: "19:30",
-    location: "Teatro Municipal de Arequipa",
-    city: "Arequipa",
-    status: "active",
-    isFeatured: true,
-  },
-  {
-    id: "cus-2026",
-    title: "CINEFONÍA Nights - Gira Cusco",
-    date: "2026-09-12",
-    time: "19:30",
-    location: "Teatro Municipal del Cusco",
-    city: "Cusco",
-    status: "soon",
-  },
-  {
-    id: "lim-2026",
-    title: "CINEFONÍA Nights - Gira Lima",
-    date: "2026-10-03",
-    time: "20:00",
-    location: "Auditorio Santa Úrsula",
-    city: "Lima",
-    status: "soon",
-  },
-];
+const EVENTS = eventosData as Recital[];
 
 export default function Recitales() {
   return (

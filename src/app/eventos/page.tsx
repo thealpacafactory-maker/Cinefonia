@@ -6,6 +6,8 @@ import { Calendar, MapPin, Clock, Users, ArrowLeft, Info } from "lucide-react";
 import Link from "next/link";
 import DevBadge from "@/components/ui/DevBadge";
 
+import eventosData from "@/data/eventos.json";
+
 interface EventShow {
   id: string;
   title: string;
@@ -19,44 +21,7 @@ interface EventShow {
   status: "active" | "soon";
 }
 
-const EVENTS: EventShow[] = [
-  {
-    id: "aqp-2026",
-    title: "CINEFONÍA Nights - Concierto Estreno Arequipa",
-    date: "Sábado, 22 de Agosto de 2026",
-    time: "19:30",
-    location: "Teatro Municipal de Arequipa (Calle Mercaderes 239)",
-    city: "Arequipa",
-    capacity: "850 personas",
-    duration: "75 minutos sin intermedio (58 minutos de música)",
-    concept: "La música de las películas más memorables de la historia del cine interpretada en vivo por un quinteto de cámara de primer nivel, en sincronía con proyecciones audiovisuales inmersivas.",
-    status: "active",
-  },
-  {
-    id: "cus-2026",
-    title: "CINEFONÍA Nights - Gira Cusco",
-    date: "Sábado, 12 de Septiembre de 2026",
-    time: "19:30",
-    location: "Teatro Municipal del Cusco (Calle Mesón de la Estrella 149)",
-    city: "Cusco",
-    capacity: "600 personas",
-    duration: "75 minutos sin intermedio",
-    concept: "Recital inmersivo en el corazón del Cusco antiguo. Una noche íntima para revivir las partituras clásicas del séptimo arte.",
-    status: "soon",
-  },
-  {
-    id: "lim-2026",
-    title: "CINEFONÍA Nights - Gira Lima",
-    date: "Sábado, 3 de Octubre de 2026",
-    time: "20:00",
-    location: "Auditorio Santa Úrsula (Av. Santo Toribio 150, San Isidro)",
-    city: "Lima",
-    capacity: "950 personas",
-    duration: "75 minutos sin intermedio",
-    concept: "Gran gala de cierre en la capital, adaptando las icónicas piezas cinematográficas con acústica optimizada.",
-    status: "soon",
-  },
-];
+const EVENTS = eventosData as EventShow[];
 
 export default function EventosPage() {
   return (

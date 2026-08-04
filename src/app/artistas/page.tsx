@@ -6,6 +6,8 @@ import { User, Music, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import DevBadge from "@/components/ui/DevBadge";
 
+import artistasData from "@/data/artistas.json";
+
 interface Artist {
   name: string;
   role: string;
@@ -14,43 +16,7 @@ interface Artist {
   trajectory: string;
 }
 
-const ARTISTS: Artist[] = [
-  {
-    name: "María Lucía Roca Gamarra",
-    role: "Dirección Artística / Piano",
-    instrument: "Piano",
-    bio: "Pianista y directora con trayectoria en la difusión de música de cámara. Lidera la curaduría artística del ensamble CINEFONÍA.",
-    trajectory: "Egresada de conservatorios nacionales de música, ha participado en recitales solistas y de ensamble en diversas salas de concierto de Latinoamérica, especializándose en música de los siglos XIX y XX.",
-  },
-  {
-    name: "Julián Enríquez",
-    role: "Dirección Musical / Flauta",
-    instrument: "Flauta Traversa",
-    bio: "Flautista destacado especializado en arreglos musicales para bandas sonoras. Dirige la ejecución instrumental y el ritmo dramático.",
-    trajectory: "Especialista en flauta traversa y pedagogía musical. Ha colaborado con orquestas sinfónicas regionales y ha desarrollado adaptaciones de compositores de cine como Ennio Morricone y Joe Hisaishi.",
-  },
-  {
-    name: "Lucho Vera",
-    role: "Violinista I",
-    instrument: "Violín I",
-    bio: "Primer violín del ensamble, responsable de los pasajes líricos y melódicos de mayor intensidad emotiva en escena.",
-    trajectory: "Músico concertista con amplia trayectoria. Integrante frecuente de agrupaciones filarmónicas y festivales de música clásica contemporánea.",
-  },
-  {
-    name: "Mijael Jesús Cuarite Cáceres",
-    role: "Violista",
-    instrument: "Viola",
-    bio: "Músico de viola con amplia versatilidad, aportando la calidez y el rango medio fundamental para la armonía del quinteto.",
-    trajectory: "Especializado en violín y viola en proyectos orquestales. Su formación destaca en la interpretación estilística de ensambles de cuerda para música dramática.",
-  },
-  {
-    name: "Ederson Maquito Velarde",
-    role: "Violonchelista",
-    instrument: "Violonchelo",
-    bio: "Violonchelista con experiencia en música sinfónica y orquestas de cámara. Provee el soporte y la profundidad de los bajos del concierto.",
-    trajectory: "Violonchelista con estudios superiores en cuerdas frotadas. Ha colaborado en grabaciones de bandas sonoras y conciertos temáticos en teatros peruanos.",
-  },
-];
+const ARTISTS = artistasData as Artist[];
 
 export default function ArtistasPage() {
   return (

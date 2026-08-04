@@ -5,44 +5,51 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Clock } from "lucide-react";
 
+import noticiasData from "@/data/noticias.json";
+import blogData from "@/data/blog.json";
+
 interface Article {
   slug: string;
   title: string;
   excerpt: string;
   date: string;
   readTime: string;
-  category: "noticia" | "blog";
+  category: string;
   categoryLabel: string;
+  routeType: "noticias" | "blog";
 }
 
 const ARTICLES: Article[] = [
   {
-    slug: "estreno-arequipa-2026",
-    title: "CINEFONÍA Nights prepara su gran estreno en el Teatro Municipal de Arequipa",
-    excerpt: "Conoce los detalles logísticos y artísticos detrás del recital de cámara que busca revivir la época dorada del cine de culto este 22 de agosto.",
-    date: "2026-08-01",
-    readTime: "4 min",
-    category: "noticia",
-    categoryLabel: "Noticias",
+    slug: noticiasData[0].slug,
+    title: noticiasData[0].title,
+    excerpt: noticiasData[0].description,
+    date: noticiasData[0].date,
+    readTime: noticiasData[0].readTime,
+    category: noticiasData[0].category,
+    categoryLabel: noticiasData[0].categoryLabel,
+    routeType: "noticias"
   },
   {
-    slug: "el-violonchelo-en-el-cine-dramatico",
-    title: "El Violonchelo: La voz de la melancolía en el cine de Christopher Nolan",
-    excerpt: "Un análisis del rol fundamental del violonchelo en la creación de tensión psicológica y melancolía dramática en bandas sonoras icónicas.",
-    date: "2026-07-20",
-    readTime: "6 min",
-    category: "blog",
-    categoryLabel: "Análisis / Blog",
+    slug: blogData[0].slug,
+    title: blogData[0].title,
+    excerpt: blogData[0].excerpt,
+    date: blogData[0].date,
+    readTime: blogData[0].readTime,
+    category: blogData[0].category,
+    categoryLabel: blogData[0].categoryLabel,
+    routeType: "blog"
   },
   {
-    slug: "entrevista-maria-lucia-roca",
-    title: "Detrás de las partituras: Entrevista con la Directora Artística María Lucía Roca",
-    excerpt: "Conversamos con la fundadora del quinteto sobre los desafíos de adaptar arreglos orquestales a un formato íntimo de música de cámara.",
-    date: "2026-07-15",
-    readTime: "8 min",
-    category: "blog",
-    categoryLabel: "Entrevistas",
-  },
+    slug: blogData[1].slug,
+    title: blogData[1].title,
+    excerpt: blogData[1].excerpt,
+    date: blogData[1].date,
+    readTime: blogData[1].readTime,
+    category: blogData[1].category,
+    categoryLabel: blogData[1].categoryLabel,
+    routeType: "blog"
+  }
 ];
 
 export default function LatestNews() {
@@ -107,7 +114,7 @@ export default function LatestNews() {
               {/* Read More Link */}
               <div className="pt-4 border-t border-brand-gold/5">
                 <Link
-                  href={`/${article.category}/${article.slug}`}
+                  href={`/${article.routeType}/${article.slug}`}
                   className="inline-flex items-center space-x-1 text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-brand-gold-light group-hover:pl-1 transition-all duration-300"
                 >
                   <span>Leer Artículo</span>

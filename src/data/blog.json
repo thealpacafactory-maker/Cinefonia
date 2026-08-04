@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "el-violonchelo-en-el-cine-dramatico",
+    "title": "El Violonchelo: La voz de la melancolía en el cine de Christopher Nolan",
+    "category": "Análisis Musical",
+    "categoryLabel": "Análisis / Blog",
+    "date": "2026-07-20",
+    "readTime": "6 min",
+    "excerpt": "Un análisis del rol fundamental del violonchelo en la creación de tensión psicológica y melancolía dramática en bandas sonoras icónicas.",
+    "image": "/images/blog/cello-nolan.jpg",
+    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg"
+  },
+  {
+    "slug": "entrevista-maria-lucia-roca",
+    "title": "Detrás de las partituras: Entrevista con la Directora Artística María Lucía Roca",
+    "category": "Entrevistas",
+    "categoryLabel": "Entrevistas",
+    "date": "2026-07-15",
+    "readTime": "8 min",
+    "excerpt": "Conversamos con la fundadora del quinteto sobre los desafíos de adaptar arreglos orquestales a un formato íntimo de música de cámara.",
+    "image": "/images/blog/interview-maria.jpg",
+    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg"
+  },
+  {
+    "slug": "origen-musica-de-cine",
+    "title": "De la pianola al sintetizador: La evolución de los recitales de cine en vivo",
+    "category": "Historia del Cine",
+    "categoryLabel": "Historia",
+    "date": "2026-07-02",
+    "readTime": "7 min",
+    "excerpt": "Una mirada histórica a la tradición de sonorizar películas en vivo y cómo las tecnologías acústicas modernas potencian la experiencia inmersiva.",
+    "image": "/images/blog/evolution-cinematic.jpg",
+    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg"
+  }
+]

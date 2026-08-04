@@ -1,6 +1,9 @@
 # Estructura de Datos por Página - CINEFONÍA Nights
 
-Este documento describe la especificación de datos (TypeScript Interfaces y Esquemas Zod) utilizada en cada una de las páginas interiores y formularios de la plataforma para asegurar la robustez de la aplicación durante la fase de desarrollo.
+Este documento describe la especificación de datos (TypeScript Interfaces y Esquemas Zod) utilizada en cada una de las páginas interiores y formularios de la plataforma. 
+
+> [!NOTE]
+> Todos los datos estáticos y placeholders de contenido (incluyendo las rutas a sus respectivas imágenes) han sido centralizados en archivos JSON bajo la carpeta [`src/data/`](file:///home/fx00/projects/cinefonia-app/src/data), facilitando su importación directa como módulos tipados y la posterior transición a un sistema de gestión de contenidos (CMS) o API.
 
 ---
 
