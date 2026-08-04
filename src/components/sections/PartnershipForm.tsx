@@ -6,10 +6,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { Mail, Phone, Building, User, Award, Send, CheckCircle2 } from "lucide-react";
 import { sponsorSchema, type SponsorFormData } from "@/schemas/forms";
+import { sendSponsorshipEmail } from "@/app/actions/send-email";
 
 export default function PartnershipForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -30,12 +32,21 @@ export default function PartnershipForm() {
 
   const onSubmit = async (data: SponsorFormData) => {
     setIsLoading(true);
-    // Simular el post a la API (se completará con la API real en el Hito 3)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Datos de patrocinio enviados:", data);
-    setIsLoading(false);
-    setIsSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      const response = await sendSponsorshipEmail(data);
+      if (response.success) {
+        setIsSubmitted(true);
+        reset();
+      } else {
+        setSubmitError(response.error || "Ocurrió un error inesperado al procesar la solicitud.");
+      }
+    } catch (err) {
+      console.error("Error en envío:", err);
+      setSubmitError("No se pudo conectar con el servidor de correo. Intente más tarde.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -216,6 +227,13 @@ export default function PartnershipForm() {
                 )}
               </div>
 
+              {/* Submit Error Message */}
+              {submitError && (
+                <div className="p-4 border border-brand-copper/35 bg-brand-copper/5 text-brand-copper text-xs font-semibold rounded-none">
+                  {submitError}
+                </div>
+              )}
+
               {/* Submit Button */}
               <div className="pt-2">
                 <button
@@ -224,7 +242,7 @@ export default function PartnershipForm() {
                   className="w-full inline-flex items-center justify-center px-8 py-4 bg-brand-gold hover:bg-brand-gold-light disabled:bg-gray-700 text-brand-bg font-bold tracking-widest uppercase text-xs transition-all duration-300 shadow-gold-glow cursor-pointer disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
-                    <span>Procesando...</span>
+                    <span>Enviando...</span>
                   ) : (
                     <>
                       <span>Enviar Propuesta</span>
