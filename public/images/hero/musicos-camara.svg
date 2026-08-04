@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none">
+  <!-- Deep Dark Navy Background -->
+  <rect width="1000" height="1000" fill="#030712"/>
+
+  <!-- Subtle grid lines -->
+  <path d="M0 150 H1000 M0 300 H1000 M0 450 H1000 M0 600 H1000 M0 750 H1000 M0 900 H1000" stroke="#c37d53" stroke-width="0.5" stroke-opacity="0.05"/>
+  <path d="M150 0 V1000 M300 0 V1000 M450 0 V1000 M600 0 V1000 M750 0 V1000 M900 0 V1000" stroke="#c37d53" stroke-width="0.5" stroke-opacity="0.05"/>
+  
+  <!-- Copper Glow of Stage Lights -->
+  <circle cx="900" cy="500" r="500" fill="url(#glow-copper)" opacity="0.12" />
+
+  <!-- Abstract Art: Violoncello/Violin scroll and lines representing music sheets/waves -->
+  <g stroke="#c37d53" stroke-opacity="0.25" stroke-width="1.5" fill="none">
+    <!-- Music Waves -->
+    <path d="M 100 800 C 300 700, 400 900, 600 750 C 800 600, 700 400, 950 350" stroke-width="0.8" stroke-dasharray="10 5"/>
+    <path d="M 50 750 C 250 650, 350 850, 550 700 C 750 550, 650 350, 900 300" stroke-width="1.2"/>
+    <path d="M 0 700 C 200 600, 300 800, 500 650 C 700 500, 600 300, 850 250" stroke-width="0.5"/>
+
+    <!-- Violin / Cello Abstract Silhouette -->
+    <g transform="translate(600, 200) scale(0.9)">
+      <!-- Scroll & Pegbox -->
+      <path d="M 150 100 C 130 80, 110 80, 100 100 C 90 120, 110 140, 130 140 C 160 140, 170 90, 140 60 C 110 30, 70 50, 70 100 V 250" stroke-width="2"/>
+      <circle cx="60" cy="120" r="6" fill="#c37d53" fill-opacity="0.4"/>
+      <circle cx="140" cy="120" r="6" fill="#c37d53" fill-opacity="0.4"/>
+      
+      <!-- Neck and Fingerboard -->
+      <rect x="90" y="200" width="20" height="300" fill="none" stroke-width="1.5"/>
+      <line x1="100" y1="200" x2="100" y2="500" stroke-width="0.8"/>
+      
+      <!-- Cello Body curves (Upper bout, C-bouts) -->
+      <path d="M 50 500 C 20 450, 10 380, 50 350 C 80 320, 120 320, 150 350 C 190 380, 180 450, 150 500" />
+      <path d="M 50 500 C -10 530, -10 600, 30 650 C 60 680, 140 680, 170 650 C 210 600, 210 530, 150 500" stroke-width="2"/>
+      
+      <!-- F-Holes -->
+      <path d="M 60 550 C 50 570, 50 600, 65 610" stroke-width="2"/>
+      <path d="M 140 550 C 150 570, 150 600, 135 610" stroke-width="2"/>
+    </g>
+
+    <!-- Flute Abstract Horizontal Lines -->
+    <g transform="translate(100, 250) rotate(-15)">
+      <line x1="0" y1="0" x2="600" y2="0" stroke-width="3" stroke-opacity="0.15"/>
+      <rect x="100" y="-5" width="25" height="10" rx="1"/>
+      <rect x="150" y="-5" width="15" height="10" rx="1"/>
+      <rect x="180" y="-5" width="15" height="10" rx="1"/>
+      <rect x="210" y="-5" width="15" height="10" rx="1"/>
+      <rect x="260" y="-5" width="25" height="10" rx="1"/>
+      <rect x="310" y="-5" width="15" height="10" rx="1"/>
+      <rect x="340" y="-5" width="15" height="10" rx="1"/>
+      <circle cx="50" cy="0" r="3" fill="#c37d53" fill-opacity="0.5"/>
+    </g>
+  </g>
+
+  <defs>
+    <radialGradient id="glow-copper" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 500) scale(500)">
+      <stop offset="0%" stop-color="#c37d53" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#8b4e2b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

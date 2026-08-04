@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <!-- Deep Navy/Black Background -->
+  <rect width="800" height="1000" fill="#030712"/>
+  
+  <!-- Subtle Grid Lines -->
+  <path d="M0 100 H800 M0 200 H800 M0 300 H800 M0 400 H800 M0 500 H800 M0 600 H800 M0 700 H800 M0 800 H800 M0 900 H800" stroke="#c5a880" stroke-width="0.5" stroke-opacity="0.05"/>
+  <path d="M100 0 V1000 M200 0 V1000 M300 0 V1000 M400 0 V1000 M500 0 V1000 M600 0 V1000 M700 0 V1000" stroke="#c5a880" stroke-width="0.5" stroke-opacity="0.05"/>
+
+  <!-- Golden Radial Glow representing the theatrical lights -->
+  <circle cx="100" cy="500" r="450" fill="url(#glow-grad)" opacity="0.15" />
+  
+  <!-- Abstract Minimal Silhouette of Basilica Cathedral of Arequipa -->
+  <g stroke="#c5a880" stroke-opacity="0.25" stroke-width="1.5" fill="none">
+    <!-- Base Structures -->
+    <rect x="50" y="650" width="450" height="200" rx="3" stroke-dasharray="10 5"/>
+    <line x1="50" y1="750" x2="500" y2="750" />
+    
+    <!-- Cathedral Arches -->
+    <path d="M 100 850 V 780 A 20 20 0 0 1 140 780 V 850" />
+    <path d="M 170 850 V 780 A 20 20 0 0 1 210 780 V 850" />
+    <path d="M 340 850 V 780 A 20 20 0 0 1 380 780 V 850" />
+    <path d="M 410 850 V 780 A 20 20 0 0 1 450 780 V 850" />
+    
+    <!-- Left Tower -->
+    <rect x="80" y="450" width="80" height="200" rx="2"/>
+    <path d="M 80 450 L 120 350 L 160 450 Z" />
+    <circle cx="120" cy="480" r="12" />
+    <line x1="120" y1="350" x2="120" y2="300" stroke-width="2"/> <!-- Cross spire -->
+    
+    <!-- Right Tower -->
+    <rect x="390" y="450" width="80" height="200" rx="2"/>
+    <path d="M 390 450 L 430 350 L 470 450 Z" />
+    <circle cx="430" cy="480" r="12" />
+    <line x1="430" y1="350" x2="430" y2="300" stroke-width="2"/> <!-- Cross spire -->
+    
+    <!-- Central Dome Structure -->
+    <path d="M 230 650 A 60 60 0 0 1 350 650 Z" stroke-dasharray="5 5"/>
+    <rect x="270" y="550" width="50" height="40"/>
+    <path d="M 270 550 L 295 500 L 320 550 Z" />
+  </g>
+  
+  <!-- Artistic Vertical Accent lines -->
+  <line x1="50" y1="100" x2="50" y2="900" stroke="#c5a880" stroke-width="0.5" stroke-opacity="0.1"/>
+  <line x1="750" y1="100" x2="750" y2="900" stroke="#c5a880" stroke-width="0.5" stroke-opacity="0.1"/>
+  
+  <defs>
+    <radialGradient id="glow-grad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 500) scale(450)">
+      <stop offset="0%" stop-color="#f3e5ab" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#c5a880" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

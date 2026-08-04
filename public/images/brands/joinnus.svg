@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" fill="none">
+  <!-- Stylized Joinnus Logo Text -->
+  <text x="5" y="21" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-weight="900" font-size="16" fill="url(#joinnus-grad)" letter-spacing="0.05em">Joinnus</text>
+  
+  <!-- Decorative tickets ticket-stub circle icon -->
+  <rect x="80" y="7" width="14" height="15" rx="2" stroke="url(#joinnus-grad)" stroke-width="1.5"/>
+  <circle cx="87" cy="14" r="2" fill="#c5a880"/>
+  
+  <defs>
+    <linearGradient id="joinnus-grad" x1="0" y1="0" x2="100" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f3e5ab"/>
+      <stop offset="100%" stop-color="#c5a880"/>
+    </linearGradient>
+  </defs>
+</svg>
