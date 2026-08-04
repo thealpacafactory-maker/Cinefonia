@@ -1,3 +1,4 @@
+
 # Checklist de Despliegue - CINEFONÍA Nights MVP
 
 Este documento registra el progreso del desarrollo por hitos del MVP público profesional.
@@ -12,20 +13,20 @@ Este documento registra el progreso del desarrollo por hitos del MVP público pr
   - [x] Creación de `CHECKLIST.md`, `README.md` y `docs/arquitectura.md`.
   - [x] Verificación de errores de TypeScript y compilación (`npm run build`).
 
-- [ ] **Hito 2: Construcción Visual de la Homepage**
-  - [ ] Diseño Pixel-Perfect de la Homepage cinematográfica.
-  - [ ] Hero Section con los botones CTA funcionales y elementos interactivos.
-  - [ ] Sección de "Próximos Recitales" (Tarjetas de fechas y locaciones).
-  - [ ] Grid interactivo de "La Experiencia" (4 pilares con micro-animaciones).
-  - [ ] Grid de "Artistas Destacados" con imágenes estilizadas.
-  - [ ] Grid jerárquico de "Patrocinadores" (Socio Principal, Socio Estratégico, etc.).
-  - [ ] Integración del formulario de captación de alianzas.
-  - [ ] Sección de carrusel para "Noticias y Blog".
+- [x] **Hito 2: Construcción Visual de la Homepage**
+  - [x] Diseño Pixel-Perfect de la Homepage cinematográfica.
+  - [x] Hero Section con los botones CTA funcionales y elementos interactivos.
+  - [x] Sección de "Próximos Recitales" (Tarjetas de fechas y locaciones).
+  - [x] Grid interactivo de "La Experiencia" (4 pilares con micro-animaciones).
+  - [x] Grid de "Artistas Destacados" con imágenes estilizadas.
+  - [x] Grid jerárquico de "Patrocinadores" (Socio Principal, Socio Estratégico, etc.).
+  - [x] Integración del formulario de captación de alianzas.
+  - [x] Sección de carrusel para "Noticias y Blog".
 
-- [ ] **Hito 3: Ecosistema de Páginas Interiores y Formularios**
-  - [ ] Rutas mínimas completas (`/eventos`, `/artistas`, `/patrocinadores`, `/noticias`, `/blog`, `/contacto`, `/quiero-auspiciar`).
-  - [ ] Desarrollo de formularios de contacto y auspicio integrando React Hook Form + Zod.
-  - [ ] Implementación de APIs seguras de envío con validación en servidor.
+- [x] **Hito 3: Ecosistema de Páginas Interiores y Formularios**
+  - [x] Rutas mínimas completas (`/eventos`, `/artistas`, `/patrocinadores`, `/noticias`, `/blog`, `/contacto`, `/quiero-auspiciar`).
+  - [x] Desarrollo de formularios de contacto y auspicio integrando React Hook Form + Zod.
+  - [x] Implementación de APIs seguras de envío con validación en servidor.
 
 - [ ] **Hito 4: Motor de Contenido y SEO Técnico**
   - [ ] Configuración del sistema de renderizado Markdown/MDX para `/blog/[slug]` y `/noticias/[slug]`.
