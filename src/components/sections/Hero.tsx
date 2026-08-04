@@ -5,8 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, Building, Sparkles } from "lucide-react";
+import CountdownTimer from "@/components/ui/CountdownTimer";
 
 export default function Hero() {
+  const mainEventIsoDate = "2026-08-22T19:30:00-05:00";
+
   return (
     <section className="relative min-h-screen w-full bg-brand-bg overflow-hidden flex items-center">
       
@@ -90,7 +93,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-row flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-300 font-medium uppercase tracking-widest border-y border-brand-gold/10 py-4 mb-8 bg-brand-bg/40 backdrop-blur-sm max-w-xl"
+            className="flex flex-row flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-300 font-medium uppercase tracking-widest border-y border-brand-gold/10 py-4 mb-6 bg-brand-bg/40 backdrop-blur-sm max-w-xl"
           >
             <div className="flex items-center space-x-2">
               <Calendar className="h-4 w-4 text-brand-gold flex-shrink-0" />
@@ -103,6 +106,21 @@ export default function Hero() {
             <div className="flex items-center space-x-2">
               <Building className="h-4 w-4 text-brand-gold flex-shrink-0" />
               <span>Teatro Municipal de Arequipa</span>
+            </div>
+          </motion.div>
+
+          {/* Countdown Timer in Hero */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mb-8 bg-brand-card/60 border border-brand-gold/20 p-4 backdrop-blur-md max-w-xl shadow-gold-glow"
+          >
+            <span className="text-[10px] font-bold tracking-[0.25em] text-brand-gold uppercase block mb-3 font-sans">
+              TIEMPO RESTANTE PARA EL ESTRENO
+            </span>
+            <div className="flex justify-start">
+              <CountdownTimer targetDate={mainEventIsoDate} variant="dark" />
             </div>
           </motion.div>
 

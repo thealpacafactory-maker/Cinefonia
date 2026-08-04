@@ -4,31 +4,23 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import CountdownTimer from "@/components/ui/CountdownTimer";
+import eventosData from "@/data/eventos.json";
+
+interface EventItem {
+  id: string;
+  title: string;
+  date: string;
+  time?: string;
+  isoDate?: string;
+  location: string;
+  city: string;
+  status: string;
+}
+
+const EVENTS = eventosData as EventItem[];
 
 export default function Recitales() {
-  const events = [
-    {
-      id: "aqp-2026",
-      day: "22",
-      monthYear: "AGO 2026",
-      title: "Cinefonía Nights",
-      location: "Teatro Municipal de Arequipa",
-      city: "Arequipa",
-      status: "active",
-      href: "/eventos"
-    },
-    {
-      id: "cus-2026",
-      day: "19",
-      monthYear: "DIC 2026",
-      title: "Cinefonía Nights",
-      location: "Teatro Municipal de Arequipa",
-      city: "Arequipa",
-      status: "soon",
-      href: "/eventos"
-    }
-  ];
-
   return (
     <section className="py-20 bg-[#F7F5F0] text-[#111827] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,50 +37,74 @@ export default function Recitales() {
           </div>
         </div>
 
-        {/* Cards Grid matching PDF page 1 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          {events.map((event, idx) => (
-            <motion.div
-              key={event.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="bg-white border border-[#E5E7EB] p-6 sm:p-8 flex items-stretch space-x-6 shadow-sm hover:shadow-md transition-shadow group"
-            >
-              {/* Date Box */}
-              <div className="flex flex-col items-center justify-center border-r border-[#E5E7EB] pr-6 flex-shrink-0">
-                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#1F2937] leading-none">
-                  {event.day}
-                </span>
-                <span className="text-[10px] font-semibold tracking-wider text-[#6B7280] uppercase mt-1">
-                  {event.monthYear}
-                </span>
-              </div>
-
-              {/* Text details */}
-              <div className="flex flex-col justify-between flex-1 py-1">
+        {/* Cards Grid matching PDF page 1 with Countdown Timers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+          {EVENTS.map((event, idx) => {
+            const dayNumber = event.date.match(/\d+/)?.[0] || "22";
+            const monthYear = event.date.includes("Agosto") || event.date.includes("AGO") ? "AGO 2026" : "DIC 2026";
+            const targetIso = event.isoDate || (event.id === "aqp-2026" ? "2026-08-22T19:30:00-05:00" : "2026-12-19T19:30:00-05:00");
+            
+            return (
+              <motion.div
+                key={event.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                className="bg-white border border-[#E5E7EB] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
+              >
                 <div>
-                  <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#111827] tracking-tight mb-2">
-                    {event.title} <span className="italic text-[#6B7280] font-light text-lg">Nights</span>
-                  </h3>
-                  <p className="text-xs text-[#4B5563] font-light leading-snug">
-                    {event.location}
-                  </p>
+                  <div className="flex items-stretch space-x-6 mb-6">
+                    {/* Date Box */}
+                    <div className="flex flex-col items-center justify-center border-r border-[#E5E7EB] pr-6 flex-shrink-0">
+                      <span className="font-serif text-3xl sm:text-4xl font-bold text-[#111827] leading-none">
+                        {dayNumber}
+                      </span>
+                      <span className="text-[10px] font-semibold tracking-wider text-[#6B7280] uppercase mt-1">
+                        {monthYear}
+                      </span>
+                    </div>
+
+                    {/* Text details */}
+                    <div className="flex flex-col justify-between flex-1 py-1">
+                      <div>
+                        <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#111827] tracking-tight mb-1">
+                          {event.title.split("-")[0]} <span className="italic text-[#6B7280] font-light text-lg">Nights</span>
+                        </h3>
+                        <p className="text-xs text-[#4B5563] font-light leading-snug">
+                          {event.location}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Live Countdown Timer per event */}
+                  <div className="bg-[#FAF8F5] border border-[#E5E7EB] p-3 mb-4">
+                    <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#6B7280] block mb-2 text-center">
+                      TIEMPO RESTANTE
+                    </span>
+                    <div className="flex justify-center">
+                      <CountdownTimer targetDate={targetIso} variant="light" />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-[#F3F4F6]">
+                <div className="pt-4 border-t border-[#F3F4F6] flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#B87A4B]">
+                    {event.status === "active" ? "Entradas Disponibles" : "Próximamente"}
+                  </span>
+
                   <Link
-                    href={event.href}
+                    href="/eventos"
                     className="inline-flex items-center text-[11px] font-bold tracking-widest text-[#B87A4B] uppercase hover:text-[#8C552E] group-hover:translate-x-1 transition-all"
                   >
                     <span>VER DETALLES</span>
                     <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
                   </Link>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Action Button */}
