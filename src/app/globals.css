@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* Tipografías */
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-serif: var(--font-cinzel), serif;
+
+  /* Paleta Cinematográfica Premium */
+  --color-brand-bg: #030712;         /* Azul-negro profundo (Fondo general) */
+  --color-brand-card: #0b1329;       /* Azul marino medianoche (Tarjetas y Paneles) */
+  --color-brand-gold-light: #f3e5ab;  /* Dorado claro brillante */
+  --color-brand-gold: #c5a880;        /* Dorado clásico principal */
+  --color-brand-gold-dark: #8c6d3f;   /* Dorado envejecido / oscuro */
+  --color-brand-copper: #c37d53;      /* Cobre brillante */
+  --color-brand-copper-dark: #8b4e2b;  /* Cobre profundo */
+
+  /* Efectos y Sombras Teatrales */
+  --shadow-gold-glow: 0 0 25px rgba(197, 168, 128, 0.15);
+  --shadow-copper-glow: 0 0 25px rgba(195, 125, 83, 0.15);
+}
+
+:root {
+  --background: #030712;
+  --foreground: #f3f4f6; /* Gris muy claro para alto contraste */
+}
+
+/* Configuraciones globales */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Títulos Cinematográficos Serif */
+h1, h2, h3, h4, .font-serif-classic {
+  font-family: var(--font-cinzel), serif;
+}
+
+/* Clases de utilidad para efectos visuales premium */
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(197, 168, 128, 0.5), 0 0 2px rgba(197, 168, 128, 0.3);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f3e5ab 0%, #c5a880 50%, #8c6d3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-copper {
+  background: linear-gradient(135deg, #c37d53 0%, #8b4e2b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Paneles con desenfoque de vidrio (Glassmorphism) */
+.glass-panel {
+  background: rgba(11, 19, 41, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 168, 128, 0.1);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-panel-hover:hover {
+  background: rgba(11, 19, 41, 0.85);
+  border-color: rgba(197, 168, 128, 0.25);
+  box-shadow: 0 0 25px rgba(197, 168, 128, 0.1);
+}
