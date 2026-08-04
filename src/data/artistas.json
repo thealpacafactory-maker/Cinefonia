@@ -2,51 +2,71 @@
   {
     "slug": "maria-lucia-roca-gamarra",
     "name": "María Lucía Roca Gamarra",
-    "role": "Dirección Artística / Piano",
+    "role": "Dirección Artística · Piano · Curaduría Musical",
     "instrument": "Piano",
     "image": "/images/artists/maria-lucia-roca.jpg",
     "imagePlaceholder": "/images/placeholders/artist-placeholder.jpg",
-    "bio": "Pianista y directora con trayectoria en la difusión de música de cámara. Lidera la curaduría artística del ensamble CINEFONÍA.",
-    "trajectory": "Egresada de conservatorios nacionales de música, ha participado en recitales solistas y de ensamble en diversas salas de concierto de Latinoamérica, especializándose en música de los siglos XIX y XX."
+    "bio": "Pianista arequipeña con trayectoria internacional, actualmente residente en Madrid, donde lidera una escuela boutique de enseñanza musical.",
+    "trajectory": "Completó un Máster en Interpretación Solista en el Centro Superior Katarina Gurska de Madrid (bajo la tutela de Luis Fernando Pérez) y un Máster en Pedagogía Musical por la Universidad de La Rioja. Licenciada por la Universidad Nacional de Música del Perú (alumna de la maestra Carmen Escobedo). Perfeccionó sus estudios en la Florida Gulf Coast University (EE.UU.), donde se graduó Cum Laude tras obtener una beca completa tras participar como finalista en el Concurso Internacional Frederic Chopin de Lima (2015). Ha participado en festivales internacionales como FEMUSC y Salvador de Bahía en Brasil, Szeged en Hungría y From Chopin to Górecki en Polonia, ofreciendo recitales en la sala Steinway & Sons de Bonita Springs, Teatro Castro Alves de Salvador de Bahía y la Universidad Frederic Chopin de Varsovia."
   },
   {
     "slug": "julian-enriquez",
     "name": "Julián Enríquez",
-    "role": "Dirección Musical / Flauta",
+    "role": "Dirección Musical · Flauta · Adaptación de Arreglos",
     "instrument": "Flauta Traversa",
     "image": "/images/artists/julian-enriquez.jpg",
     "imagePlaceholder": "/images/placeholders/artist-placeholder.jpg",
-    "bio": "Flautista destacado especializado en arreglos musicales para bandas sonoras. Dirige la ejecución instrumental y el ritmo dramático.",
-    "trajectory": "Especialista en flauta traversa y pedagogía musical. Ha colaborado con orquestas sinfónicas regionales y ha desarrollado adaptaciones de compositores de cine como Ennio Morricone y Joe Hisaishi."
+    "bio": "Flautista y arreglista peruano. Compagina su actividad como intérprete con una sólida trayectoria docente en instituciones educativas de Madrid.",
+    "trajectory": "Desde 2024 colabora con la Orquesta Metropolitana de Madrid y anteriormente participó como músico invitado con la Orquesta Filarmónica de Cali y la Banda Departamental del Valle del Cauca. En 2025 fundó CoRú Dúo, dedicado a la difusión del repertorio latinoamericano para flauta y piano. Fue ganador del concurso Jóvenes Solistas 2015 de la Banda Departamental del Valle del Cauca y becario del Festival Internacional de Música de Cartagena (2012 y 2014). Cursó el Máster en Interpretación Solista en el Centro Superior Katarina Gurska (España) y es egresado de la Universidad del Valle."
   },
   {
     "slug": "lucho-vera",
     "name": "Lucho Vera",
-    "role": "Violinista I",
+    "role": "Violín I",
     "instrument": "Violín I",
     "image": "/images/artists/lucho-vera.jpg",
     "imagePlaceholder": "/images/placeholders/artist-placeholder.jpg",
-    "bio": "Primer violín del ensamble, responsable de los pasajes líricos y melódicos de mayor intensidad emotiva en escena.",
-    "trajectory": "Músico concertista con amplia trayectoria. Integrante frecuente de agrupaciones filarmónicas y festivales de música clásica contemporánea."
+    "bio": "Primer violín del ensamble y miembro activo de la vida filarmónica de la ciudad.",
+    "trajectory": "Integrante de la Orquesta Sinfónica de Arequipa. Desarrolla una activa labor dentro de la programación sinfónica de la ciudad y participa regularmente en proyectos de cámara de alto nivel."
+  },
+  {
+    "slug": "violin-ii",
+    "name": "Violín II",
+    "role": "Violín II",
+    "instrument": "Violín II",
+    "image": "/images/artists/violin-ii.jpg",
+    "imagePlaceholder": "/images/placeholders/artist-placeholder.jpg",
+    "bio": "Puesto en actualización para la temporada 2026.",
+    "trajectory": "La incorporación del segundo violín se encuentra en proceso de confirmación por la dirección artística y será anunciada oportunamente."
   },
   {
     "slug": "mijael-jesus-cuarite-caceres",
     "name": "Mijael Jesús Cuarite Cáceres",
-    "role": "Violista",
+    "role": "Viola",
     "instrument": "Viola",
     "image": "/images/artists/mijael-cuarite.jpg",
     "imagePlaceholder": "/images/placeholders/artist-placeholder.jpg",
-    "bio": "Músico de viola con amplia versatilidad, aportando la calidez y el rango medio fundamental para la armonía del quinteto.",
-    "trajectory": "Especializado en violín y viola en proyectos orquestales. Su formación destaca en la interpretación estilística de ensambles de cuerda para música dramática."
+    "bio": "Violista arequipeño de destacada presencia en ensambles de cámara regionales.",
+    "trajectory": "Inició sus estudios a los diez años con el maestro Ricardo Calcina y continuó con Eduardo Solís. Estudia en la Escuela Profesional de Artes bajo la tutela de Stephanie Arenas Pérez. Ha sido músico invitado de la Orquesta Sinfónica de Arequipa e integra el Cuarteto Ayni y el Cuarteto Sinfoni."
   },
   {
     "slug": "ederson-maquito-velarde",
     "name": "Ederson Maquito Velarde",
-    "role": "Violonchelista",
+    "role": "Violonchelo",
     "instrument": "Violonchelo",
     "image": "/images/artists/ederson-maquito.jpg",
     "imagePlaceholder": "/images/placeholders/artist-placeholder.jpg",
-    "bio": "Violonchelista con experiencia en música sinfónica y orquestas de cámara. Provee el soporte y la profundidad de los bajos del concierto.",
-    "trajectory": "Violonchelista con estudios superiores en cuerdas frotadas. Ha colaborado en grabaciones de bandas sonoras y conciertos temáticos en teatros peruanos."
+    "bio": "Violonchelista arequipeño con amplia experiencia en orquestas sinfónicas y dirección pedagógica.",
+    "trajectory": "Formado en la Universidad Nacional de San Agustín, se perfeccionó con el maestro Iván Pierantozzi Fuchs. Es violonchelista de la Orquesta Sinfónica de Arequipa, dirige la Banda Sinfónica del Club Internacional y forma parte del programa Orquestando del Ministerio de Educación. Ha participado en encuentros orquestales en seis países de América."
+  },
+  {
+    "slug": "narrador",
+    "name": "Narrador",
+    "role": "Narración en Vivo",
+    "instrument": "Voz / Relatos",
+    "image": "/images/artists/narrador.jpg",
+    "imagePlaceholder": "/images/placeholders/artist-placeholder.jpg",
+    "bio": "Voz guía del viaje emocional (En proceso de selección).",
+    "trajectory": "La incorporación del narrador oficial que acompañará las transiciones poéticas entre obras se encuentra en proceso de selección y se anunciará antes del concierto estreno."
   }
 ]

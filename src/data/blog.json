@@ -1,35 +1,38 @@
 [
   {
-    "slug": "el-violonchelo-en-el-cine-dramatico",
-    "title": "El Violonchelo: La voz de la melancolía en el cine de Christopher Nolan",
-    "category": "Análisis Musical",
-    "categoryLabel": "Análisis / Blog",
-    "date": "2026-07-20",
+    "slug": "bandas-sonoras-historia-del-cine",
+    "title": "Las 10 bandas sonoras que marcaron la historia del cine",
+    "category": "Análisis Musicológico",
+    "categoryLabel": "Blog",
+    "date": "30 MAY 2025",
     "readTime": "6 min",
-    "excerpt": "Un análisis del rol fundamental del violonchelo en la creación de tensión psicológica y melancolía dramática en bandas sonoras icónicas.",
-    "image": "/images/blog/cello-nolan.jpg",
-    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg"
+    "excerpt": "Un recorrido por las composiciones inolvidables de Ennio Morricone, John Williams, Hans Zimmer y Joe Hisaishi que revolucionaron el séptimo arte.",
+    "image": "/images/blog/bandas-sonoras.jpg",
+    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg",
+    "content": "Desde el lirismo conmovedor de Cinema Paradiso hasta la épica espacial de Interstellar, la música cinematográfica ha demostrado tener la potencia suficiente para subsistir más allá de la pantalla..."
   },
   {
-    "slug": "entrevista-maria-lucia-roca",
-    "title": "Detrás de las partituras: Entrevista con la Directora Artística María Lucía Roca",
-    "category": "Entrevistas",
-    "categoryLabel": "Entrevistas",
-    "date": "2026-07-15",
-    "readTime": "8 min",
-    "excerpt": "Conversamos con la fundadora del quinteto sobre los desafíos de adaptar arreglos orquestales a un formato íntimo de música de cámara.",
-    "image": "/images/blog/interview-maria.jpg",
-    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg"
+    "slug": "musica-transforma-escena-inolvidable",
+    "title": "Cómo la música transforma una escena en inolvidable",
+    "category": "Estética Cinematográfica",
+    "categoryLabel": "Blog",
+    "date": "16 MAY 2025",
+    "readTime": "5 min",
+    "excerpt": "El papel de la narración en vivo y las proyecciones visuales al guiar al oyente por las diversas emociones del repertorio.",
+    "image": "/images/blog/escena-inolvidable.jpg",
+    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg",
+    "content": "En CINEFONÍA NIGHTS, el narrador no explica las obras: las conecta. La combinación de sexteto acústico, narración sutil e iluminación atmosférica genera un entorno de inmersión íntima."
   },
   {
-    "slug": "origen-musica-de-cine",
-    "title": "De la pianola al sintetizador: La evolución de los recitales de cine en vivo",
-    "category": "Historia del Cine",
-    "categoryLabel": "Historia",
-    "date": "2026-07-02",
+    "slug": "cultura-musica-sur-del-peru",
+    "title": "Cultura y música en el sur del Perú: un legado que crece",
+    "category": "Identidad & Territorio",
+    "categoryLabel": "Blog",
+    "date": "02 MAY 2025",
     "readTime": "7 min",
-    "excerpt": "Una mirada histórica a la tradición de sonorizar películas en vivo y cómo las tecnologías acústicas modernas potencian la experiencia inmersiva.",
-    "image": "/images/blog/evolution-cinematic.jpg",
-    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg"
+    "excerpt": "El impacto de descentralizar la producción artística de alto nivel e integrar músicos locales con trayectorias internacionales.",
+    "image": "/images/blog/legado-sur.jpg",
+    "imagePlaceholder": "/images/placeholders/blog-placeholder.jpg",
+    "content": "Una ciudad con patrimonio también necesita nuevas experiencias. CINEFONÍA NIGHTS no utiliza a Arequipa únicamente como escenario, sino que dialoga de manera activa con su identidad cultural."
   }
 ]

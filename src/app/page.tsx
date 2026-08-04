@@ -4,7 +4,6 @@ import Recitales from "@/components/sections/Recitales";
 import Experience from "@/components/sections/Experience";
 import FeaturedArtists from "@/components/sections/FeaturedArtists";
 import Sponsors from "@/components/sections/Sponsors";
-import PartnershipForm from "@/components/sections/PartnershipForm";
 import LatestNews from "@/components/sections/LatestNews";
 import JsonLd from "@/components/seo/JsonLd";
 
@@ -84,13 +83,10 @@ export default function Home() {
       {/* 4. Artistas Destacados */}
       <FeaturedArtists />
 
-      {/* 5. Patrocinadores */}
+      {/* 5. Patrocinadores & Formulario Alianza */}
       <Sponsors />
 
-      {/* 6. Formulario "Construyamos algo extraordinario" */}
-      <PartnershipForm />
-
-      {/* 7. Noticias y Blog */}
+      {/* 6. Noticias y Blog */}
       <LatestNews />
     </>
   );

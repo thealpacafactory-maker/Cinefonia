@@ -1,72 +1,131 @@
-[
-  {
-    "name": "Fundación Cultural Arequipa",
-    "level": "principal",
-    "tag": "Socio Principal",
-    "logo": "/images/sponsors/fundacion-cultural.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "Andina Medios & Difusión",
-    "level": "estrategico",
-    "tag": "Socio Estratégico",
-    "logo": "/images/sponsors/andina-medios.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "CineSur Distribución",
-    "level": "estrategico",
-    "tag": "Socio Estratégico",
-    "logo": "/images/sponsors/cinesur.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "Banco del Sur",
-    "level": "cultural",
-    "tag": "Socio Cultural",
-    "logo": "/images/sponsors/banco-del-sur.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "Hoteles del Misti",
-    "level": "cultural",
-    "tag": "Socio Cultural",
-    "logo": "/images/sponsors/hoteles-misti.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "Cámara de Comercio Arequipa",
-    "level": "cultural",
-    "tag": "Socio Cultural",
-    "logo": "/images/sponsors/camara-comercio.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "Imprenta El Heraldo",
-    "level": "aliado",
-    "tag": "Aliado Cultural",
-    "logo": "/images/sponsors/el-heraldo.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "Café de la Ópera",
-    "level": "aliado",
-    "tag": "Aliado Cultural",
-    "logo": "/images/sponsors/cafe-opera.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "Radio Melodía Arequipa",
-    "level": "aliado",
-    "tag": "Aliado Cultural",
-    "logo": "/images/sponsors/radio-melodia.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  },
-  {
-    "name": "Asociación Bellas Artes",
-    "level": "aliado",
-    "tag": "Aliado Cultural",
-    "logo": "/images/sponsors/bellas-artes.png",
-    "logoPlaceholder": "/images/placeholders/sponsor-logo.png"
-  }
-]
+{
+  "tiers": [
+    {
+      "id": "socio-principal",
+      "name": "Socio Principal",
+      "price": "S/ 15,000",
+      "hierarchy": "Principal",
+      "exclusivity": "Sí (por rubro)",
+      "sponsorPresentation": "Individual",
+      "totalInvitations": 40,
+      "palcoAccess": 8,
+      "networking": "Prioritario",
+      "hospitality": "Premium",
+      "activation": "Personalizada",
+      "content": "Personalizado",
+      "report": "Completo",
+      "recommended": false,
+      "description": "La máxima presencia institucional con exclusividad de rubro y paquete integral de visibilidad, hospitality premium y contenidos personalizados."
+    },
+    {
+      "id": "socio-estrategico",
+      "name": "Socio Estratégico",
+      "price": "S/ 7,500",
+      "hierarchy": "Destacada",
+      "exclusivity": "Negociable",
+      "sponsorPresentation": "Individual",
+      "totalInvitations": 25,
+      "palcoAccess": 4,
+      "networking": "Sí",
+      "hospitality": "Sí",
+      "activation": "Curada",
+      "content": "Seleccionado",
+      "report": "Completo",
+      "recommended": false,
+      "description": "Presencia destacada para marcas interesadas en networking de alto nivel, activaciones curadas y presencia personalizada."
+    },
+    {
+      "id": "socio-cultural",
+      "name": "Socio Cultural",
+      "price": "S/ 3,000",
+      "hierarchy": "Institucional",
+      "exclusivity": "No",
+      "sponsorPresentation": "Colectiva",
+      "totalInvitations": 12,
+      "palcoAccess": 2,
+      "networking": "Sí",
+      "hospitality": "Básica",
+      "activation": "Limitada",
+      "content": "General",
+      "report": "Resumido",
+      "recommended": true,
+      "description": "El nivel recomendado para empresas que buscan vinculación directa con el patrimonio y la cultura arequipeña con excelente retorno reputacional."
+    },
+    {
+      "id": "aliado-cultural",
+      "name": "Aliado Cultural",
+      "price": "S/ 1,500",
+      "hierarchy": "Colectiva",
+      "exclusivity": "No",
+      "sponsorPresentation": "Agradecimiento",
+      "totalInvitations": 5,
+      "palcoAccess": "Según cupo",
+      "networking": "General",
+      "hospitality": "No",
+      "activation": "No",
+      "content": "General",
+      "report": "Básico",
+      "recommended": false,
+      "description": "Forma accesible para pymes e instituciones locales que desean sumarse al apoyo del talento y la cultura en Arequipa."
+    },
+    {
+      "id": "colaboracion-personalizada",
+      "name": "Colaboraciones Personalizadas",
+      "price": "Consultar",
+      "hierarchy": "A definir",
+      "exclusivity": "A definir",
+      "sponsorPresentation": "Según acuerdo",
+      "totalInvitations": "A definir",
+      "palcoAccess": "Según acuerdo",
+      "networking": "Según acuerdo",
+      "hospitality": "Según acuerdo",
+      "activation": "Según acuerdo",
+      "content": "Según acuerdo",
+      "report": "Según acuerdo",
+      "recommended": false,
+      "description": "Alianzas a la medida mediante aportes valorizados, media partner, servicios de producción, difusión o canjes estratégicos."
+    }
+  ],
+  "palcoVipFeatures": [
+    "Acceso preferente",
+    "Localidades reservadas de primera fila",
+    "Recepción y atención diferenciada",
+    "Gestión personalizada de invitados",
+    "Networking empresarial e institucional",
+    "Encuentro privado con la dirección artística",
+    "Registro fotográfico profesional de recuerdo",
+    "Programa de mano especial impreso"
+  ],
+  "sponsorsList": [
+    {
+      "name": "Empresa Tu Marca Aquí",
+      "level": "principal",
+      "tag": "Socio Principal"
+    },
+    {
+      "name": "Marca Tu Logo Aquí",
+      "level": "estrategico",
+      "tag": "Socio Estratégico"
+    },
+    {
+      "name": "Compañía Tu Marca Aquí",
+      "level": "estrategico",
+      "tag": "Socio Estratégico"
+    },
+    {
+      "name": "Brand Tu Logo Aquí",
+      "level": "cultural",
+      "tag": "Socio Cultural"
+    },
+    {
+      "name": "Empresa Tu Marca Aquí",
+      "level": "cultural",
+      "tag": "Socio Cultural"
+    },
+    {
+      "name": "Aliado Tu Logo Aquí",
+      "level": "aliado",
+      "tag": "Aliado Cultural"
+    }
+  ]
+}

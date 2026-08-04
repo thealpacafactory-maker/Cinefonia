@@ -2,93 +2,99 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { User, Music, ArrowLeft } from "lucide-react";
+import { User, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import DevBadge from "@/components/ui/DevBadge";
-
 import artistasData from "@/data/artistas.json";
-
-interface Artist {
-  name: string;
-  role: string;
-  instrument: string;
-  bio: string;
-  trajectory: string;
-}
-
-const ARTISTS = artistasData as Artist[];
 
 export default function ArtistasPage() {
   return (
-    <div className="min-h-screen py-16 bg-brand-bg relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-16 bg-[#070D1D] text-white relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Navigation Breadcrumb */}
-        <div className="mb-8">
-          <Link href="/" className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors">
+        <div className="mb-8 pt-10">
+          <Link href="/" className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors">
             <ArrowLeft className="h-4 w-4" />
             <span>Volver al Inicio</span>
           </Link>
         </div>
 
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <span className="text-xs font-semibold tracking-[0.25em] text-brand-gold uppercase block mb-3">El Corazón Musical</span>
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold uppercase text-white tracking-wide">
-            Nuestros Artistas
+        <div className="text-center mb-16">
+          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3">MEMORIA DESCRIPTIVA</span>
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal uppercase text-white tracking-wider">
+            Dirección y Elenco
           </h1>
-          <p className="max-w-xl mx-auto text-sm text-gray-400 mt-4 font-light leading-relaxed">
-            Conoce el trasfondo y la trayectoria de los virtuosos solistas que integran el quinteto oficial de CINEFONÍA.
+          <div className="flex items-center justify-center space-x-3 my-4">
+            <div className="w-12 h-[1px] bg-brand-gold/30" />
+            <span className="text-brand-gold text-xs font-serif">✦</span>
+            <div className="w-12 h-[1px] bg-brand-gold/30" />
+          </div>
+          <p className="max-w-xl mx-auto text-sm text-gray-400 font-light leading-relaxed">
+            Seis instrumentistas. Una narración. Una sola experiencia.
           </p>
-          <div className="mt-4 w-16 h-[1.5px] bg-brand-gold mx-auto" />
         </div>
 
-        {/* Dev Warning Badge */}
-        <DevBadge message="Nota de Desarrollo: La biografía artística e instrumental de los integrantes está en proceso de revisión oficial para el programa de mano final." />
+        {/* Carta de la Dirección Artística from Memoria Descriptiva page 3 */}
+        <div className="bg-[#0B1329] border border-brand-gold/30 p-8 sm:p-12 mb-16 relative">
+          <span className="text-[10px] font-bold tracking-[0.25em] text-brand-gold uppercase block mb-2">MENSAJE EDITORIAL</span>
+          <h2 className="font-serif text-xl sm:text-3xl font-normal text-white mb-6">
+            Carta de la Dirección Artística
+          </h2>
+          <div className="space-y-4 text-xs sm:text-sm text-gray-300 font-light leading-relaxed italic border-l-2 border-brand-gold/40 pl-6 my-6">
+            <p>
+              &ldquo;CINEFONÍA NIGHTS nace de una inquietud que fui construyendo a lo largo de varios años de trabajo como pianista: la certeza de que el repertorio de cámara, pese a su riqueza, no siempre logra tender un puente emocional inmediato con públicos ajenos a la formación clásica. Descubrí, en cambio, que las bandas sonoras de cine despiertan de manera casi inmediata recuerdos y emociones compartidas.&rdquo;
+            </p>
+            <p>
+              &ldquo;De esa observación surgió la idea de utilizar la música cinematográfica no como un fin en sí mismo, sino como una puerta de entrada a la escucha activa. Más íntimo. Más cercano. Más camerístico.&rdquo;
+            </p>
+            <p>
+              &ldquo;Elegí Arequipa como ciudad de estreno por ser mi ciudad natal y por el deseo de aportar a su programación cultural una propuesta artística distinta, construida junto a músicos profesionales de la ciudad.&rdquo;
+            </p>
+          </div>
+          <div className="mt-6 pt-4 border-t border-brand-gold/15 flex items-center justify-between text-xs">
+            <span className="font-serif font-bold text-white tracking-widest">María Lucía Roca Gamarra</span>
+            <span className="text-brand-gold uppercase tracking-wider text-[11px]">DIRECCIÓN ARTÍSTICA</span>
+          </div>
+        </div>
 
-        {/* Artists Roster */}
-        <div className="space-y-16 mt-12">
-          {ARTISTS.map((artist, idx) => (
+        {/* Artists List */}
+        <div className="space-y-12">
+          {artistasData.map((artist, idx) => (
             <motion.div
-              key={artist.name}
-              initial={{ opacity: 0, y: 30 }}
+              key={artist.slug}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="flex flex-col lg:flex-row gap-8 lg:gap-12 p-8 bg-brand-card/30 border border-brand-gold/10 hover:border-brand-gold/25 transition-all duration-300 relative group"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-[#0B1329] border border-brand-gold/20 p-6 sm:p-8 flex flex-col md:flex-row gap-8 items-start hover:border-brand-gold/40 transition-colors"
             >
-              {/* Photo Placeholder */}
-              <div className="w-full lg:w-1/3 aspect-[4/5] bg-neutral-900 border border-brand-gold/15 flex items-center justify-center relative overflow-hidden group-hover:bg-neutral-800 transition-colors">
-                <div className="absolute inset-4 border border-brand-gold/5 pointer-events-none group-hover:border-brand-gold/10" />
-                <div className="flex flex-col items-center justify-center text-gray-700 group-hover:text-brand-gold/30 transition-colors">
-                  <User className="h-20 w-20 stroke-[0.8] mb-2" />
-                  <Music className="h-6 w-6 stroke-[0.8]" />
-                  <span className="text-[9px] uppercase tracking-[0.25em] mt-4 text-gray-600">Placeholder Foto B&W</span>
-                </div>
-                <div className="absolute bottom-4 left-4 bg-brand-bg/95 border border-brand-gold/25 px-3 py-1 text-[9px] uppercase tracking-widest text-brand-gold font-medium">
+              {/* Photo Box */}
+              <div className="w-full md:w-48 aspect-[4/5] bg-[#050914] border border-brand-gold/15 flex items-center justify-center flex-shrink-0 relative">
+                <User className="h-20 w-20 text-gray-600 stroke-[0.8]" />
+                <span className="absolute bottom-3 left-3 bg-[#070D1D] px-2 py-1 text-[9px] font-bold text-brand-gold uppercase tracking-widest border border-brand-gold/20">
                   {artist.instrument}
-                </div>
+                </span>
               </div>
 
-              {/* Trajectory and Bio Info */}
-              <div className="flex-1 flex flex-col justify-between py-2">
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-copper block mb-1">
-                    {artist.role}
+              {/* Bio & Trajectory */}
+              <div className="flex-1 space-y-3">
+                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-gold block">
+                  {artist.role}
+                </span>
+                <h3 className="font-serif text-2xl font-semibold text-white tracking-wide">
+                  {artist.name}
+                </h3>
+                <p className="text-xs text-gray-300 font-light leading-relaxed">
+                  {artist.bio}
+                </p>
+                <div className="pt-3 border-t border-brand-gold/10">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-1">
+                    Trayectoria Académica y Profesional:
                   </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-6 tracking-wide group-hover:text-brand-gold-light transition-colors">
-                    {artist.name}
-                  </h2>
-                  <div className="space-y-4 text-sm sm:text-base text-gray-400 font-light leading-relaxed">
-                    <p>{artist.bio}</p>
-                    <p className="border-l-2 border-brand-gold/20 pl-4 italic text-gray-500">
-                      {artist.trajectory}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-brand-gold/10 flex items-center space-x-2 text-xs uppercase tracking-widest text-brand-gold font-medium">
-                  <span>Ensamble CINEFONÍA Nights</span>
+                  <p className="text-xs text-gray-400 font-light leading-relaxed">
+                    {artist.trajectory}
+                  </p>
                 </div>
               </div>
             </motion.div>

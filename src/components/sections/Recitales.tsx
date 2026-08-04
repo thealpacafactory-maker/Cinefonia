@@ -3,113 +3,104 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Ticket } from "lucide-react";
-
-import eventosData from "@/data/eventos.json";
-
-interface Recital {
-  id: string;
-  title: string;
-  date: string;
-  time: string;
-  location: string;
-  city: string;
-  status: "active" | "soon" | "soldout";
-  isFeatured?: boolean;
-}
-
-const EVENTS = eventosData as Recital[];
+import { ArrowRight } from "lucide-react";
 
 export default function Recitales() {
+  const events = [
+    {
+      id: "aqp-2026",
+      day: "22",
+      monthYear: "AGO 2026",
+      title: "Cinefonía Nights",
+      location: "Teatro Municipal de Arequipa",
+      city: "Arequipa",
+      status: "active",
+      href: "/eventos"
+    },
+    {
+      id: "cus-2026",
+      day: "19",
+      monthYear: "DIC 2026",
+      title: "Cinefonía Nights",
+      location: "Teatro Municipal de Arequipa",
+      city: "Arequipa",
+      status: "soon",
+      href: "/eventos"
+    }
+  ];
+
   return (
-    <section className="py-24 bg-brand-bg relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section className="py-20 bg-[#F7F5F0] text-[#111827] relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Title */}
         <div className="text-center mb-16">
-          <span className="text-xs font-semibold tracking-[0.25em] text-brand-gold uppercase block mb-3">Cartelera de Conciertos</span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold uppercase text-white tracking-wide">
-            Próximos Recitales
+          <h2 className="font-serif text-xs font-bold tracking-[0.3em] uppercase text-[#374151] mb-2">
+            PRÓXIMOS RECITALES
           </h2>
-          <div className="mt-4 w-16 h-[1.5px] bg-brand-gold mx-auto" />
+          <div className="flex items-center justify-center space-x-3 mt-2">
+            <div className="w-8 h-[1px] bg-[#9CA3AF]" />
+            <span className="text-[#9CA3AF] text-xs font-serif">✦</span>
+            <div className="w-8 h-[1px] bg-[#9CA3AF]" />
+          </div>
         </div>
 
-        {/* Events Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {EVENTS.map((event, idx) => {
-            const isAqp = event.id === "aqp-2026";
-            
-            return (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: idx * 0.15 }}
-                className={`relative glass-panel glass-panel-hover flex flex-col justify-between p-8 group ${
-                  event.isFeatured ? "border-brand-gold/40 shadow-gold-glow" : ""
-                }`}
-              >
-                {/* Featured Badge */}
-                {event.isFeatured && (
-                  <div className="absolute -top-3.5 left-8 bg-brand-gold text-brand-bg text-[9px] font-bold uppercase tracking-widest px-3 py-1">
-                    Evento Principal
-                  </div>
-                )}
+        {/* Cards Grid matching PDF page 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+          {events.map((event, idx) => (
+            <motion.div
+              key={event.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              className="bg-white border border-[#E5E7EB] p-6 sm:p-8 flex items-stretch space-x-6 shadow-sm hover:shadow-md transition-shadow group"
+            >
+              {/* Date Box */}
+              <div className="flex flex-col items-center justify-center border-r border-[#E5E7EB] pr-6 flex-shrink-0">
+                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#1F2937] leading-none">
+                  {event.day}
+                </span>
+                <span className="text-[10px] font-semibold tracking-wider text-[#6B7280] uppercase mt-1">
+                  {event.monthYear}
+                </span>
+              </div>
 
+              {/* Text details */}
+              <div className="flex flex-col justify-between flex-1 py-1">
                 <div>
-                  {/* City */}
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-gold block mb-2">
-                    {event.city}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="font-serif text-xl sm:text-2xl font-semibold text-white mb-6 leading-snug group-hover:text-brand-gold-light transition-colors">
-                    {event.title}
+                  <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#111827] tracking-tight mb-2">
+                    {event.title} <span className="italic text-[#6B7280] font-light text-lg">Nights</span>
                   </h3>
-
-                  {/* Details */}
-                  <div className="space-y-4 mb-8 text-sm text-gray-400">
-                    <div className="flex items-center space-x-3">
-                      <Calendar className="h-4.5 w-4.5 text-brand-gold flex-shrink-0" />
-                      <span>
-                        {isAqp ? "Sábado, 22 de Agosto de 2026" : event.date} • {event.time} hrs
-                      </span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <MapPin className="h-4.5 w-4.5 text-brand-gold flex-shrink-0 mt-0.5" />
-                      <span>{event.location}</span>
-                    </div>
-                  </div>
+                  <p className="text-xs text-[#4B5563] font-light leading-snug">
+                    {event.location}
+                  </p>
                 </div>
 
-                {/* CTA Action */}
-                <div className="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
-                  <span className="text-xs uppercase font-medium tracking-wider">
-                    {event.status === "active" ? (
-                      <span className="text-emerald-400 font-semibold animate-pulse">Entradas Disponibles</span>
-                    ) : event.status === "soldout" ? (
-                      <span className="text-red-400 font-semibold">Agotado</span>
-                    ) : (
-                      <span className="text-gray-500">Próximamente</span>
-                    )}
-                  </span>
-
+                <div className="mt-4 pt-4 border-t border-[#F3F4F6]">
                   <Link
-                    href={`/eventos`}
-                    className={`inline-flex items-center space-x-2 text-xs uppercase font-bold tracking-widest transition-colors ${
-                      event.status === "active"
-                        ? "text-brand-gold hover:text-brand-gold-light"
-                        : "text-gray-500 cursor-not-allowed pointer-events-none"
-                    }`}
+                    href={event.href}
+                    className="inline-flex items-center text-[11px] font-bold tracking-widest text-[#B87A4B] uppercase hover:text-[#8C552E] group-hover:translate-x-1 transition-all"
                   >
-                    <span>{event.status === "active" ? "Comprar" : "Detalles"}</span>
-                    {event.status === "active" && <Ticket className="h-4 w-4" />}
+                    <span>VER DETALLES</span>
+                    <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
                   </Link>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Action Button */}
+        <div className="text-center">
+          <Link
+            href="/eventos"
+            className="inline-flex items-center px-8 py-3 border border-[#374151] text-xs font-semibold tracking-[0.2em] text-[#374151] uppercase hover:bg-[#374151] hover:text-white transition-colors"
+          >
+            VER TODOS LOS EVENTOS
+          </Link>
+        </div>
+
       </div>
     </section>
   );

@@ -2,108 +2,80 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Clock, Search, FileText } from "lucide-react";
+import { ArrowLeft, Clock, ArrowRight, Newspaper } from "lucide-react";
 import Link from "next/link";
-import DevBadge from "@/components/ui/DevBadge";
-
 import noticiasData from "@/data/noticias.json";
-
-interface NewsPlaceholder {
-  slug: string;
-  title: string;
-  category: string;
-  date: string;
-  readTime: string;
-  description: string;
-}
-
-const NEWS_PLACEHOLDERS = noticiasData as NewsPlaceholder[];
 
 export default function NoticiasPage() {
   return (
-    <div className="min-h-screen py-16 bg-brand-bg relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-16 bg-[#070D1D] text-white relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Navigation Breadcrumb */}
-        <div className="mb-8">
-          <Link href="/" className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors">
+        <div className="mb-8 pt-10">
+          <Link href="/" className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors">
             <ArrowLeft className="h-4 w-4" />
             <span>Volver al Inicio</span>
           </Link>
         </div>
 
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <span className="text-xs font-semibold tracking-[0.25em] text-brand-gold uppercase block mb-3">Prensa y Comunicados</span>
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold uppercase text-white tracking-wide">
-            Noticias Recientes
+        <div className="text-center mb-16">
+          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3">ACTUALIDAD Y COMUNICADOS</span>
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal uppercase text-white tracking-wider">
+            Noticias Oficiales
           </h1>
-          <p className="max-w-xl mx-auto text-sm text-gray-400 mt-4 font-light leading-relaxed">
-            Mantente informado sobre los lanzamientos de entradas, incorporaciones del ensamble y comunicados de prensa.
+          <div className="flex items-center justify-center space-x-3 my-4">
+            <div className="w-12 h-[1px] bg-brand-gold/30" />
+            <span className="text-brand-gold text-xs font-serif">✦</span>
+            <div className="w-12 h-[1px] bg-brand-gold/30" />
+          </div>
+          <p className="max-w-xl mx-auto text-sm text-gray-400 font-light leading-relaxed">
+            Novedades, ensayos, rueda de prensa y anuncios oficiales de la temporada 2026 de CINEFONÍA Nights.
           </p>
-          <div className="mt-4 w-16 h-[1.5px] bg-brand-gold mx-auto" />
         </div>
 
-        {/* Dev Warning Badge */}
-        <DevBadge message="Fase de Desarrollo: Los comunicados y notas de prensa mostrados son borradores de pre-lanzamiento en proceso de validación de redacción." />
-
-        {/* Search Simulation */}
-        <div className="max-w-md mx-auto mb-16 relative">
-          <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
-            <Search className="h-4.5 w-4.5" />
-          </span>
-          <input
-            type="text"
-            placeholder="Buscar noticias o anuncios..."
-            className="w-full bg-brand-card/45 border border-brand-gold/15 focus:border-brand-gold focus:outline-none pl-11 pr-4 py-3 text-sm text-white placeholder-gray-600 transition-all rounded-none"
-            disabled
-          />
-          <span className="absolute right-3.5 top-3.5 text-[10px] uppercase font-mono text-gray-600 font-bold tracking-widest">
-            Simulado
-          </span>
-        </div>
-
-        {/* News Grid Placeholders */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {NEWS_PLACEHOLDERS.map((news, idx) => (
+        {/* News Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {noticiasData.map((news, idx) => (
             <motion.div
               key={news.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 bg-brand-card/25 border border-brand-gold/10 flex flex-col justify-between rounded-none group hover:border-brand-gold/30 hover:shadow-gold-glow transition-all duration-300"
+              className="bg-[#0B1329] border border-brand-gold/20 p-6 flex flex-col justify-between group hover:border-brand-gold/40 transition-all duration-300"
             >
               <div>
-                {/* Image Placeholder */}
-                <div className="aspect-video w-full bg-neutral-900 border border-white/5 mb-6 flex flex-col items-center justify-center text-gray-700 relative overflow-hidden group-hover:bg-neutral-800 transition-colors">
-                  <FileText className="h-10 w-10 stroke-[0.8]" />
-                  <span className="text-[9px] uppercase tracking-[0.2em] mt-3">Placeholder Imagen</span>
-                  <div className="absolute top-2 left-2 bg-brand-bg/90 border border-brand-gold/25 px-2 py-0.5 text-[8px] uppercase tracking-widest text-brand-gold">
+                {/* Visual Header */}
+                <div className="aspect-[16/9] w-full bg-[#050914] border border-brand-gold/10 mb-6 flex flex-col items-center justify-center text-gray-600 relative overflow-hidden group-hover:bg-[#080E1E] transition-colors">
+                  <Newspaper className="h-10 w-10 stroke-[0.8] mb-1 text-brand-gold/50" />
+                  <div className="absolute top-2 left-2 bg-[#070D1D] border border-brand-gold/25 px-2 py-0.5 text-[8px] font-bold uppercase tracking-widest text-brand-gold">
                     {news.category}
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-2 text-[10px] text-gray-500 font-semibold mb-2">
-                  <Clock className="h-3.5 w-3.5" />
+                <div className="flex items-center space-x-2 text-[10px] text-gray-400 font-semibold mb-2">
+                  <Clock className="h-3.5 w-3.5 text-brand-gold" />
                   <span>{news.date} • {news.readTime} lectura</span>
                 </div>
 
-                <h3 className="font-serif text-lg font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">
+                <h3 className="font-serif text-lg font-bold text-white mb-3 leading-snug group-hover:text-brand-gold transition-colors">
                   {news.title}
                 </h3>
                 
-                <p className="text-gray-400 text-xs sm:text-sm font-light leading-relaxed mb-6">
+                <p className="text-gray-300 text-xs font-light leading-relaxed mb-6">
                   {news.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-brand-gold/5">
+              <div className="pt-4 border-t border-brand-gold/10">
                 <Link
                   href={`/noticias/${news.slug}`}
                   className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors"
                 >
-                  <span>Ver Comunicado Completo</span>
+                  <span>LEER COMUNICADO</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </motion.div>

@@ -1,79 +1,69 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { User, Music } from "lucide-react";
-
+import { User } from "lucide-react";
 import artistasData from "@/data/artistas.json";
 
-interface Artist {
-  name: string;
-  role: string;
-  instrument: string;
-  bio: string;
-}
-
-const ARTISTS = artistasData as Artist[];
-
 export default function FeaturedArtists() {
+  // Display the 5 main instrumental ensemble members
+  const featured = artistasData.slice(0, 5);
+
   return (
-    <section className="py-24 bg-brand-bg relative border-t border-brand-gold/10">
+    <section className="py-20 bg-[#070D1D] text-white relative border-t border-brand-gold/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <span className="text-xs font-semibold tracking-[0.25em] text-brand-gold uppercase block mb-3">El Ensamble</span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold uppercase text-white tracking-wide">
-            Artistas Destacados
+        
+        {/* Section Title */}
+        <div className="text-center mb-16">
+          <h2 className="font-serif text-xs font-bold tracking-[0.3em] uppercase text-gray-300 mb-2">
+            ARTISTAS DESTACADOS
           </h2>
-          <p className="max-w-xl mx-auto text-sm text-gray-400 mt-4 font-light">
-            Conoce a los virtuosos músicos peruanos encargados de revivir las partituras icónicas del cine de culto.
-          </p>
-          <div className="mt-4 w-16 h-[1.5px] bg-brand-gold mx-auto" />
+          <div className="flex items-center justify-center space-x-3 my-4">
+            <div className="w-8 h-[1px] bg-brand-gold/40" />
+            <span className="text-brand-gold text-xs font-serif">✦</span>
+            <div className="w-8 h-[1px] bg-brand-gold/40" />
+          </div>
         </div>
 
-        {/* Artists Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {ARTISTS.map((artist, idx) => (
+        {/* 5 Cards Grid matching PDF page 1 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+          {featured.map((artist, idx) => (
             <motion.div
               key={artist.name}
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group flex flex-col justify-between p-6 bg-brand-card/40 border border-brand-gold/10 hover:border-brand-gold/30 hover:shadow-gold-glow transition-all duration-500 rounded-none relative overflow-hidden"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-[#0B1329] border border-brand-gold/20 p-4 flex flex-col items-center text-center group hover:border-brand-gold/50 transition-colors"
             >
-              {/* Black and White Artistic Box Effect */}
-              <div className="relative aspect-[4/5] w-full bg-neutral-900 border-b border-brand-gold/10 mb-6 overflow-hidden flex items-center justify-center group-hover:bg-neutral-800 transition-colors duration-500">
-                {/* Decorative Frame */}
-                <div className="absolute inset-4 border border-brand-gold/10 pointer-events-none group-hover:border-brand-gold/20 transition-all duration-500" />
-                
-                {/* Artistic B&W Icon Placeholder */}
-                <div className="flex flex-col items-center justify-center text-gray-600 group-hover:text-brand-gold/50 transition-colors duration-500">
-                  <User className="h-16 w-16 stroke-[1] mb-2" />
-                  <Music className="h-6 w-6 stroke-[1]" />
-                </div>
-
-                {/* Instrument Tag */}
-                <div className="absolute bottom-4 left-4 bg-brand-bg/90 border border-brand-gold/20 px-3 py-1 text-[10px] uppercase tracking-widest text-brand-gold font-medium">
-                  {artist.instrument}
-                </div>
+              {/* Photo Box */}
+              <div className="w-full aspect-[4/5] bg-[#050914] border border-brand-gold/10 mb-4 overflow-hidden relative flex items-center justify-center group-hover:bg-[#080E1E] transition-colors">
+                <User className="h-16 w-16 text-gray-600 stroke-[0.8]" />
+                <div className="absolute inset-2 border border-brand-gold/10 pointer-events-none" />
               </div>
 
-              {/* Text Info */}
-              <div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-copper block mb-1">
-                  {artist.role}
-                </span>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-white mb-3 tracking-wide group-hover:text-brand-gold-light transition-colors duration-300">
-                  {artist.name}
-                </h3>
-                <p className="text-gray-400 text-xs sm:text-sm font-light leading-relaxed mb-4">
-                  {artist.bio}
-                </p>
-              </div>
+              {/* Artist Name & Instrument */}
+              <h3 className="font-serif text-sm font-semibold text-white tracking-wide mb-1 leading-snug">
+                {artist.name}
+              </h3>
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-gold">
+                {artist.instrument}
+              </span>
             </motion.div>
           ))}
         </div>
+
+        {/* Action Button */}
+        <div className="text-center">
+          <Link
+            href="/artistas"
+            className="inline-flex items-center px-8 py-3 border border-brand-gold/60 text-xs font-semibold tracking-[0.2em] text-white uppercase hover:bg-brand-gold hover:text-brand-bg transition-colors"
+          >
+            VER TODOS LOS ARTISTAS
+          </Link>
+        </div>
+
       </div>
     </section>
   );

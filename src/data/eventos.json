@@ -8,16 +8,91 @@
     "city": "Arequipa",
     "capacity": "850 personas",
     "duration": "75 minutos sin intermedio (58 minutos de música)",
-    "concept": "La música de las películas más memorables de la historia del cine interpretada en vivo por un quinteto de cámara de primer nivel, en sincronía con proyecciones audiovisuales inmersivas.",
+    "concept": "CINEFONÍA NIGHTS utiliza la memoria emocional del cine para acercar nuevos públicos a la música de cámara mediante una experiencia de piano, flauta, cuerdas, narración, luz y proyección.",
     "status": "active",
     "image": "/images/events/estreno-arequipa.jpg",
     "imagePlaceholder": "/images/placeholders/event-placeholder.jpg",
-    "isFeatured": true
+    "isFeatured": true,
+    "repertoire": [
+      {
+        "block": "Prólogo",
+        "title": "Prólogo",
+        "pieces": [
+          { "name": "Feather Theme", "composer": "Alan Silvestri", "movie": "Forrest Gump", "year": "1994" }
+        ]
+      },
+      {
+        "block": "Bloque I",
+        "title": "Soñar",
+        "pieces": [
+          { "name": "Married Life", "composer": "Michael Giacchino", "movie": "Up", "year": "2009" },
+          { "name": "Merry-Go-Round of Life", "composer": "Joe Hisaishi", "movie": "El castillo ambulante", "year": "2004" },
+          { "name": "Concerning Hobbits", "composer": "Howard Shore", "movie": "El Señor de los Anillos", "year": "2001" }
+        ]
+      },
+      {
+        "block": "Bloque II",
+        "title": "Amar",
+        "pieces": [
+          { "name": "Mia & Sebastian's Theme", "composer": "Justin Hurwitz", "movie": "La La Land", "year": "2016" },
+          { "name": "Liz on Top", "composer": "Dario Marianelli", "movie": "Orgullo y prejuicio", "year": "2005" },
+          { "name": "The Shape of Water", "composer": "Alexandre Desplat", "movie": "La forma del agua", "year": "2017" },
+          { "name": "Playing Love", "composer": "Ennio Morricone", "movie": "La leyenda del pianista", "year": "1998" },
+          { "name": "Somewhere in Time", "composer": "John Barry", "movie": "Somewhere in Time", "year": "1980" },
+          { "name": "Cinema Paradiso", "composer": "Ennio Morricone", "movie": "Cinema Paradiso", "year": "1988" }
+        ]
+      },
+      {
+        "block": "Bloque III",
+        "title": "Aquello por lo que luchamos",
+        "pieces": [
+          { "name": "Gabriel's Oboe", "composer": "Ennio Morricone", "movie": "La misión", "year": "1986" },
+          { "name": "Cornfield Chase", "composer": "Hans Zimmer", "movie": "Interstellar", "year": "2014" },
+          { "name": "For the Love of a Princess", "composer": "James Horner", "movie": "Braveheart", "year": "1995" }
+        ]
+      },
+      {
+        "block": "Bloque IV",
+        "title": "El destino y las pasiones humanas",
+        "pieces": [
+          { "name": "The Ecstasy of Gold", "composer": "Ennio Morricone", "movie": "El bueno, el feo y el malo", "year": "1966" },
+          { "name": "Por una Cabeza", "composer": "Carlos Gardel y A. Le Pera", "movie": "Tango / Perfume de Mujer", "year": "1935" },
+          { "name": "The Godfather", "composer": "Nino Rota", "movie": "El Padrino", "year": "1972" }
+        ]
+      },
+      {
+        "block": "Propina",
+        "title": "Propina",
+        "pieces": [
+          { "name": "He's a Pirate", "composer": "Klaus Badelt y Hans Zimmer", "movie": "Piratas del Caribe", "year": "2003" }
+        ]
+      }
+    ],
+    "experiencePhases": [
+      { "number": "01", "name": "Recepción" },
+      { "number": "02", "name": "Narración" },
+      { "number": "03", "name": "Música en vivo" },
+      { "number": "04", "name": "Proyección artística" },
+      { "number": "05", "name": "Iluminación" },
+      { "number": "06", "name": "Hospitality" }
+    ],
+    "technicalRider": {
+      "stage": ["Piano de cola afinado", "Seis sillas", "Cinco atriles", "Espacio reservado para el narrador"],
+      "sound": ["Micrófono inalámbrico", "Sistema de sonido de alta fidelidad"],
+      "lighting": ["Iluminación regulable y ambiental"],
+      "projection": ["Pantalla de proyección de gran formato", "Proyector Full HD", "Conexión HDMI"]
+    },
+    "technicalSchedule": [
+      { "activity": "Montaje", "duration": "2 horas" },
+      { "activity": "Prueba de sonido", "duration": "45 minutos" },
+      { "activity": "Ensayo general", "duration": "60 minutos" },
+      { "activity": "Desmontaje", "duration": "45 minutos" }
+    ]
   },
   {
     "id": "cus-2026",
     "title": "CINEFONÍA Nights - Gira Cusco",
-    "date": "Sábado, 12 de Septiembre de 2026",
+    "date": "Sábado, 19 de Diciembre de 2026",
     "time": "19:30",
     "location": "Teatro Municipal del Cusco (Calle Mesón de la Estrella 149)",
     "city": "Cusco",
@@ -26,21 +101,6 @@
     "concept": "Recital inmersivo en el corazón del Cusco antiguo. Una noche íntima para revivir las partituras clásicas del séptimo arte.",
     "status": "soon",
     "image": "/images/events/gira-cusco.jpg",
-    "imagePlaceholder": "/images/placeholders/event-placeholder.jpg",
-    "isFeatured": false
-  },
-  {
-    "id": "lim-2026",
-    "title": "CINEFONÍA Nights - Gira Lima",
-    "date": "Sábado, 3 de Octubre de 2026",
-    "time": "20:00",
-    "location": "Auditorio Santa Úrsula (Av. Santo Toribio 150, San Isidro)",
-    "city": "Lima",
-    "capacity": "950 personas",
-    "duration": "75 minutos sin intermedio",
-    "concept": "Gran gala de cierre en la capital, adaptando las icónicas piezas cinematográficas con acústica optimizada.",
-    "status": "soon",
-    "image": "/images/events/gira-lima.jpg",
     "imagePlaceholder": "/images/placeholders/event-placeholder.jpg",
     "isFeatured": false
   }

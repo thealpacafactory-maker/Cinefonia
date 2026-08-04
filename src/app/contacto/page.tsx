@@ -3,11 +3,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
-import { Mail, User, BookOpen, Send, CheckCircle2, ArrowLeft, MapPin, Phone } from "lucide-react";
-import Link from "next/link";
 import { contactSchema, type ContactFormData } from "@/schemas/forms";
-import DevBadge from "@/components/ui/DevBadge";
+import { ArrowLeft, Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactoPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -30,209 +28,164 @@ export default function ContactoPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
-    // Simulación de envío (será implementado en el backend en el Hito 3/4)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Datos de contacto enviados:", data);
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+    console.log("Contacto enviado:", data);
     setIsLoading(false);
     setIsSubmitted(true);
     reset();
   };
 
   return (
-    <div className="min-h-screen py-16 bg-brand-bg relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-16 bg-[#070D1D] text-white relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Navigation Breadcrumb */}
-        <div className="mb-8">
-          <Link href="/" className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors">
+        <div className="mb-8 pt-10">
+          <Link href="/" className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors">
             <ArrowLeft className="h-4 w-4" />
             <span>Volver al Inicio</span>
           </Link>
         </div>
 
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <span className="text-xs font-semibold tracking-[0.25em] text-brand-gold uppercase block mb-3">Ponte en Contacto</span>
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold uppercase text-white tracking-wide">
-            Contacto
+        <div className="text-center mb-16">
+          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3">INFORMACIÓN Y COMUNICACIÓN</span>
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal uppercase text-white tracking-wider">
+            Datos de Contacto
           </h1>
-          <p className="max-w-xl mx-auto text-sm text-gray-400 mt-4 font-light leading-relaxed">
-            ¿Tienes alguna consulta sobre la compra de entradas, el aforo, la accesibilidad o la prensa? Escríbenos directamente.
+          <div className="flex items-center justify-center space-x-3 my-4">
+            <div className="w-12 h-[1px] bg-brand-gold/30" />
+            <span className="text-brand-gold text-xs font-serif">✦</span>
+            <div className="w-12 h-[1px] bg-brand-gold/30" />
+          </div>
+          <p className="max-w-xl mx-auto text-sm text-gray-400 font-light leading-relaxed">
+            Canales directos de consulta con el equipo de producción, dirección artística y prensa.
           </p>
-          <div className="mt-4 w-16 h-[1.5px] bg-brand-gold mx-auto" />
         </div>
 
-        {/* Dev Warning Badge */}
-        <DevBadge message="Nota de Desarrollo: Los correos de respuesta se simulan en consola durante esta fase de integración frontend." />
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12 items-start">
-          {/* Left Column: Direct Info */}
-          <div className="space-y-8 lg:col-span-1">
-            <div className="bg-brand-card/30 border border-brand-gold/10 p-8 space-y-6">
-              <h2 className="font-serif text-xl text-white font-bold tracking-wide uppercase border-b border-brand-gold/10 pb-4">
-                Información Oficial
-              </h2>
-
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3.5 text-sm text-gray-400">
-                  <MapPin className="h-5 w-5 text-brand-gold flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-gray-200">Teatro Municipal de Arequipa</p>
-                    <p className="text-xs leading-relaxed">Calle Mercaderes 239, Cercado de Arequipa, Perú</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-3.5 text-sm text-gray-400">
-                  <Mail className="h-5 w-5 text-brand-gold flex-shrink-0" />
-                  <span>contacto@cinefonia-nights.pe</span>
-                </div>
-
-                <div className="flex items-center space-x-3.5 text-sm text-gray-400">
-                  <Phone className="h-5 w-5 text-brand-gold flex-shrink-0" />
-                  <span>+51 987 654 321</span>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Direct Leadership Contact Details */}
+          <div className="lg:col-span-5 space-y-8">
+            
+            <div className="bg-[#0B1329] border border-brand-gold/20 p-8 space-y-6">
+              <h3 className="font-serif text-xs font-bold tracking-[0.25em] text-brand-gold uppercase border-b border-brand-gold/15 pb-3">
+                DIRECCIÓN ARTÍSTICA
+              </h3>
+              <div>
+                <p className="font-serif text-lg font-bold text-white">María Lucía Roca Gamarra</p>
+                <p className="text-xs text-gray-400 font-light mt-1">Dirección Artística · Piano</p>
               </div>
 
-              <div className="pt-4 border-t border-brand-gold/10 text-xs text-gray-500 space-y-2">
-                <p><strong>Horario de Atención:</strong></p>
-                <p>Lunes a Viernes: 9:00 - 18:00 hrs</p>
-                <p>Sábados: 9:00 - 13:00 hrs</p>
+              <h3 className="font-serif text-xs font-bold tracking-[0.25em] text-brand-gold uppercase border-b border-brand-gold/15 pb-3 pt-4">
+                DIRECCIÓN MUSICAL
+              </h3>
+              <div>
+                <p className="font-serif text-lg font-bold text-white">Julián Enríquez</p>
+                <p className="text-xs text-gray-400 font-light mt-1">Dirección Musical · Flauta · Adaptación de Arreglos</p>
               </div>
             </div>
+
+            <div className="bg-[#0B1329] border border-brand-gold/20 p-8 space-y-4 text-xs text-gray-300">
+              <h3 className="font-serif font-bold tracking-[0.25em] text-white uppercase mb-4">
+                UBICACIÓN Y ATENCIÓN
+              </h3>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-4 w-4 text-brand-gold flex-shrink-0 mt-0.5" />
+                <span>Teatro Municipal de Arequipa (Calle Mercaderes 239, Arequipa, Perú)</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 text-brand-gold flex-shrink-0" />
+                <a href="mailto:hola@cinefoniashow.com" className="hover:text-brand-gold transition-colors">
+                  hola@cinefoniashow.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-4 w-4 text-brand-gold flex-shrink-0" />
+                <span>+51 987 654 321</span>
+              </div>
+            </div>
+
           </div>
 
-          {/* Right Column: Form */}
-          <div className="lg:col-span-2">
-            <div className="glass-panel p-8 sm:p-12 relative shadow-copper-glow">
+          {/* Right Column: Contact Form */}
+          <div className="lg:col-span-7">
+            <div className="bg-[#0B1329] border border-brand-gold/20 p-8 sm:p-10">
+              <h3 className="font-serif text-sm font-bold tracking-[0.2em] uppercase text-white mb-6">
+                ENVÍANOS UN MENSAJE
+              </h3>
+
               {isSubmitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12 flex flex-col items-center justify-center"
-                >
-                  <CheckCircle2 className="h-16 w-16 text-brand-gold mb-6" />
-                  <h3 className="font-serif text-2xl font-semibold text-white mb-3">
-                    ¡Mensaje Enviado!
-                  </h3>
-                  <p className="text-gray-400 text-sm max-w-md leading-relaxed mb-8">
-                    Tu consulta ha sido registrada exitosamente. Un representante del área correspondiente responderá a tu correo electrónico en un lapso no mayor a 24 horas.
-                  </p>
+                <div className="py-12 text-center">
+                  <CheckCircle2 className="h-12 w-12 text-brand-gold mx-auto mb-4" />
+                  <h4 className="font-serif text-lg text-white mb-2">¡Mensaje Recibido!</h4>
+                  <p className="text-xs text-gray-400 mb-6">Gracias por contactarte con CINEFONÍA Nights. Te responderemos a la brevedad.</p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="px-6 py-3 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-bg uppercase text-xs tracking-widest font-semibold transition-all duration-300 rounded-none"
+                    className="text-xs uppercase font-bold text-brand-gold border-b border-brand-gold pb-1"
                   >
                     Enviar otro mensaje
                   </button>
-                </motion.div>
+                </div>
               ) : (
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    {/* Name */}
-                    <div>
-                      <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
-                        Nombre Completo
-                      </label>
-                      <div className="relative">
-                        <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
-                          <User className="h-4 w-4" />
-                        </span>
-                        <input
-                          type="text"
-                          id="name"
-                          {...register("name")}
-                          placeholder="Ej. Carlos Mendoza"
-                          className="w-full bg-brand-bg/40 border border-brand-gold/15 focus:border-brand-gold focus:outline-none pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 transition-all rounded-none"
-                        />
-                      </div>
-                      {errors.name && (
-                        <p className="mt-1 text-xs text-brand-copper font-medium">{errors.name.message}</p>
-                      )}
-                    </div>
-
-                    {/* Email */}
-                    <div>
-                      <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
-                        Correo Electrónico
-                      </label>
-                      <div className="relative">
-                        <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
-                          <Mail className="h-4 w-4" />
-                        </span>
-                        <input
-                          type="email"
-                          id="email"
-                          {...register("email")}
-                          placeholder="carlos@correo.com"
-                          className="w-full bg-brand-bg/40 border border-brand-gold/15 focus:border-brand-gold focus:outline-none pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 transition-all rounded-none"
-                        />
-                      </div>
-                      {errors.email && (
-                        <p className="mt-1 text-xs text-brand-copper font-medium">{errors.email.message}</p>
-                      )}
-                    </div>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-xs">
+                  <div>
+                    <label className="block text-[10px] uppercase font-bold text-gray-400 mb-1">Nombre Completo</label>
+                    <input
+                      type="text"
+                      {...register("name")}
+                      placeholder="Tu nombre"
+                      className="w-full bg-[#050914] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors"
+                    />
+                    {errors.name && <p className="text-[10px] text-red-400 mt-1">{errors.name.message}</p>}
                   </div>
 
-                  {/* Subject */}
                   <div>
-                    <label htmlFor="subject" className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
-                      Asunto
-                    </label>
-                    <div className="relative">
-                      <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-gray-500">
-                        <BookOpen className="h-4 w-4" />
-                      </span>
-                      <input
-                        type="text"
-                        id="subject"
-                        {...register("subject")}
-                        placeholder="Ej. Duda sobre aforo VIP o Prensa"
-                        className="w-full bg-brand-bg/40 border border-brand-gold/15 focus:border-brand-gold focus:outline-none pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 transition-all rounded-none"
-                      />
-                    </div>
-                    {errors.subject && (
-                      <p className="mt-1 text-xs text-brand-copper font-medium">{errors.subject.message}</p>
-                    )}
+                    <label className="block text-[10px] uppercase font-bold text-gray-400 mb-1">Correo Electrónico</label>
+                    <input
+                      type="email"
+                      {...register("email")}
+                      placeholder="tu@correo.com"
+                      className="w-full bg-[#050914] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors"
+                    />
+                    {errors.email && <p className="text-[10px] text-red-400 mt-1">{errors.email.message}</p>}
                   </div>
 
-                  {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
-                      Mensaje
-                    </label>
+                    <label className="block text-[10px] uppercase font-bold text-gray-400 mb-1">Asunto</label>
+                    <input
+                      type="text"
+                      {...register("subject")}
+                      placeholder="Motivo de consulta"
+                      className="w-full bg-[#050914] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors"
+                    />
+                    {errors.subject && <p className="text-[10px] text-red-400 mt-1">{errors.subject.message}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-[10px] uppercase font-bold text-gray-400 mb-1">Mensaje</label>
                     <textarea
-                      id="message"
                       rows={5}
                       {...register("message")}
                       placeholder="Escribe tu mensaje aquí..."
-                      className="w-full bg-brand-bg/40 border border-brand-gold/15 focus:border-brand-gold focus:outline-none px-4 py-3 text-sm text-white placeholder-gray-600 transition-all rounded-none resize-none"
+                      className="w-full bg-[#050914] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors resize-none"
                     />
-                    {errors.message && (
-                      <p className="mt-1 text-xs text-brand-copper font-medium">{errors.message.message}</p>
-                    )}
+                    {errors.message && <p className="text-[10px] text-red-400 mt-1">{errors.message.message}</p>}
                   </div>
 
-                  {/* Submit */}
-                  <div>
-                    <button
-                      type="submit"
-                      disabled={isLoading}
-                      className="w-full inline-flex items-center justify-center px-8 py-4 bg-brand-gold hover:bg-brand-gold-light disabled:bg-gray-700 text-brand-bg font-bold tracking-widest uppercase text-xs transition-all duration-300 shadow-gold-glow cursor-pointer disabled:cursor-not-allowed"
-                    >
-                      {isLoading ? (
-                        <span>Enviando...</span>
-                      ) : (
-                        <>
-                          <span>Enviar Mensaje</span>
-                          <Send className="h-4 w-4 ml-2" />
-                        </>
-                      )}
-                    </button>
-                  </div>
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full bg-[#B87A4B] hover:bg-[#a3683a] text-white font-bold tracking-[0.2em] uppercase py-3.5 px-6 transition-colors flex items-center justify-center space-x-2"
+                  >
+                    <span>{isLoading ? "ENVIANDO..." : "ENVIAR MENSAJE"}</span>
+                    {!isLoading && <Send className="h-3.5 w-3.5" />}
+                  </button>
                 </form>
               )}
             </div>
           </div>
+
         </div>
 
       </div>
