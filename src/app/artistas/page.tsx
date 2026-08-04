@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { User, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import artistasData from "@/data/artistas.json";
 
 export default function ArtistasPage() {
@@ -67,12 +68,23 @@ export default function ArtistasPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-[#0B1329] border border-brand-gold/20 p-6 sm:p-8 flex flex-col md:flex-row gap-8 items-start hover:border-brand-gold/40 transition-colors"
+              className="bg-[#0B1329] border border-brand-gold/20 p-6 sm:p-8 flex flex-col md:flex-row gap-8 items-start hover:border-brand-gold/40 transition-colors group"
             >
               {/* Photo Box */}
-              <div className="w-full md:w-48 aspect-[4/5] bg-[#050914] border border-brand-gold/15 flex items-center justify-center flex-shrink-0 relative">
-                <User className="h-20 w-20 text-gray-600 stroke-[0.8]" />
-                <span className="absolute bottom-3 left-3 bg-[#070D1D] px-2 py-1 text-[9px] font-bold text-brand-gold uppercase tracking-widest border border-brand-gold/20">
+              <div className="w-full md:w-48 aspect-[4/5] bg-[#050914] border border-brand-gold/15 flex items-center justify-center flex-shrink-0 relative overflow-hidden">
+                {artist.image ? (
+                  <Image
+                    src={artist.image}
+                    alt={artist.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 200px"
+                    style={{ objectFit: "cover" }}
+                    className="grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                  />
+                ) : (
+                  <User className="h-20 w-20 text-gray-600 stroke-[0.8]" />
+                )}
+                <span className="absolute bottom-3 left-3 bg-[#070D1D] px-2 py-1 text-[9px] font-bold text-brand-gold uppercase tracking-widest border border-brand-gold/20 z-10">
                   {artist.instrument}
                 </span>
               </div>

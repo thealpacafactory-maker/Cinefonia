@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
 import artistasData from "@/data/artistas.json";
@@ -39,8 +40,19 @@ export default function FeaturedArtists() {
             >
               {/* Photo Box */}
               <div className="w-full aspect-[4/5] bg-[#050914] border border-brand-gold/10 mb-4 overflow-hidden relative flex items-center justify-center group-hover:bg-[#080E1E] transition-colors">
-                <User className="h-16 w-16 text-gray-600 stroke-[0.8]" />
-                <div className="absolute inset-2 border border-brand-gold/10 pointer-events-none" />
+                {artist.image ? (
+                  <Image
+                    src={artist.image}
+                    alt={artist.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 20vw, 15vw"
+                    style={{ objectFit: "cover" }}
+                    className="grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                  />
+                ) : (
+                  <User className="h-16 w-16 text-gray-600 stroke-[0.8]" />
+                )}
+                <div className="absolute inset-2 border border-brand-gold/15 pointer-events-none z-10" />
               </div>
 
               {/* Artist Name & Instrument */}
