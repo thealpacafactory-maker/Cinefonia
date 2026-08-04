@@ -76,7 +76,7 @@ export default function Experience() {
 
         {/* Highlight Concept block from Rev5 */}
         <div className="bg-[#EFECE6] border-l-4 border-[#B87A4B] p-8 sm:p-10 max-w-4xl mx-auto my-8">
-          <span className="text-[10px] font-bold tracking-[0.25em] text-[#B87A4B] uppercase block mb-2">CONCEPTO CENTRAL (REV 5)</span>
+          <span className="text-[10px] font-bold tracking-[0.25em] text-[#B87A4B] uppercase block mb-2">CONCEPTO CENTRAL</span>
           <h4 className="font-serif text-xl sm:text-2xl font-bold uppercase text-[#111827] tracking-wide mb-3">
             EL CINE ABRE LA PUERTA. LA MÚSICA HACE EL RESTO.
           </h4>
