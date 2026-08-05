@@ -86,7 +86,7 @@ export default function CountdownTimer({
   if (variant === "hero") {
     return (
       <div className={`flex items-center justify-center gap-3 sm:gap-6 ${className}`}>
-        <div className="flex flex-col items-center bg-[#0B1329]/90 border border-brand-gold/30 p-3 sm:p-4 min-w-[65px] sm:min-w-[85px] shadow-gold-glow backdrop-blur-md">
+        <div className="flex flex-col items-center bg-[#121E36]/90 border border-brand-gold/30 p-3 sm:p-4 min-w-[65px] sm:min-w-[85px] shadow-gold-glow backdrop-blur-md">
           <span className="font-serif text-2xl sm:text-4xl font-bold text-white leading-none">
             {formatNumber(timeLeft.days)}
           </span>
@@ -97,7 +97,7 @@ export default function CountdownTimer({
 
         <span className="font-serif text-xl sm:text-3xl text-brand-gold/50 font-light">:</span>
 
-        <div className="flex flex-col items-center bg-[#0B1329]/90 border border-brand-gold/30 p-3 sm:p-4 min-w-[65px] sm:min-w-[85px] shadow-gold-glow backdrop-blur-md">
+        <div className="flex flex-col items-center bg-[#121E36]/90 border border-brand-gold/30 p-3 sm:p-4 min-w-[65px] sm:min-w-[85px] shadow-gold-glow backdrop-blur-md">
           <span className="font-serif text-2xl sm:text-4xl font-bold text-white leading-none">
             {formatNumber(timeLeft.hours)}
           </span>
@@ -108,7 +108,7 @@ export default function CountdownTimer({
 
         <span className="font-serif text-xl sm:text-3xl text-brand-gold/50 font-light">:</span>
 
-        <div className="flex flex-col items-center bg-[#0B1329]/90 border border-brand-gold/30 p-3 sm:p-4 min-w-[65px] sm:min-w-[85px] shadow-gold-glow backdrop-blur-md">
+        <div className="flex flex-col items-center bg-[#121E36]/90 border border-brand-gold/30 p-3 sm:p-4 min-w-[65px] sm:min-w-[85px] shadow-gold-glow backdrop-blur-md">
           <span className="font-serif text-2xl sm:text-4xl font-bold text-white leading-none">
             {formatNumber(timeLeft.minutes)}
           </span>
@@ -119,7 +119,7 @@ export default function CountdownTimer({
 
         <span className="font-serif text-xl sm:text-3xl text-brand-gold/50 font-light">:</span>
 
-        <div className="flex flex-col items-center bg-[#0B1329]/90 border border-brand-gold/30 p-3 sm:p-4 min-w-[65px] sm:min-w-[85px] shadow-gold-glow backdrop-blur-md">
+        <div className="flex flex-col items-center bg-[#121E36]/90 border border-brand-gold/30 p-3 sm:p-4 min-w-[65px] sm:min-w-[85px] shadow-gold-glow backdrop-blur-md">
           <span className="font-serif text-2xl sm:text-4xl font-bold text-white leading-none text-gradient-gold">
             {formatNumber(timeLeft.seconds)}
           </span>
@@ -168,10 +168,10 @@ export default function CountdownTimer({
         <span className="text-xs text-[#9CA3AF] font-bold">:</span>
 
         <div className="flex flex-col items-center bg-white border border-[#E5E7EB] px-3 py-2 min-w-[50px] shadow-sm">
-          <span className="font-serif text-lg font-bold text-[#B87A4B] leading-none">
+          <span className="font-serif text-lg font-bold text-[#ad6e4f] leading-none">
             {formatNumber(timeLeft.seconds)}
           </span>
-          <span className="text-[8px] font-bold uppercase tracking-wider text-[#B87A4B] mt-1">
+          <span className="text-[8px] font-bold uppercase tracking-wider text-[#ad6e4f] mt-1">
             SEGS
           </span>
         </div>
@@ -182,7 +182,7 @@ export default function CountdownTimer({
   // Default Dark Variant
   return (
     <div className={`flex items-center gap-2 sm:gap-3 ${className}`}>
-      <div className="flex flex-col items-center bg-[#050914] border border-brand-gold/20 px-3 py-2 min-w-[55px]">
+      <div className="flex flex-col items-center bg-[#0A1326] border border-brand-gold/20 px-3 py-2 min-w-[55px]">
         <span className="font-serif text-base font-bold text-white leading-none">
           {formatNumber(timeLeft.days)}
         </span>
@@ -193,7 +193,7 @@ export default function CountdownTimer({
 
       <span className="text-xs text-brand-gold/60 font-bold">:</span>
 
-      <div className="flex flex-col items-center bg-[#050914] border border-brand-gold/20 px-3 py-2 min-w-[55px]">
+      <div className="flex flex-col items-center bg-[#0A1326] border border-brand-gold/20 px-3 py-2 min-w-[55px]">
         <span className="font-serif text-base font-bold text-white leading-none">
           {formatNumber(timeLeft.hours)}
         </span>
@@ -204,7 +204,7 @@ export default function CountdownTimer({
 
       <span className="text-xs text-brand-gold/60 font-bold">:</span>
 
-      <div className="flex flex-col items-center bg-[#050914] border border-brand-gold/20 px-3 py-2 min-w-[55px]">
+      <div className="flex flex-col items-center bg-[#0A1326] border border-brand-gold/20 px-3 py-2 min-w-[55px]">
         <span className="font-serif text-base font-bold text-white leading-none">
           {formatNumber(timeLeft.minutes)}
         </span>
@@ -215,7 +215,7 @@ export default function CountdownTimer({
 
       <span className="text-xs text-brand-gold/60 font-bold">:</span>
 
-      <div className="flex flex-col items-center bg-[#050914] border border-brand-gold/20 px-3 py-2 min-w-[55px]">
+      <div className="flex flex-col items-center bg-[#0A1326] border border-brand-gold/20 px-3 py-2 min-w-[55px]">
         <span className="font-serif text-base font-bold text-brand-gold leading-none">
           {formatNumber(timeLeft.seconds)}
         </span>

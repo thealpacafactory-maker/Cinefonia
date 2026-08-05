@@ -98,34 +98,32 @@
   ],
   "sponsorsList": [
     {
-      "name": "Empresa Tu Marca Aquí",
+      "id": "mun-aqp",
+      "name": "Municipalidad Provincial de Arequipa",
       "level": "principal",
-      "tag": "Socio Principal"
+      "tag": "Respaldo Institucional",
+      "logo": "/images/brands/logo municipalidad aqp.png"
     },
     {
-      "name": "Marca Tu Logo Aquí",
+      "id": "caja-aqp",
+      "name": "Caja Arequipa",
+      "level": "principal",
+      "tag": "Socio Principal",
+      "logo": "/images/brands/caja arequipa.png"
+    },
+    {
+      "id": "andina",
+      "name": "Andina",
       "level": "estrategico",
-      "tag": "Socio Estratégico"
+      "tag": "Socio Estratégico",
+      "logo": "/images/brands/Logo-Andina-500x500.jpg"
     },
     {
-      "name": "Compañía Tu Marca Aquí",
-      "level": "estrategico",
-      "tag": "Socio Estratégico"
-    },
-    {
-      "name": "Brand Tu Logo Aquí",
+      "id": "silvera-nanotech",
+      "name": "Silvera Nanotech",
       "level": "cultural",
-      "tag": "Socio Cultural"
-    },
-    {
-      "name": "Empresa Tu Marca Aquí",
-      "level": "cultural",
-      "tag": "Socio Cultural"
-    },
-    {
-      "name": "Aliado Tu Logo Aquí",
-      "level": "aliado",
-      "tag": "Aliado Cultural"
+      "tag": "Socio Cultural",
+      "logo": "/images/brands/Logo_Silvera_Nanotech.png"
     }
   ]
 }

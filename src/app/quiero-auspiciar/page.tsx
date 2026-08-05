@@ -28,7 +28,7 @@ export default function QuieroAuspiciarPage() {
 
         {/* Section Title */}
         <div className="text-center mb-12">
-          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3">DOSSIER DE PATROCINIO (REV 5)</span>
+          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3"></span>
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal uppercase text-white tracking-wider">
             Solicitud de Alianza
           </h1>

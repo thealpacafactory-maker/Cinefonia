@@ -1,14 +1,16 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, Crown } from "lucide-react";
+import { ArrowLeft, Check, Crown, Award } from "lucide-react";
 import Link from "next/link";
 import patrocinadoresData from "@/data/patrocinadores.json";
 
 export default function PatrocinadoresPage() {
   const tiers = patrocinadoresData.tiers || [];
   const palcoFeatures = patrocinadoresData.palcoVipFeatures || [];
+  const sponsors = patrocinadoresData.sponsorsList || [];
 
   return (
     <div className="min-h-screen py-16 bg-[#070D1D] text-white relative">
@@ -24,7 +26,7 @@ export default function PatrocinadoresPage() {
 
         {/* Header Title */}
         <div className="text-center mb-16">
-          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3">DOSSIER DE PATROCINIO (REV 5)</span>
+          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3"></span>
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal uppercase text-white tracking-wider">
             Alianzas Culturales
           </h1>
@@ -36,6 +38,49 @@ export default function PatrocinadoresPage() {
           <p className="max-w-2xl mx-auto text-sm text-gray-400 font-light leading-relaxed">
             No todas las marcas necesitan la misma presencia. Cinco niveles de participación para integrar su marca a una experiencia cultural memorable.
           </p>
+        </div>
+
+        {/* Official Sponsors Showcase Section */}
+        <div className="mb-20 bg-[#0B1329] border border-brand-gold/30 p-8 sm:p-12 shadow-2xl">
+          <div className="text-center mb-10">
+            <span className="text-[10px] font-bold tracking-[0.25em] text-brand-gold uppercase block mb-2 flex items-center justify-center">
+              <Award className="h-4 w-4 mr-2" /> NUESTROS ALIANZAS Y PATROCINADORES ACTUALES
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-normal text-white">
+              Marcas e Instituciones Comprometidas con la Cultura
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {sponsors.map((sponsor, idx) => (
+              <motion.div
+                key={sponsor.id || idx}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="bg-[#050914] border border-brand-gold/20 p-6 flex flex-col items-center justify-between text-center rounded-none group hover:border-brand-gold transition-colors"
+              >
+                <div className="relative w-full h-24 mb-4 flex items-center justify-center bg-white/5 p-4 border border-white/5">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    fill
+                    sizes="240px"
+                    className="object-contain p-2 filter brightness-105 group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-serif text-sm font-bold text-white uppercase mb-1">
+                    {sponsor.name}
+                  </h3>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand-gold">
+                    {sponsor.tag}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* 5 Tiers Matrix Cards */}

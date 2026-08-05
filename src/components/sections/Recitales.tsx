@@ -90,13 +90,13 @@ export default function Recitales() {
                 </div>
 
                 <div className="pt-4 border-t border-[#F3F4F6] flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#B87A4B]">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#ad6e4f]">
                     {event.status === "active" ? "Entradas Disponibles" : "Próximamente"}
                   </span>
 
                   <Link
                     href="/eventos"
-                    className="inline-flex items-center text-[11px] font-bold tracking-widest text-[#B87A4B] uppercase hover:text-[#8C552E] group-hover:translate-x-1 transition-all"
+                    className="inline-flex items-center text-[11px] font-bold tracking-widest text-[#ad6e4f] uppercase hover:text-[#7d492e] group-hover:translate-x-1 transition-all"
                   >
                     <span>VER DETALLES</span>
                     <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
