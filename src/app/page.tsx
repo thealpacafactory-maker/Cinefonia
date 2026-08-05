@@ -3,6 +3,8 @@ import Hero from "@/components/sections/Hero";
 import Recitales from "@/components/sections/Recitales";
 import Experience from "@/components/sections/Experience";
 import FeaturedArtists from "@/components/sections/FeaturedArtists";
+import HistoriasRevivir from "@/components/sections/HistoriasRevivir";
+import FaqSection from "@/components/sections/FaqSection";
 import Sponsors from "@/components/sections/Sponsors";
 import LatestNews from "@/components/sections/LatestNews";
 import JsonLd from "@/components/seo/JsonLd";
@@ -70,7 +72,7 @@ export default function Home() {
     <>
       {/* Event Schema Injection */}
       <JsonLd data={eventSchema} />
-      
+
       {/* 1. Hero Section */}
       <Hero />
 
@@ -80,8 +82,14 @@ export default function Home() {
       {/* 3. La Experiencia */}
       <Experience />
 
+      {/* Historias a Revivir */}
+      <HistoriasRevivir />
+
       {/* 4. Artistas Destacados */}
       <FeaturedArtists />
+
+      {/* Preguntas Frecuentes */}
+      <FaqSection />
 
       {/* 5. Patrocinadores & Formulario Alianza */}
       <Sponsors />

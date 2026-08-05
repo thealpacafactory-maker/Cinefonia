@@ -3,6 +3,7 @@ import { Cinzel, Geist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FloatingTimer from "@/components/ui/FloatingTimer";
 import JsonLd from "@/components/seo/JsonLd";
 
 const cinzel = Cinzel({
@@ -108,6 +109,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <FloatingTimer />
       </body>
     </html>
   );

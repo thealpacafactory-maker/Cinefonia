@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Clock, Calendar, Newspaper } from "lucide-react";
+import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import noticiasData from "@/data/noticias.json";
 
 interface Props {

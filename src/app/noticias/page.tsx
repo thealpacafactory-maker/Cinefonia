@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Clock, ArrowRight, Newspaper } from "lucide-react";
+import { ArrowLeft, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import noticiasData from "@/data/noticias.json";

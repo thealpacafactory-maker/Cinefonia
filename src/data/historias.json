@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Feather Theme",
+        "movie": "Forrest Gump (1994)",
+        "image": "/images/posters/p2.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Married Life",
+        "movie": "Up (2009)",
+        "image": "/images/posters/p1.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Mia & Sebastian's Theme",
+        "movie": "La La Land (2016)",
+        "image": "/images/posters/p3.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Gabriel's Oboe",
+        "movie": "The Mission (1986)",
+        "image": "/images/posters/p4.jpg"
+    },
+    {
+        "id": 5,
+        "title": "The Ecstasy of Gold",
+        "movie": "The Good, the Bad and the Ugly (1966)",
+        "image": "/images/posters/p5.jpg"
+    },
+    {
+        "id": 6,
+        "title": "He's a Pirate",
+        "movie": "Pirates of the Caribbean (2003)",
+        "image": "/images/posters/p6.jpg"
+    }
+]
