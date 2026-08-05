@@ -34,37 +34,37 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-3 group">
 
-              <div className="relative w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="relative w-12 h-12 flex-shrink-0 transition-transform group-hover:scale-105">
                 <Image
                   src="/Logo Cinefonia Nights_Negro.png"
                   alt="Monograma Cinefonía"
                   fill
-                  priority
-                  className="object-contain filter invert brightness-200 drop-shadow-[0_0_8px_rgba(173,110,79,0.3)]"
+                  className="object-contain drop-shadow-[0_0_8px_rgba(242,232,213,0.15)]"
                 />
               </div>
 
-              <div className="flex flex-col items-center justify-center mt-1">
+              {/* Contenedor del Texto */}
+              <div className="flex flex-col justify-center">
 
                 {/* Título Principal */}
                 <span className={cn(
-                  "tracking-[0.25em] text-lg md:text-xl text-[#F2E8D5] uppercase leading-none",
+                  "tracking-[0.25em] text-lg md:text-xl text-[#F2E8D5] uppercase leading-none text-center",
                   cinzel.className
                 )}>
                   CINEFONÍA
                 </span>
 
                 {/* Separador con la estrella central */}
-                <div className="flex items-center w-[95%] my-1.5 opacity-80">
-                  <div className="h-[1px] flex-grow bg-[#ad6e4f]"></div>
-                  <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 mx-2 fill-[#ad6e4f]">
+                <div className="flex items-center w-full my-1.5 opacity-80">
+                  <div className="h-[1px] flex-grow bg-[#F2E8D5]"></div>
+                  <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 mx-2 fill-[#F2E8D5] flex-shrink-0">
                     <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
                   </svg>
-                  <div className="h-[1px] flex-grow bg-[#ad6e4f]"></div>
+                  <div className="h-[1px] flex-grow bg-[#F2E8D5]"></div>
                 </div>
 
                 {/* Subtítulo */}
-                <span className="text-[0.45rem] md:text-[0.55rem] tracking-[0.4em] text-[#ad6e4f] uppercase font-light ml-[0.4em]">
+                <span className="text-[0.45rem] md:text-[0.55rem] tracking-[0.4em] text-[#F2E8D5] uppercase font-light ml-[0.4em] text-center w-full">
                   MÚSICA DE CINE EN CONCIERTO
                 </span>
 

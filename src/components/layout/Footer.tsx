@@ -2,29 +2,61 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Mail, Phone, Globe, Share2, Video } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Cinzel } from "next/font/google";
+
+const cinzel = Cinzel({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Footer() {
   return (
     <footer className="bg-[#070D1D] text-gray-400 border-t border-brand-gold/15 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          
+
           {/* Column 1: Brand & Logo */}
           <div className="space-y-6">
-            <Link href="/" className="inline-flex items-center space-x-3 group">
-              <div className="w-10 h-10 rounded-full border border-brand-gold/40 flex items-center justify-center bg-[#050914]">
-                <span className="font-serif italic font-bold text-brand-gold text-lg">Cf</span>
+            <Link href="/" className="inline-flex items-center space-x-4 group">
+
+              {/* Monograma de la imagen */}
+              <div className="relative w-12 h-12 flex-shrink-0 transition-transform group-hover:scale-105">
+                <Image
+                  src="/Logo Cinefonia Nights_Negro.png"
+                  alt="Monograma Cinefonía"
+                  fill
+                  className="object-contain drop-shadow-[0_0_8px_rgba(242,232,213,0.15)]"
+                />
               </div>
-              <div className="flex flex-col">
-                <span className="font-serif tracking-[0.25em] text-lg font-bold text-white uppercase leading-none">
+
+              {/* Contenedor del Texto */}
+              <div className="flex flex-col justify-center">
+
+                {/* Título Principal */}
+                <span className={cn(
+                  "tracking-[0.25em] text-lg md:text-xl text-[#F2E8D5] uppercase leading-none text-center",
+                  cinzel.className
+                )}>
                   CINEFONÍA
                 </span>
-                <span className="font-serif italic text-sm text-[#8EA4C8] font-normal tracking-wide leading-none mt-1">
-                  Nights
+
+                {/* Separador con la estrella central */}
+                <div className="flex items-center w-full my-1.5 opacity-80">
+                  <div className="h-[1px] flex-grow bg-[#F2E8D5]"></div>
+                  <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 mx-2 fill-[#F2E8D5] flex-shrink-0">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                  </svg>
+                  <div className="h-[1px] flex-grow bg-[#F2E8D5]"></div>
+                </div>
+
+                {/* Subtítulo */}
+                <span className="text-[0.45rem] md:text-[0.55rem] tracking-[0.4em] text-[#F2E8D5] uppercase font-light ml-[0.4em] text-center w-full">
+                  MÚSICA DE CINE EN CONCIERTO
                 </span>
+
               </div>
             </Link>
+
             <p className="text-xs text-gray-400 leading-relaxed font-light">
               Música de Cine en Concierto. Una experiencia cultural única creada para perdurar en la memoria de Arequipa.
             </p>
