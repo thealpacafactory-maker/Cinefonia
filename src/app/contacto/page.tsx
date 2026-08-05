@@ -6,10 +6,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactFormData } from "@/schemas/forms";
 import { ArrowLeft, Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { sendContactEmail } from "@/app/actions/send-email";
 
 export default function ContactoPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -28,11 +30,21 @@ export default function ContactoPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    console.log("Contacto enviado:", data);
-    setIsLoading(false);
-    setIsSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      const response = await sendContactEmail(data);
+      if (response.success) {
+        setIsSubmitted(true);
+        reset();
+      } else {
+        setSubmitError(response.error || "Ocurrió un error inesperado al enviar el mensaje.");
+      }
+    } catch (err) {
+      console.error("Error en envío:", err);
+      setSubmitError("No se pudo conectar con el servidor de correo. Intente más tarde.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -172,6 +184,12 @@ export default function ContactoPage() {
                     />
                     {errors.message && <p className="text-[10px] text-red-400 mt-1">{errors.message.message}</p>}
                   </div>
+
+                  {submitError && (
+                    <div className="p-3 border border-red-500/30 bg-red-500/5 text-red-400 text-xs font-medium rounded-none">
+                      {submitError}
+                    </div>
+                  )}
 
                   <button
                     type="submit"

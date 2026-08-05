@@ -9,10 +9,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { sponsorSchema, type SponsorFormData } from "@/schemas/forms";
 import { Send, CheckCircle2 } from "lucide-react";
 import patrocinadoresData from "@/data/patrocinadores.json";
+import { sendSponsorshipEmail } from "@/app/actions/send-email";
 
 export default function Sponsors() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -33,11 +35,21 @@ export default function Sponsors() {
 
   const onSubmit = async (data: SponsorFormData) => {
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    console.log("Formulario de alianza enviado:", data);
-    setIsLoading(false);
-    setIsSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      const response = await sendSponsorshipEmail(data);
+      if (response.success) {
+        setIsSubmitted(true);
+        reset();
+      } else {
+        setSubmitError(response.error || "Ocurrió un error inesperado al procesar la solicitud.");
+      }
+    } catch (err) {
+      console.error("Error en envío de alianzas:", err);
+      setSubmitError("No se pudo conectar con el servidor de correo. Intente más tarde.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const sponsorLogos = patrocinadoresData.sponsorsList || [];
@@ -183,6 +195,24 @@ export default function Sponsors() {
                   </div>
 
                   <div>
+                    <select
+                      id="sponsorLevel"
+                      {...register("sponsorLevel")}
+                      className="w-full bg-[#050914] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors cursor-pointer appearance-none"
+                    >
+                      <option value="" disabled className="bg-[#050914] text-gray-500">Selecciona Nivel de Auspicio</option>
+                      <option value="Socio Principal" className="bg-[#050914] text-white">Socio Principal</option>
+                      <option value="Socio Estratégico" className="bg-[#050914] text-white">Socio Estratégico</option>
+                      <option value="Socio Cultural" className="bg-[#050914] text-white">Socio Cultural</option>
+                      <option value="Aliado Cultural" className="bg-[#050914] text-white">Aliado Cultural</option>
+                      <option value="Colaboración personalizada" className="bg-[#050914] text-white">Colaboración personalizada</option>
+                    </select>
+                    {errors.sponsorLevel && (
+                      <p className="text-[10px] text-red-400 mt-1">{errors.sponsorLevel.message}</p>
+                    )}
+                  </div>
+
+                  <div>
                     <textarea
                       rows={3}
                       {...register("proposal")}
@@ -194,12 +224,18 @@ export default function Sponsors() {
                     )}
                   </div>
 
+                  {submitError && (
+                    <div className="p-3 border border-red-500/35 bg-red-500/5 text-red-400 text-xs font-semibold rounded-none">
+                      {submitError}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
                     disabled={isLoading}
                     className="w-full bg-[#ad6e4f] hover:bg-[#8b4e2b] text-white font-bold tracking-[0.2em] uppercase py-3.5 px-6 transition-colors flex items-center justify-center space-x-2"
                   >
-                    <span>{isLoading ? "PROCESANDO..." : "SOLICITAR ALIANZA"}</span>
+                    <span>{isLoading ? "ENVIANDO..." : "SOLICITAR ALIANZA"}</span>
                     {!isLoading && <Send className="h-3.5 w-3.5" />}
                   </button>
                 </form>
