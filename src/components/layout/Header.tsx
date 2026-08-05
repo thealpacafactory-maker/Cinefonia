@@ -2,9 +2,14 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Cinzel } from "next/font/google";
+
+// Importamos la fuente Cinzel para que el texto sea idéntico al logo
+const cinzel = Cinzel({ subsets: ["latin"], weight: ["400", "700"] });
 
 const NAV_LINKS = [
   { href: "/", label: "INICIO" },
@@ -24,20 +29,47 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0B1329]/95 backdrop-blur-md border-b border-brand-gold/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
-          {/* Logo - Matching visual reference */}
+
+          {/* Logo - Actualizado con imagen y fuente Cinzel */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-9 h-9 rounded-full border border-brand-gold/40 flex items-center justify-center bg-[#070D1D] group-hover:border-brand-gold transition-colors">
-                <span className="font-serif italic font-bold text-brand-gold text-base tracking-tighter">Cf</span>
+
+              {/* Aquí va el monograma Cf sin fondo (asegúrate de tener public/logo-cf.png) */}
+              <div className="relative w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-105">
+                <Image
+                  src="/Logo Cinefonia Nights_Negro.png"
+                  alt="Monograma Cinefonía"
+                  fill
+                  className="object-contain drop-shadow-[0_0_8px_rgba(242,232,213,0.1)]"
+                />
               </div>
-              <div className="flex flex-col">
-                <span className="font-serif tracking-[0.2em] text-sm md:text-base font-bold text-white uppercase leading-none">
+
+              <div className="flex flex-col items-center justify-center mt-1">
+
+                {/* Título Principal */}
+                <span className={cn(
+                  "tracking-[0.25em] text-lg md:text-xl text-[#F2E8D5] uppercase leading-none",
+                  cinzel.className
+                )}>
                   CINEFONÍA
                 </span>
-                <span className="font-serif italic text-xs md:text-sm text-[#8EA4C8] font-normal tracking-wide leading-none mt-1">
-                  Nights
+
+                {/* Separador con la estrella central */}
+                <div className="flex items-center w-[95%] my-1.5 opacity-80">
+                  <div className="h-[1px] flex-grow bg-[#F2E8D5]"></div>
+                  {/* Estrella de 4 puntas (rombo estirado) en SVG */}
+                  <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 mx-2 fill-[#F2E8D5]">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                  </svg>
+                  <div className="h-[1px] flex-grow bg-[#F2E8D5]"></div>
+                </div>
+
+                {/* Subtítulo */}
+                {/* Nota: El ml-[0.4em] al final compensa visualmente el "tracking" para que se vea perfectamente centrado */}
+                <span className="text-[0.45rem] md:text-[0.55rem] tracking-[0.4em] text-[#F2E8D5] uppercase font-light ml-[0.4em]">
+                  MÚSICA DE CINE EN CONCIERTO
                 </span>
+
               </div>
             </Link>
           </div>
