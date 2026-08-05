@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { href: "/artistas", label: "ARTISTAS" },
   { href: "/patrocinadores", label: "PATROCINADORES" },
   { href: "/noticias", label: "NOTICIAS" },
-  { href: "/blog", label: "BLOG" },
+  // { href: "/blog", label: "BLOG" },
   { href: "/contacto", label: "CONTACTO" },
 ];
 
