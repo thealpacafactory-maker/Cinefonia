@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { sponsorSchema, type SponsorFormData } from "@/schemas/forms";
 import { Send, CheckCircle2 } from "lucide-react";
 import patrocinadoresData from "@/data/patrocinadores.json";
-import { sendSponsorshipEmail } from "@/app/actions/send-email";
+import { submitToSheet } from "@/app/actions/submit-to-sheet";
 
 export default function Sponsors() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -37,7 +37,7 @@ export default function Sponsors() {
     setIsLoading(true);
     setSubmitError(null);
     try {
-      const response = await sendSponsorshipEmail(data);
+      const response = await submitToSheet(data);
       if (response.success) {
         setIsSubmitted(true);
         reset();
@@ -45,8 +45,8 @@ export default function Sponsors() {
         setSubmitError(response.error || "Ocurrió un error inesperado al procesar la solicitud.");
       }
     } catch (err) {
-      console.error("Error en envío de alianzas:", err);
-      setSubmitError("No se pudo conectar con el servidor de correo. Intente más tarde.");
+      console.error("Error en registro Sheets:", err);
+      setSubmitError("No se pudo conectar con el servidor de base de datos. Intente más tarde.");
     } finally {
       setIsLoading(false);
     }

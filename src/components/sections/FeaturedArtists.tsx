@@ -36,8 +36,8 @@ export default function FeaturedArtists() {
           </div>
         </div>
 
-        {/* 5 Cards Grid con animaciones dinámicas */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+        {/* 5 Cards Grid con animaciones dinámicas - 2 columnas en móvil */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-16">
           {featured.map((artist, idx) => (
             <motion.div
               key={artist.name}
