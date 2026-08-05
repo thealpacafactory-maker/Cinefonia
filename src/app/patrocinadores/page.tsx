@@ -151,10 +151,11 @@ export default function PatrocinadoresPage() {
                 El mejor lugar del evento no es solo una butaca.
               </h2>
               <h3 className="font-serif italic text-base text-brand-gold mb-6 font-bold">
-                PALCO CINEFONÍA / PALCO VIP
+                EXPERIENCIA PREFERENTE PARA AUSPICIADORES
               </h3>
               <p className="text-xs sm:text-sm text-gray-650 font-light leading-relaxed mb-6">
-                Un espacio de hospitalidad cultural concebido para sponsors, clientes, directivos, institutions y aliados seleccionados.
+                Una experiencia de hospitalidad cultural diseñada para sponsors, clientes,
+                directivos, instituciones y aliados estratégicos de Cinefonía.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-700">
                 {palcoFeatures.map((feature, fIdx) => (
