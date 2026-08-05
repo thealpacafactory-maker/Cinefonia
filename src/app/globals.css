@@ -5,29 +5,29 @@
   --font-sans: var(--font-geist-sans), sans-serif;
   --font-serif: var(--font-cinzel), serif;
 
-  /* Paleta Cinematográfica Premium - Azul Marino Más Claro y Dorado #ad6e4f */
-  --color-brand-bg: #0f1c3f;         /* Azul marino ligeramente más claro, vibrante y moderno */
-  --color-brand-card: #172854;       /* Azul marino refinado para Tarjetas y Paneles */
-  --color-brand-gold-light: #d89b7b;  /* Tono dorado claro complementario */
-  --color-brand-gold: #ad6e4f;        /* Color oficial para letras y acentos */
-  --color-brand-gold-dark: #7d492e;   /* Dorado cobrizo oscuro */
-  --color-brand-copper: #ad6e4f;      /* Tono acento primario */
-  --color-brand-copper-dark: #8b4e2b;  /* Cobre profundo */
+  /* Paleta Cinematográfica Premium - Rojo Guinda y Hueso Claro */
+  --color-brand-bg: #FAF9F5;         /* Hueso claro cálido */
+  --color-brand-card: #FFFFFF;       /* Tarjetas de fondo blanco */
+  --color-brand-gold-light: #B62F4A;  /* Rojo guinda claro */
+  --color-brand-gold: #8A1C36;        /* Rojo guinda primario oficial */
+  --color-brand-gold-dark: #5E0B1F;   /* Guinda oscuro */
+  --color-brand-copper: #8A1C36;      /* Tono acento primario */
+  --color-brand-copper-dark: #5E0B1F;  /* Acento profundo */
 
   /* Efectos y Sombras Teatrales */
-  --shadow-gold-glow: 0 0 30px rgba(173, 110, 79, 0.25);
-  --shadow-copper-glow: 0 0 30px rgba(173, 110, 79, 0.25);
+  --shadow-gold-glow: 0 0 30px rgba(138, 28, 54, 0.15);
+  --shadow-copper-glow: 0 0 30px rgba(138, 28, 54, 0.15);
 }
 
 :root {
-  --background: #0f1c3f;
-  --foreground: #f3f4f6; /* Gris muy claro para alto contraste */
+  --background: #FAF9F5;
+  --foreground: #1D0A0E; /* Carbón con matiz guinda para alto contraste */
 }
 
 /* Configuraciones globales */
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {

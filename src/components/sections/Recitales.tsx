@@ -24,7 +24,7 @@ export default function Recitales() {
   return (
     <section className="py-20 bg-[#F7F5F0] text-[#111827] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="font-serif text-xs font-bold tracking-[0.3em] uppercase text-[#374151] mb-2">
@@ -43,7 +43,7 @@ export default function Recitales() {
             const dayNumber = event.date.match(/\d+/)?.[0] || "22";
             const monthYear = event.date.includes("Agosto") || event.date.includes("AGO") ? "AGO 2026" : "DIC 2026";
             const targetIso = event.isoDate || (event.id === "aqp-2026" ? "2026-08-22T19:30:00-05:00" : "2026-12-19T19:30:00-05:00");
-            
+
             return (
               <motion.div
                 key={event.id}
@@ -90,13 +90,13 @@ export default function Recitales() {
                 </div>
 
                 <div className="pt-4 border-t border-[#F3F4F6] flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#ad6e4f]">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#8A1C36]">
                     {event.status === "active" ? "Entradas Disponibles" : "Próximamente"}
                   </span>
 
                   <Link
                     href="/eventos"
-                    className="inline-flex items-center text-[11px] font-bold tracking-widest text-[#ad6e4f] uppercase hover:text-[#7d492e] group-hover:translate-x-1 transition-all"
+                    className="inline-flex items-center text-[11px] font-bold tracking-widest text-[#8A1C36] uppercase hover:text-[#5E0B1F] group-hover:translate-x-1 transition-all"
                   >
                     <span>VER DETALLES</span>
                     <ArrowRight className="h-3.5 w-3.5 ml-1.5" />

@@ -57,7 +57,7 @@ export default function Sponsors() {
   return (
     <section className="py-20 bg-[#F7F5F0] text-[#111827] relative border-t border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="font-serif text-xs font-bold tracking-[0.3em] uppercase text-[#374151] mb-2">
@@ -71,7 +71,7 @@ export default function Sponsors() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: Logos grid of actual sponsors in full color ALWAYS */}
           <div className="lg:col-span-6 flex flex-col justify-between h-full">
             <div>
@@ -87,7 +87,7 @@ export default function Sponsors() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
-                    className="bg-white border border-[#E5E7EB] p-5 flex flex-col items-center justify-between text-center aspect-[4/3] shadow-sm hover:border-[#ad6e4f] transition-all group overflow-hidden"
+                    className="bg-white border border-[#E5E7EB] p-5 flex flex-col items-center justify-between text-center aspect-[4/3] shadow-sm hover:border-[#8A1C36] transition-all group overflow-hidden"
                   >
                     <div className="relative w-full h-16 sm:h-20 my-auto flex items-center justify-center">
                       <Image
@@ -102,7 +102,7 @@ export default function Sponsors() {
                       <span className="font-serif text-[11px] font-bold uppercase tracking-wider text-[#111827] block line-clamp-1">
                         {sponsor.name}
                       </span>
-                      <span className="text-[8px] text-[#ad6e4f] font-semibold tracking-widest uppercase block mt-0.5">
+                      <span className="text-[8px] text-[#8A1C36] font-semibold tracking-widest uppercase block mt-0.5">
                         {sponsor.tag}
                       </span>
                     </div>
@@ -114,31 +114,31 @@ export default function Sponsors() {
             <div className="mt-4 text-center lg:text-left">
               <Link
                 href="/patrocinadores"
-                className="inline-flex items-center px-6 py-2.5 border border-[#374151] text-xs font-semibold tracking-[0.2em] text-[#374151] uppercase hover:bg-[#374151] hover:text-white transition-colors"
+                className="inline-flex items-center px-6 py-2.5 border border-[#8A1C36] text-xs font-semibold tracking-[0.2em] text-[#8A1C36] uppercase hover:bg-[#8A1C36] hover:text-white transition-colors"
               >
                 VER DOSSIER DE PATROCINIO &rarr;
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Dark Navy Form Card matching PDF page 1 */}
+          {/* Right Column: Light Form Card */}
           <div className="lg:col-span-6">
-            <div className="bg-[#121E36] text-white p-8 sm:p-10 border border-brand-gold/30 shadow-2xl">
-              <h3 className="font-serif text-sm sm:text-base font-bold tracking-[0.2em] uppercase text-white mb-1">
+            <div className="bg-white text-gray-800 p-8 sm:p-10 border border-[#8A1C36]/15 shadow-lg">
+              <h3 className="font-serif text-sm sm:text-base font-bold tracking-[0.2em] uppercase text-[#8A1C36] mb-1">
                 CONSTRUYAMOS ALGO EXTRAORDINARIO
               </h3>
-              <p className="text-xs text-gray-400 font-light mb-8">
+              <p className="text-xs text-gray-600 font-light mb-8">
                 Llevemos juntos la música de cine a más personas.
               </p>
 
               {isSubmitted ? (
                 <div className="py-8 text-center">
-                  <CheckCircle2 className="h-12 w-12 text-brand-gold mx-auto mb-4" />
-                  <h4 className="font-serif text-lg text-white mb-2">¡Solicitud Enviada!</h4>
-                  <p className="text-xs text-gray-400 mb-6">Nos pondremos en contacto con tu empresa en breve.</p>
+                  <CheckCircle2 className="h-12 w-12 text-[#8A1C36] mx-auto mb-4" />
+                  <h4 className="font-serif text-lg text-gray-800 mb-2">¡Solicitud Enviada!</h4>
+                  <p className="text-xs text-gray-500 mb-6">Nos pondremos en contacto con tu empresa en breve.</p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="text-xs uppercase font-bold text-brand-gold border-b border-brand-gold pb-1"
+                    className="text-xs uppercase font-bold text-[#8A1C36] border-b border-[#8A1C36] pb-1"
                   >
                     Enviar otra consulta
                   </button>
@@ -150,10 +150,10 @@ export default function Sponsors() {
                       type="text"
                       {...register("companyName")}
                       placeholder="Nombre de la empresa"
-                      className="w-full bg-[#0A1326] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors"
+                      className="w-full bg-[#FAF9F5] border border-gray-200 focus:border-[#8A1C36] px-4 py-3 text-gray-800 placeholder-gray-405 focus:outline-none transition-colors"
                     />
                     {errors.companyName && (
-                      <p className="text-[10px] text-red-400 mt-1">{errors.companyName.message}</p>
+                      <p className="text-[10px] text-red-500 mt-1">{errors.companyName.message}</p>
                     )}
                   </div>
 
@@ -162,10 +162,10 @@ export default function Sponsors() {
                       type="text"
                       {...register("contactName")}
                       placeholder="Nombre de contacto"
-                      className="w-full bg-[#0A1326] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors"
+                      className="w-full bg-[#FAF9F5] border border-gray-200 focus:border-[#8A1C36] px-4 py-3 text-gray-800 placeholder-gray-405 focus:outline-none transition-colors"
                     />
                     {errors.contactName && (
-                      <p className="text-[10px] text-red-400 mt-1">{errors.contactName.message}</p>
+                      <p className="text-[10px] text-red-500 mt-1">{errors.contactName.message}</p>
                     )}
                   </div>
 
@@ -175,10 +175,10 @@ export default function Sponsors() {
                         type="email"
                         {...register("email")}
                         placeholder="Correo electrónico"
-                        className="w-full bg-[#0A1326] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors"
+                        className="w-full bg-[#FAF9F5] border border-gray-200 focus:border-[#8A1C36] px-4 py-3 text-gray-800 placeholder-gray-405 focus:outline-none transition-colors"
                       />
                       {errors.email && (
-                        <p className="text-[10px] text-red-400 mt-1">{errors.email.message}</p>
+                        <p className="text-[10px] text-red-500 mt-1">{errors.email.message}</p>
                       )}
                     </div>
                     <div>
@@ -186,10 +186,10 @@ export default function Sponsors() {
                         type="text"
                         {...register("phone")}
                         placeholder="Teléfono"
-                        className="w-full bg-[#0A1326] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors"
+                        className="w-full bg-[#FAF9F5] border border-gray-200 focus:border-[#8A1C36] px-4 py-3 text-gray-800 placeholder-gray-405 focus:outline-none transition-colors"
                       />
                       {errors.phone && (
-                        <p className="text-[10px] text-red-400 mt-1">{errors.phone.message}</p>
+                        <p className="text-[10px] text-red-500 mt-1">{errors.phone.message}</p>
                       )}
                     </div>
                   </div>
@@ -198,17 +198,17 @@ export default function Sponsors() {
                     <select
                       id="sponsorLevel"
                       {...register("sponsorLevel")}
-                      className="w-full bg-[#050914] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors cursor-pointer appearance-none"
+                      className="w-full bg-[#FAF9F5] border border-gray-200 focus:border-[#8A1C36] px-4 py-3 text-gray-800 placeholder-gray-405 focus:outline-none transition-colors cursor-pointer appearance-none"
                     >
-                      <option value="" disabled className="bg-[#050914] text-gray-500">Selecciona Nivel de Auspicio</option>
-                      <option value="Socio Principal" className="bg-[#050914] text-white">Socio Principal</option>
-                      <option value="Socio Estratégico" className="bg-[#050914] text-white">Socio Estratégico</option>
-                      <option value="Socio Cultural" className="bg-[#050914] text-white">Socio Cultural</option>
-                      <option value="Aliado Cultural" className="bg-[#050914] text-white">Aliado Cultural</option>
-                      <option value="Colaboración personalizada" className="bg-[#050914] text-white">Colaboración personalizada</option>
+                      <option value="" disabled className="bg-[#FAF9F5] text-gray-500">Selecciona Nivel de Auspicio</option>
+                      <option value="Socio Principal" className="bg-white text-gray-800">Socio Principal</option>
+                      <option value="Socio Estratégico" className="bg-white text-gray-800">Socio Estratégico</option>
+                      <option value="Socio Cultural" className="bg-white text-gray-800">Socio Cultural</option>
+                      <option value="Aliado Cultural" className="bg-white text-gray-800">Aliado Cultural</option>
+                      <option value="Colaboración personalizada" className="bg-white text-gray-800">Colaboración personalizada</option>
                     </select>
                     {errors.sponsorLevel && (
-                      <p className="text-[10px] text-red-400 mt-1">{errors.sponsorLevel.message}</p>
+                      <p className="text-[10px] text-red-500 mt-1">{errors.sponsorLevel.message}</p>
                     )}
                   </div>
 
@@ -217,15 +217,15 @@ export default function Sponsors() {
                       rows={3}
                       {...register("proposal")}
                       placeholder="Mensaje"
-                      className="w-full bg-[#0A1326] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-colors resize-none"
+                      className="w-full bg-[#FAF9F5] border border-gray-200 focus:border-[#8A1C36] px-4 py-3 text-gray-800 placeholder-gray-405 focus:outline-none transition-colors resize-none"
                     />
                     {errors.proposal && (
-                      <p className="text-[10px] text-red-400 mt-1">{errors.proposal.message}</p>
+                      <p className="text-[10px] text-red-500 mt-1">{errors.proposal.message}</p>
                     )}
                   </div>
 
                   {submitError && (
-                    <div className="p-3 border border-red-500/35 bg-red-500/5 text-red-400 text-xs font-semibold rounded-none">
+                    <div className="p-3 border border-red-500/35 bg-red-500/5 text-red-500 text-xs font-semibold rounded-none">
                       {submitError}
                     </div>
                   )}
@@ -233,7 +233,7 @@ export default function Sponsors() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-[#ad6e4f] hover:bg-[#8b4e2b] text-white font-bold tracking-[0.2em] uppercase py-3.5 px-6 transition-colors flex items-center justify-center space-x-2"
+                    className="w-full bg-[#8A1C36] hover:bg-[#5E0B1F] text-white font-bold tracking-[0.2em] uppercase py-3.5 px-6 transition-colors flex items-center justify-center space-x-2"
                   >
                     <span>{isLoading ? "ENVIANDO..." : "SOLICITAR ALIANZA"}</span>
                     {!isLoading && <Send className="h-3.5 w-3.5" />}

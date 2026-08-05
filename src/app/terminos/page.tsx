@@ -4,35 +4,38 @@ import Link from "next/link";
 
 export default function TerminosPage() {
   return (
-    <div className="min-h-screen py-16 bg-brand-bg relative">
+    <div className="min-h-screen py-16 bg-[#FAF9F5] text-gray-800 relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Navigation Breadcrumb */}
-        <div className="mb-8">
-          <Link href="/" className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors">
+        <div className="mb-8 pt-10">
+          <Link href="/" className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:underline transition-colors animate-fade-in-left">
             <ArrowLeft className="h-4 w-4" />
             <span>Volver al Inicio</span>
           </Link>
         </div>
 
         {/* Header */}
-        <div className="mb-12 border-b border-brand-gold/10 pb-8">
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold uppercase text-white tracking-wide mb-4">
+        <div className="mb-12 border-b border-gray-150 pb-8">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#8A1C36] uppercase block mb-3 font-sans">
+            NORMAS & CONDICIONES
+          </span>
+          <h1 className="font-serif text-3xl sm:text-4xl font-semibold uppercase text-gray-850 tracking-wide mb-4">
             Términos y Condiciones
           </h1>
-          <p className="text-gray-500 text-xs uppercase tracking-wider font-mono">
+          <p className="text-gray-550 text-xs uppercase tracking-wider font-mono">
             Última actualización: 4 de Agosto de 2026
           </p>
         </div>
 
         {/* Content */}
-        <div className="space-y-8 text-sm sm:text-base text-gray-400 font-light leading-relaxed">
+        <div className="space-y-8 text-sm sm:text-base text-gray-655 font-light leading-relaxed font-sans">
           <p>
             El acceso y uso de este portal web de **CINEFONÍA Nights** está sujeto a los siguientes términos y condiciones. Al navegar por nuestro sitio web o utilizar nuestros formularios de registro, confirmas tu conformidad y aceptación de las presentes cláusulas.
           </p>
 
           <div className="space-y-4">
-            <h2 className="font-serif text-lg font-semibold text-white tracking-wide uppercase">
+            <h2 className="font-serif text-lg font-bold text-gray-800 tracking-wide uppercase">
               1. Propiedad Intelectual
             </h2>
             <p>
@@ -41,7 +44,7 @@ export default function TerminosPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-serif text-lg font-semibold text-white tracking-wide uppercase">
+            <h2 className="font-serif text-lg font-bold text-gray-800 tracking-wide uppercase">
               2. Condiciones del Concierto y Entradas
             </h2>
             <p>
@@ -55,7 +58,7 @@ export default function TerminosPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-serif text-lg font-semibold text-white tracking-wide uppercase">
+            <h2 className="font-serif text-lg font-bold text-gray-800 tracking-wide uppercase">
               3. Uso Responsable del Sitio
             </h2>
             <p>
@@ -64,7 +67,7 @@ export default function TerminosPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-serif text-lg font-semibold text-white tracking-wide uppercase">
+            <h2 className="font-serif text-lg font-bold text-gray-800 tracking-wide uppercase">
               4. Limitación de Responsabilidad
             </h2>
             <p>

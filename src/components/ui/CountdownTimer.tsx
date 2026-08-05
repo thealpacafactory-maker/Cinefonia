@@ -168,10 +168,10 @@ export default function CountdownTimer({
         <span className="text-xs text-[#9CA3AF] font-bold">:</span>
 
         <div className="flex flex-col items-center bg-white border border-[#E5E7EB] px-3 py-2 min-w-[50px] shadow-sm">
-          <span className="font-serif text-lg font-bold text-[#ad6e4f] leading-none">
+          <span className="font-serif text-lg font-bold text-[#8A1C36] leading-none">
             {formatNumber(timeLeft.seconds)}
           </span>
-          <span className="text-[8px] font-bold uppercase tracking-wider text-[#ad6e4f] mt-1">
+          <span className="text-[8px] font-bold uppercase tracking-wider text-[#8A1C36] mt-1">
             SEGS
           </span>
         </div>

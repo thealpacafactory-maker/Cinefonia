@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import noticiasData from "@/data/noticias.json";
@@ -11,7 +12,7 @@ export default function LatestNews() {
   return (
     <section className="py-24 bg-[#F7F5F0] text-[#111827] relative border-t border-[#E5E7EB] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative z-10">
-        
+
         {/* NOTICIAS Block */}
         <div>
           <div className="text-center mb-12">
@@ -39,18 +40,24 @@ export default function LatestNews() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.12 }}
                 whileHover={{ y: -6, scale: 1.01 }}
-                className="bg-white border border-[#E5E7EB] p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-[#ad6e4f] transition-all duration-300 group"
+                className="bg-white border border-[#E5E7EB] p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-[#8A1C36] transition-all duration-300 group"
               >
                 <div>
-                  <div className="aspect-[16/9] bg-[#EFECE6] mb-4 overflow-hidden relative flex items-center justify-center border border-[#E5E7EB] group-hover:border-[#ad6e4f]/30 transition-colors">
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#ad6e4f]">
-                      CINEFONÍA NOTICIAS
-                    </span>
+                  <div className="aspect-[16/9] w-full bg-[#EFECE6] mb-4 overflow-hidden relative border border-[#E5E7EB] group-hover:border-[#8A1C36]/30 transition-colors">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      placeholder="blur"
+                      blurDataURL={item.imagePlaceholder}
+                    />
                   </div>
                   <span className="text-[10px] font-bold tracking-widest text-[#9CA3AF] uppercase block mb-1">
                     {item.date}
                   </span>
-                  <h3 className="font-serif text-sm font-semibold text-[#111827] mb-3 leading-snug group-hover:text-[#ad6e4f] transition-colors">
+                  <h3 className="font-serif text-sm font-semibold text-[#111827] mb-3 leading-snug group-hover:text-[#8A1C36] transition-colors">
                     {item.title}
                   </h3>
                 </div>
@@ -58,10 +65,10 @@ export default function LatestNews() {
                 <div className="pt-4 border-t border-[#F3F4F6]">
                   <Link
                     href={`/noticias`}
-                    className="inline-flex items-center text-[10px] font-bold tracking-widest text-[#374151] uppercase hover:text-[#ad6e4f] transition-colors group-hover:translate-x-1 transition-transform"
+                    className="inline-flex items-center text-[10px] font-bold tracking-widest text-[#374151] uppercase hover:text-[#8A1C36] transition-colors group-hover:translate-x-1 transition-transform"
                   >
                     <span>LEER MÁS</span>
-                    <ArrowRight className="h-3 w-3 ml-1.5 text-[#ad6e4f]" />
+                    <ArrowRight className="h-3 w-3 ml-1.5 text-[#8A1C36]" />
                   </Link>
                 </div>
               </motion.div>
@@ -82,7 +89,7 @@ export default function LatestNews() {
             </motion.h2>
             <div className="flex items-center justify-center space-x-3 my-3">
               <div className="w-8 h-[1px] bg-[#9CA3AF]" />
-              <span className="text-[#ad6e4f] text-xs font-serif">✦</span>
+              <span className="text-[#8A1C36] text-xs font-serif">✦</span>
               <div className="w-8 h-[1px] bg-[#9CA3AF]" />
             </div>
           </div>
@@ -96,18 +103,18 @@ export default function LatestNews() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.12 }}
                 whileHover={{ y: -6, scale: 1.01 }}
-                className="bg-white border border-[#E5E7EB] p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-[#ad6e4f] transition-all duration-300 group"
+                className="bg-white border border-[#E5E7EB] p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-[#8A1C36] transition-all duration-300 group"
               >
                 <div>
-                  <div className="aspect-[16/9] bg-[#EFECE6] mb-4 overflow-hidden relative flex items-center justify-center border border-[#E5E7EB] group-hover:border-[#ad6e4f]/30 transition-colors">
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#ad6e4f]">
+                  <div className="aspect-[16/9] bg-[#EFECE6] mb-4 overflow-hidden relative flex items-center justify-center border border-[#E5E7EB] group-hover:border-[#8A1C36]/30 transition-colors">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#8A1C36]">
                       ARTÍCULO MUSICAL
                     </span>
                   </div>
                   <span className="text-[10px] font-bold tracking-widest text-[#9CA3AF] uppercase block mb-1">
                     {item.date}
                   </span>
-                  <h3 className="font-serif text-sm font-semibold text-[#111827] mb-3 leading-snug group-hover:text-[#ad6e4f] transition-colors">
+                  <h3 className="font-serif text-sm font-semibold text-[#111827] mb-3 leading-snug group-hover:text-[#8A1C36] transition-colors">
                     {item.title}
                   </h3>
                 </div>
@@ -115,10 +122,10 @@ export default function LatestNews() {
                 <div className="pt-4 border-t border-[#F3F4F6]">
                   <Link
                     href={`/blog`}
-                    className="inline-flex items-center text-[10px] font-bold tracking-widest text-[#374151] uppercase hover:text-[#ad6e4f] transition-colors group-hover:translate-x-1 transition-transform"
+                    className="inline-flex items-center text-[10px] font-bold tracking-widest text-[#374151] uppercase hover:text-[#8A1C36] transition-colors group-hover:translate-x-1 transition-transform"
                   >
                     <span>LEER ARTÍCULO</span>
-                    <ArrowRight className="h-3 w-3 ml-1.5 text-[#ad6e4f]" />
+                    <ArrowRight className="h-3 w-3 ml-1.5 text-[#8A1C36]" />
                   </Link>
                 </div>
               </motion.div>

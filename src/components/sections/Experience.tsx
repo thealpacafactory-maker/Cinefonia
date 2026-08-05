@@ -31,7 +31,7 @@ export default function Experience() {
   return (
     <section className="py-24 bg-[#F7F5F0] text-[#111827] relative border-t border-[#E5E7EB] overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
@@ -43,9 +43,9 @@ export default function Experience() {
             LA EXPERIENCIA
           </motion.h2>
           <div className="flex items-center justify-center space-x-3 my-4">
-            <div className="w-10 h-[1px] bg-[#ad6e4f]" />
-            <span className="text-[#ad6e4f] text-xs font-serif">✦</span>
-            <div className="w-10 h-[1px] bg-[#ad6e4f]" />
+            <div className="w-10 h-[1px] bg-[#8A1C36]" />
+            <span className="text-[#8A1C36] text-xs font-serif">✦</span>
+            <div className="w-10 h-[1px] bg-[#8A1C36]" />
           </div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -70,9 +70,9 @@ export default function Experience() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white border border-[#E5E7EB] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:border-[#ad6e4f] transition-all duration-300 group"
+                className="bg-white border border-[#E5E7EB] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:border-[#8A1C36] transition-all duration-300 group"
               >
-                <div className="w-14 h-14 rounded-none border border-[#ad6e4f]/40 flex items-center justify-center text-[#ad6e4f] mb-6 bg-[#FAF8F5] group-hover:bg-[#ad6e4f] group-hover:text-white transition-all duration-300">
+                <div className="w-14 h-14 rounded-none border border-[#8A1C36]/40 flex items-center justify-center text-[#8A1C36] mb-6 bg-[#FAF8F5] group-hover:bg-[#8A1C36] group-hover:text-white transition-all duration-300">
                   <Icon className="h-6 w-6 stroke-[1.2] group-hover:scale-110 transition-transform" />
                 </div>
                 <h3 className="font-serif text-xs font-bold tracking-[0.2em] uppercase text-[#111827] mb-3">
@@ -92,16 +92,16 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bg-[#EFECE6] border-l-4 border-[#ad6e4f] p-8 sm:p-10 max-w-4xl mx-auto my-8 shadow-sm hover:shadow-md transition-shadow"
+          className="bg-[#EFECE6] border-l-4 border-[#8A1C36] p-8 sm:p-10 max-w-4xl mx-auto my-8 shadow-sm hover:shadow-md transition-shadow"
         >
-          <span className="text-[10px] font-bold tracking-[0.25em] text-[#ad6e4f] uppercase block mb-2">CONCEPTO CENTRAL</span>
+          <span className="text-[10px] font-bold tracking-[0.25em] text-[#8A1C36] uppercase block mb-2">CONCEPTO CENTRAL</span>
           <h4 className="font-serif text-xl sm:text-2xl font-bold uppercase text-[#111827] tracking-wide mb-3">
             EL CINE ABRE LA PUERTA. LA MÚSICA HACE EL RESTO.
           </h4>
           <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-light mb-4">
             CINEFONÍA NIGHTS utiliza la memoria emocional del cine para acercar nuevos públicos a la música de cámara mediante una experiencia de piano, flauta, cuerdas, narración, luz y proyección. No reproduce películas. No propone un recital convencional.
           </p>
-          <p className="font-serif italic text-sm text-[#ad6e4f]">
+          <p className="font-serif italic text-sm text-[#8A1C36]">
             &ldquo;Primero reconocemos una melodía. Después descubrimos una nueva forma de escucharla.&rdquo;
           </p>
         </motion.div>

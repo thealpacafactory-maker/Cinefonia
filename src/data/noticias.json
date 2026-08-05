@@ -1,38 +1,38 @@
 [
   {
     "slug": "estreno-arequipa-22-agosto",
-    "title": "Cinefonía Nights regresa al Teatro Municipal de Arequipa el 22 de agosto",
+    "title": "‘Cinefonía: El Gran Concierto del Cine’ llega para revivir la magia de las películas: fecha y precio de entradas",
     "category": "Gira Oficial",
     "categoryLabel": "Noticias",
-    "date": "08 MAY 2025",
+    "date": "26 JUN 2024",
     "readTime": "4 min",
-    "description": "El sexteto de cámara liderado por María Lucía Roca Gamarra confirma la fecha del gran concierto estreno en Arequipa para 850 espectadores.",
-    "image": "/images/news/estreno-arequipa.jpg",
-    "imagePlaceholder": "/images/placeholders/news-placeholder.jpg",
+    "description": "Con gran emoción se anunciaron nuevas fechas para el espectáculo ‘Cinefonía Vol. 2: Sinfonía del Séptimo Arte’. Este evento ofrecerá a los espectadores una experiencia musical única junto a la Orquesta Sinfónica de Los Cuatro Suyos, bajo la producción de Tarkus Producciones.",
+    "image": "/images/news/noti1.avif",
+    "imagePlaceholder": "/images/placeholders/noti1.avif",
     "content": "CINEFONÍA NIGHTS — Música de Cine en Concierto reunirá un sexteto instrumental, narración en vivo y proyecciones audiovisuales en el Teatro Municipal de Arequipa el próximo 22 de agosto de 2026.\n\nConcebido por la pianista arequipeña María Lucía Roca Gamarra y bajo la dirección musical de Julián Enríquez, el recital propone un recorrido por las bandas sonoras más emotivas del cine mundial adaptadas al formato camerístico."
   },
   {
     "slug": "la-musica-de-cine-puente-emocional",
-    "title": "La música de cine: un puente entre emociones",
+    "title": "Cinefonía VOL. 3: Películas icónicas del cine en concierto sinfónico",
     "category": "Concepto Artístico",
     "categoryLabel": "Noticias",
-    "date": "24 ABR 2025",
+    "date": "9 DIC 2024",
     "readTime": "5 min",
-    "description": "Cómo las partituras cinematográficas permiten acercar el formato de música de cámara a nuevos públicos sin perder la exigencia técnica.",
-    "image": "/images/news/puente-emociones.jpg",
-    "imagePlaceholder": "/images/placeholders/news-placeholder.jpg",
+    "description": "Todo está listo para que este sábado 14 y domingo 15 de diciembre se lleve a cabo el concierto sinfónico…",
+    "image": "/images/news/noti2.jpg",
+    "imagePlaceholder": "/images/placeholders/noti2.jpg",
     "content": "El proyecto utiliza la memoria emocional del cine para tender un puente hacia la escucha atenta. No se busca reproducir películas ni recrear la experiencia de una sala de cine convencional, sino permitir al público descubrir una nueva forma de escuchar melodías que ya forman parte de su historia personal."
   },
   {
     "slug": "arequipa-ciudad-blanca-cultura",
-    "title": "Arequipa, la ciudad blanca que vibra con cultura",
+    "title": "Cinefonía: La música del cine en concierto sinfónico",
     "category": "Patrimonio",
     "categoryLabel": "Noticias",
-    "date": "14 ABR 2025",
+    "date": "06 NOV 2024",
     "readTime": "3 min",
-    "description": "Una propuesta artística creada por músicos peruanos residentes en el extranjero en diálogo constante con el talento local arequipeño.",
-    "image": "/images/news/arequipa-cultura.jpg",
-    "imagePlaceholder": "/images/placeholders/news-placeholder.jpg",
+    "description": "Cinefonía, una propuesta exitosa que ha cautivado al público desde su creación, presentará su tercera edición en Lima. Es decir, el público peruano podrá disfrutar de una impecable presentación al ritmo de famosas bandas sonoras de memorables películas.",
+    "image": "/images/news/noti3.webp",
+    "imagePlaceholder": "/images/placeholders/noti3.webp",
     "content": "Elegir Arequipa como ciudad de estreno responde al deseo de enriquecer su programación cultural con un formato camerístico íntimo, cercano y de calidad internacional, articulando profesionales formados en Europa y América con destacados instrumentistas de la Orquesta Sinfónica de Arequipa."
   }
 ]

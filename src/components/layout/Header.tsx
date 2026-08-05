@@ -26,7 +26,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0f1c3f]/95 backdrop-blur-md border-b border-[#ad6e4f]/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-[#8A1C36]/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
@@ -48,7 +48,7 @@ export default function Header() {
 
                 {/* Título Principal */}
                 <span className={cn(
-                  "tracking-[0.25em] text-lg md:text-xl text-[#F2E8D5] uppercase leading-none text-center",
+                  "tracking-[0.25em] text-lg md:text-xl text-[#8A1C36] uppercase leading-none text-center",
                   cinzel.className
                 )}>
                   CINEFONÍA
@@ -56,15 +56,15 @@ export default function Header() {
 
                 {/* Separador con la estrella central */}
                 <div className="flex items-center w-full my-1.5 opacity-80">
-                  <div className="h-[1px] flex-grow bg-[#F2E8D5]"></div>
-                  <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 mx-2 fill-[#F2E8D5] flex-shrink-0">
+                  <div className="h-[1px] flex-grow bg-[#8A1C36]"></div>
+                  <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 mx-2 fill-[#8A1C36] flex-shrink-0">
                     <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
                   </svg>
-                  <div className="h-[1px] flex-grow bg-[#F2E8D5]"></div>
+                  <div className="h-[1px] flex-grow bg-[#8A1C36]"></div>
                 </div>
 
                 {/* Subtítulo */}
-                <span className="text-[0.45rem] md:text-[0.55rem] tracking-[0.4em] text-[#F2E8D5] uppercase font-light ml-[0.4em] text-center w-full">
+                <span className="text-[0.45rem] md:text-[0.55rem] tracking-[0.4em] text-[#8A1C36] uppercase font-light ml-[0.4em] text-center w-full">
                   MÚSICA DE CINE EN CONCIERTO
                 </span>
 
@@ -83,8 +83,8 @@ export default function Header() {
                   className={cn(
                     "text-xs font-semibold tracking-[0.15em] transition-colors duration-200 py-1 relative",
                     isActive
-                      ? "text-[#ad6e4f] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-3 after:h-[2px] after:bg-[#ad6e4f]"
-                      : "text-gray-200 hover:text-[#ad6e4f]"
+                      ? "text-[#8A1C36] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-3 after:h-[2px] after:bg-[#8A1C36]"
+                      : "text-gray-700 hover:text-[#8A1C36]"
                   )}
                 >
                   {link.label}
@@ -97,7 +97,7 @@ export default function Header() {
           <div className="hidden xl:block">
             <Link
               href="/quiero-auspiciar"
-              className="inline-flex items-center justify-center px-5 py-2.5 border border-[#ad6e4f]/60 text-[11px] font-bold tracking-[0.2em] uppercase text-white hover:bg-[#ad6e4f] hover:text-[#0f1c3f] transition-all duration-300 shadow-copper-glow"
+              className="inline-flex items-center justify-center px-5 py-2.5 border border-[#8A1C36]/60 text-[11px] font-bold tracking-[0.2em] uppercase text-[#8A1C36] hover:bg-[#8A1C36] hover:text-white transition-all duration-300 shadow-gold-glow"
             >
               QUIERO AUSPICIAR
             </Link>
@@ -108,12 +108,12 @@ export default function Header() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-[#ad6e4f] hover:bg-[#172854] focus:outline-none transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#8A1C36] hover:bg-[#F3EFE9] focus:outline-none transition-colors"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
               <span className="sr-only">Abrir menú</span>
-              {isOpen ? <X className="block h-6 w-6 text-[#ad6e4f]" /> : <Menu className="block h-6 w-6 text-[#ad6e4f]" />}
+              {isOpen ? <X className="block h-6 w-6 text-[#8A1C36]" /> : <Menu className="block h-6 w-6 text-[#8A1C36]" />}
             </button>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function Header() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "xl:hidden fixed inset-x-0 top-20 bg-[#0f1c3f]/98 border-b border-[#ad6e4f]/20 backdrop-blur-xl transition-all duration-300 ease-in-out origin-top",
+          "xl:hidden fixed inset-x-0 top-20 bg-[#FAF9F5]/98 border-b border-[#8A1C36]/20 backdrop-blur-xl transition-all duration-300 ease-in-out origin-top",
           isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"
         )}
         id="mobile-menu"
@@ -138,19 +138,19 @@ export default function Header() {
                 className={cn(
                   "block px-3 py-2 text-xs font-semibold tracking-[0.2em] transition-colors",
                   isActive
-                    ? "text-[#ad6e4f] border-l-2 border-[#ad6e4f] pl-4 bg-[#ad6e4f]/10"
-                    : "text-gray-200 hover:text-[#ad6e4f]"
+                    ? "text-[#8A1C36] border-l-2 border-[#8A1C36] pl-4 bg-[#8A1C36]/10"
+                    : "text-gray-700 hover:text-[#8A1C36]"
                 )}
               >
                 {link.label}
               </Link>
             );
           })}
-          <div className="pt-4 border-t border-[#ad6e4f]/10">
+          <div className="pt-4 border-t border-[#8A1C36]/10">
             <Link
               href="/quiero-auspiciar"
               onClick={() => setIsOpen(false)}
-              className="w-full text-center block px-5 py-3 border border-[#ad6e4f] text-xs font-bold tracking-[0.2em] uppercase text-[#ad6e4f] hover:bg-[#ad6e4f] hover:text-[#0f1c3f] transition-all"
+              className="w-full text-center block px-5 py-3 border border-[#8A1C36] text-xs font-bold tracking-[0.2em] uppercase text-[#8A1C36] hover:bg-[#8A1C36] hover:text-white transition-all"
             >
               QUIERO AUSPICIAR
             </Link>

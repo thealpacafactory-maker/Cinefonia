@@ -102,7 +102,7 @@ export default function RootLayout({
       <head>
         <JsonLd data={orgSchema} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col justify-between bg-brand-bg text-gray-200">
+      <body className="antialiased min-h-screen flex flex-col justify-between bg-brand-bg text-gray-800">
         <Header />
         <main className="flex-grow pt-20">
           {children}

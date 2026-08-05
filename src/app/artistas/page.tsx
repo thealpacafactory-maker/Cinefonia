@@ -9,12 +9,12 @@ import artistasData from "@/data/artistas.json";
 
 export default function ArtistasPage() {
   return (
-    <div className="min-h-screen py-16 bg-[#070D1D] text-white relative">
+    <div className="min-h-screen py-16 bg-[#FAF9F5] text-gray-800 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Navigation Breadcrumb */}
         <div className="mb-8 pt-10">
-          <Link href="/" className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:text-brand-gold-light transition-colors">
+          <Link href="/" className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:underline transition-colors animate-fade-in-left">
             <ArrowLeft className="h-4 w-4" />
             <span>Volver al Inicio</span>
           </Link>
@@ -22,8 +22,8 @@ export default function ArtistasPage() {
 
         {/* Section Title */}
         <div className="text-center mb-16">
-          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3">MEMORIA DESCRIPTIVA</span>
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal uppercase text-white tracking-wider">
+          <span className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase block mb-3 font-sans">MEMORIA DESCRIPTIVA</span>
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal uppercase text-gray-850 tracking-wider">
             Dirección y Elenco
           </h1>
           <div className="flex items-center justify-center space-x-3 my-4">
@@ -31,18 +31,18 @@ export default function ArtistasPage() {
             <span className="text-brand-gold text-xs font-serif">✦</span>
             <div className="w-12 h-[1px] bg-brand-gold/30" />
           </div>
-          <p className="max-w-xl mx-auto text-sm text-gray-400 font-light leading-relaxed">
+          <p className="max-w-xl mx-auto text-sm text-gray-650 font-light leading-relaxed">
             Seis instrumentistas. Una narración. Una sola experiencia.
           </p>
         </div>
 
         {/* Carta de la Dirección Artística from Memoria Descriptiva page 3 */}
-        <div className="bg-[#0B1329] border border-brand-gold/30 p-8 sm:p-12 mb-16 relative">
-          <span className="text-[10px] font-bold tracking-[0.25em] text-brand-gold uppercase block mb-2">MENSAJE EDITORIAL</span>
-          <h2 className="font-serif text-xl sm:text-3xl font-normal text-white mb-6">
+        <div className="bg-white border border-brand-gold/30 p-8 sm:p-12 mb-16 relative shadow-sm">
+          <span className="text-[10px] font-bold tracking-[0.25em] text-brand-gold uppercase block mb-2 font-sans">MENSAJE EDITORIAL</span>
+          <h2 className="font-serif text-xl sm:text-3xl font-bold text-gray-850 mb-6">
             Carta de la Dirección Artística
           </h2>
-          <div className="space-y-4 text-xs sm:text-sm text-gray-300 font-light leading-relaxed italic border-l-2 border-brand-gold/40 pl-6 my-6">
+          <div className="space-y-4 text-xs sm:text-sm text-gray-650 font-light leading-relaxed italic border-l-2 border-brand-[#8A1C36]/40 pl-6 my-6">
             <p>
               &ldquo;CINEFONÍA NIGHTS nace de una inquietud que fui construyendo a lo largo de varios años de trabajo como pianista: la certeza de que el repertorio de cámara, pese a su riqueza, no siempre logra tender un puente emocional inmediato con públicos ajenos a la formación clásica. Descubrí, en cambio, que las bandas sonoras de cine despiertan de manera casi inmediata recuerdos y emociones compartidas.&rdquo;
             </p>
@@ -53,9 +53,9 @@ export default function ArtistasPage() {
               &ldquo;Elegí Arequipa como ciudad de estreno por ser mi ciudad natal y por el deseo de aportar a su programación cultural una propuesta artística distinta, construida junto a músicos profesionales de la ciudad.&rdquo;
             </p>
           </div>
-          <div className="mt-6 pt-4 border-t border-brand-gold/15 flex items-center justify-between text-xs">
-            <span className="font-serif font-bold text-white tracking-widest">María Lucía Roca Gamarra</span>
-            <span className="text-brand-gold uppercase tracking-wider text-[11px]">DIRECCIÓN ARTÍSTICA</span>
+          <div className="mt-6 pt-4 border-t border-gray-150 flex items-center justify-between text-xs">
+            <span className="font-serif font-bold text-gray-805 tracking-widest">María Lucía Roca Gamarra</span>
+            <span className="text-brand-gold uppercase tracking-wider text-[11px] font-bold font-sans">DIRECCIÓN ARTÍSTICA</span>
           </div>
         </div>
 
@@ -68,10 +68,10 @@ export default function ArtistasPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-[#0B1329] border border-brand-gold/20 p-6 sm:p-8 flex flex-col md:flex-row gap-8 items-start hover:border-brand-gold/40 transition-colors group"
+              className="bg-white border border-brand-gold/20 p-6 sm:p-8 flex flex-col md:flex-row gap-8 items-start hover:border-brand-gold/45 transition-colors group shadow-sm text-gray-800"
             >
               {/* Photo Box */}
-              <div className="w-full md:w-48 aspect-[4/5] bg-[#050914] border border-brand-gold/15 flex items-center justify-center flex-shrink-0 relative overflow-hidden">
+              <div className="w-full md:w-48 aspect-[4/5] bg-gray-100 border border-brand-gold/15 flex items-center justify-center flex-shrink-0 relative overflow-hidden">
                 {artist.image ? (
                   <Image
                     src={artist.image}
@@ -82,29 +82,29 @@ export default function ArtistasPage() {
                     className="grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
                   />
                 ) : (
-                  <User className="h-20 w-20 text-gray-600 stroke-[0.8]" />
+                  <User className="h-20 w-20 text-gray-400 stroke-[0.8]" />
                 )}
-                <span className="absolute bottom-3 left-3 bg-[#070D1D] px-2 py-1 text-[9px] font-bold text-brand-gold uppercase tracking-widest border border-brand-gold/20 z-10">
+                <span className="absolute bottom-3 left-3 bg-[#8A1C36] px-2 py-1 text-[9px] font-bold text-white uppercase tracking-widest border border-[#8A1C36]/20 z-10 font-sans">
                   {artist.instrument}
                 </span>
               </div>
 
               {/* Bio & Trajectory */}
               <div className="flex-1 space-y-3">
-                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-gold block">
+                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-gold block font-sans">
                   {artist.role}
                 </span>
-                <h3 className="font-serif text-2xl font-semibold text-white tracking-wide">
+                <h3 className="font-serif text-2xl font-semibold text-gray-805 tracking-wide">
                   {artist.name}
                 </h3>
-                <p className="text-xs text-gray-300 font-light leading-relaxed">
+                <p className="text-xs text-gray-650 font-light leading-relaxed">
                   {artist.bio}
                 </p>
-                <div className="pt-3 border-t border-brand-gold/10">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-1">
+                <div className="pt-3 border-t border-gray-150">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 block mb-1 font-sans">
                     Trayectoria Académica y Profesional:
                   </span>
-                  <p className="text-xs text-gray-400 font-light leading-relaxed">
+                  <p className="text-xs text-gray-600 font-light leading-relaxed font-sans">
                     {artist.trajectory}
                   </p>
                 </div>
