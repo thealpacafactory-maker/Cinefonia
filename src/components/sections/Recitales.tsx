@@ -69,7 +69,7 @@ export default function Recitales() {
                     <div className="flex flex-col justify-between flex-1 py-1">
                       <div>
                         <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#111827] tracking-tight mb-1">
-                          {event.title.split("-")[0]} <span className="italic text-[#6B7280] font-light text-lg">Nights</span>
+                          {event.title.split("-")[0]}
                         </h3>
                         <p className="text-xs text-[#4B5563] font-light leading-snug">
                           {event.location}
