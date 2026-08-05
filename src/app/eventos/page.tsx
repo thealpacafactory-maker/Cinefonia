@@ -127,56 +127,7 @@ export default function EventosPage() {
             </div>
           )}
 
-          {/* Technical Rider & Schedule */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-8 border-t border-gray-150 font-sans">
 
-            {/* Technical Rider */}
-            {aqpEvent.technicalRider && (
-              <div className="bg-[#FAF9F5] p-6 border border-gray-200 shadow-xs">
-                <div className="flex items-center space-x-2 mb-4 text-[#8A1C36]">
-                  <Sliders className="h-4 w-4" />
-                  <h4 className="font-serif text-xs font-bold tracking-[0.2em] uppercase text-gray-800">RIDER TÉCNICO (REQUERIMIENTOS)</h4>
-                </div>
-                <div className="space-y-3 text-xs text-gray-650">
-                  <div>
-                    <span className="font-semibold text-brand-gold uppercase text-[10px]">Escenario:</span>
-                    <p className="font-light">{aqpEvent.technicalRider.stage.join(" • ")}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-brand-gold uppercase text-[10px]">Sonido:</span>
-                    <p className="font-light">{aqpEvent.technicalRider.sound.join(" • ")}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-brand-gold uppercase text-[10px]">Iluminación:</span>
-                    <p className="font-light">{aqpEvent.technicalRider.lighting.join(" • ")}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-brand-gold uppercase text-[10px]">Proyección:</span>
-                    <p className="font-light">{aqpEvent.technicalRider.projection.join(" • ")}</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Technical Schedule */}
-            {aqpEvent.technicalSchedule && (
-              <div className="bg-[#FAF9F5] p-6 border border-gray-200/80 shadow-xs">
-                <div className="flex items-center space-x-2 mb-4 text-[#8A1C36]">
-                  <Timer className="h-4 w-4" />
-                  <h4 className="font-serif text-xs font-bold tracking-[0.2em] uppercase text-gray-800">CRONOGRAMA TÉCNICO</h4>
-                </div>
-                <div className="space-y-2 text-xs">
-                  {aqpEvent.technicalSchedule.map((item, sIdx) => (
-                    <div key={sIdx} className="flex justify-between py-1.5 border-b border-gray-200/60 text-gray-650">
-                      <span className="font-semibold">{item.activity}</span>
-                      <span className="text-[#8A1C36] font-semibold">{item.duration}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-          </div>
 
         </div>
 

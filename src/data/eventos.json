@@ -16,78 +16,181 @@
     "isFeatured": true,
     "repertoire": [
       {
-        "block": "Prólogo",
-        "title": "Prólogo",
-        "pieces": [
-          { "name": "Feather Theme", "composer": "Alan Silvestri", "movie": "Forrest Gump", "year": "1994" }
-        ]
-      },
-      {
         "block": "Bloque I",
-        "title": "Soñar",
+        "title": "El tiempo y los recuerdos",
         "pieces": [
-          { "name": "Married Life", "composer": "Michael Giacchino", "movie": "Up", "year": "2009" },
-          { "name": "Merry-Go-Round of Life", "composer": "Joe Hisaishi", "movie": "El castillo ambulante", "year": "2004" },
-          { "name": "Concerning Hobbits", "composer": "Howard Shore", "movie": "El Señor de los Anillos", "year": "2001" }
+          {
+            "name": "Somewhere in Time",
+            "composer": "John Barry",
+            "movie": "Somewhere in Time",
+            "year": "1980"
+          },
+          {
+            "name": "Cinema Paradiso",
+            "composer": "Ennio Morricone",
+            "movie": "Cinema Paradiso",
+            "year": "1988"
+          },
+          {
+            "name": "Feather Theme",
+            "composer": "Alan Silvestri",
+            "movie": "Forrest Gump",
+            "year": "1994"
+          },
+          {
+            "name": "Playing Love",
+            "composer": "Ennio Morricone",
+            "movie": "The Legend of 1900",
+            "year": "1998"
+          }
         ]
       },
       {
         "block": "Bloque II",
-        "title": "Amar",
+        "title": "El amor en todas sus formas",
         "pieces": [
-          { "name": "Mia & Sebastian's Theme", "composer": "Justin Hurwitz", "movie": "La La Land", "year": "2016" },
-          { "name": "Liz on Top", "composer": "Dario Marianelli", "movie": "Orgullo y prejuicio", "year": "2005" },
-          { "name": "The Shape of Water", "composer": "Alexandre Desplat", "movie": "La forma del agua", "year": "2017" },
-          { "name": "Playing Love", "composer": "Ennio Morricone", "movie": "La leyenda del pianista", "year": "1998" },
-          { "name": "Somewhere in Time", "composer": "John Barry", "movie": "Somewhere in Time", "year": "1980" },
-          { "name": "Cinema Paradiso", "composer": "Ennio Morricone", "movie": "Cinema Paradiso", "year": "1988" }
+          {
+            "name": "Gabriel's Oboe",
+            "composer": "Ennio Morricone",
+            "movie": "The Mission",
+            "year": "1986"
+          },
+          {
+            "name": "Liz on Top",
+            "composer": "Dario Marianelli",
+            "movie": "Pride & Prejudice",
+            "year": "2005"
+          },
+          {
+            "name": "For the Love of a Princess",
+            "composer": "James Horner",
+            "movie": "Braveheart",
+            "year": "1995"
+          },
+          {
+            "name": "Mia & Sebastian's Theme",
+            "composer": "Justin Hurwitz",
+            "movie": "La La Land",
+            "year": "2016"
+          },
+          {
+            "name": "Por una Cabeza",
+            "composer": "Carlos Gardel",
+            "movie": "Scent of a Woman",
+            "year": "1992"
+          }
         ]
       },
       {
         "block": "Bloque III",
-        "title": "Aquello por lo que luchamos",
+        "title": "Mundos imaginarios",
         "pieces": [
-          { "name": "Gabriel's Oboe", "composer": "Ennio Morricone", "movie": "La misión", "year": "1986" },
-          { "name": "Cornfield Chase", "composer": "Hans Zimmer", "movie": "Interstellar", "year": "2014" },
-          { "name": "For the Love of a Princess", "composer": "James Horner", "movie": "Braveheart", "year": "1995" }
+          {
+            "name": "Married Life",
+            "composer": "Michael Giacchino",
+            "movie": "Up",
+            "year": "2009"
+          },
+          {
+            "name": "Concerning Hobbits",
+            "composer": "Howard Shore",
+            "movie": "The Lord of the Rings: The Fellowship of the Ring",
+            "year": "2001"
+          },
+          {
+            "name": "The Shape of Water",
+            "composer": "Alexandre Desplat",
+            "movie": "The Shape of Water",
+            "year": "2017"
+          },
+          {
+            "name": "Merry-Go-Round of Life",
+            "composer": "Joe Hisaishi",
+            "movie": "Howl's Moving Castle",
+            "year": "2004"
+          }
         ]
       },
       {
         "block": "Bloque IV",
-        "title": "El destino y las pasiones humanas",
+        "title": "Destino, valor y legado",
         "pieces": [
-          { "name": "The Ecstasy of Gold", "composer": "Ennio Morricone", "movie": "El bueno, el feo y el malo", "year": "1966" },
-          { "name": "Por una Cabeza", "composer": "Carlos Gardel y A. Le Pera", "movie": "Tango / Perfume de Mujer", "year": "1935" },
-          { "name": "The Godfather", "composer": "Nino Rota", "movie": "El Padrino", "year": "1972" }
-        ]
-      },
-      {
-        "block": "Propina",
-        "title": "Propina",
-        "pieces": [
-          { "name": "He's a Pirate", "composer": "Klaus Badelt y Hans Zimmer", "movie": "Piratas del Caribe", "year": "2003" }
+          {
+            "name": "Cornfield Chase",
+            "composer": "Hans Zimmer",
+            "movie": "Interstellar",
+            "year": "2014"
+          },
+          {
+            "name": "The Gold of Ecstasy",
+            "composer": "Ennio Morricone",
+            "movie": "The Good, the Bad and the Ugly",
+            "year": "1966"
+          },
+          {
+            "name": "The Godfather (Love Theme)",
+            "composer": "Nino Rota",
+            "movie": "The Godfather",
+            "year": "1972"
+          }
         ]
       }
     ],
     "experiencePhases": [
-      { "number": "01", "name": "Recepción" },
-      { "number": "02", "name": "Narración" },
-      { "number": "03", "name": "Música en vivo" },
-      { "number": "04", "name": "Proyección artística" },
-      { "number": "05", "name": "Iluminación" },
-      { "number": "06", "name": "Hospitality" }
+      {
+        "number": "01",
+        "name": "Narración"
+      },
+      {
+        "number": "02",
+        "name": "Música en vivo"
+      },
+      {
+        "number": "03",
+        "name": "Proyección artística"
+      },
+      {
+        "number": "04",
+        "name": "Iluminación"
+      }
     ],
     "technicalRider": {
-      "stage": ["Piano de cola afinado", "Seis sillas", "Cinco atriles", "Espacio reservado para el narrador"],
-      "sound": ["Micrófono inalámbrico", "Sistema de sonido de alta fidelidad"],
-      "lighting": ["Iluminación regulable y ambiental"],
-      "projection": ["Pantalla de proyección de gran formato", "Proyector Full HD", "Conexión HDMI"]
+      "stage": [
+        "Piano de cola afinado",
+        "Seis sillas",
+        "Cinco atriles",
+        "Espacio reservado para el narrador"
+      ],
+      "sound": [
+        "Micrófono inalámbrico",
+        "Sistema de sonido de alta fidelidad"
+      ],
+      "lighting": [
+        "Iluminación regulable y ambiental"
+      ],
+      "projection": [
+        "Pantalla de proyección de gran formato",
+        "Proyector Full HD",
+        "Conexión HDMI"
+      ]
     },
     "technicalSchedule": [
-      { "activity": "Montaje", "duration": "2 horas" },
-      { "activity": "Prueba de sonido", "duration": "45 minutos" },
-      { "activity": "Ensayo general", "duration": "60 minutos" },
-      { "activity": "Desmontaje", "duration": "45 minutos" }
+      {
+        "activity": "Montaje",
+        "duration": "2 horas"
+      },
+      {
+        "activity": "Prueba de sonido",
+        "duration": "45 minutos"
+      },
+      {
+        "activity": "Ensayo general",
+        "duration": "60 minutos"
+      },
+      {
+        "activity": "Desmontaje",
+        "duration": "45 minutos"
+      }
     ]
   },
   {
