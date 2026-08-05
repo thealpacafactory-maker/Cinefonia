@@ -6,28 +6,28 @@
     "instrument": "Piano",
     "image": "/images/artists/Piano_Malu_Roca.jpeg",
     "imagePlaceholder": "/images/artists/Piano_Malu_Roca.jpeg",
-    "bio": "Pianista y directora con trayectoria en la difusión de música de cámara. Lidera la curaduría artística del ensamble CINEFONÍA.",
-    "trajectory": "Egresada de conservatorios nacionales de música, ha participado en recitales solistas y de ensamble en diversas salas de concierto de Latinoamérica, especializándose en música de los siglos XIX y XX."
+    "bio": "Pianista arequipeña radicada en Madrid, directora artística de Cinefonía y concertista con trayectoria internacional.",
+    "trajectory": "Máster en Interpretación Solista por el Centro Superior Katarina Gurska (España), Máster en Pedagogía Musical por la Universidad de La Rioja, Bachelor of Arts (Cum Laude) por Florida Gulf Coast University (EE. UU.) y licenciada por la Universidad Nacional de Música del Perú. Ha ofrecido recitales en Europa, Estados Unidos y Sudamérica. Actualmente dirige su propia escuela de música en Madrid y compagina la docencia con su labor como intérprete y directora artística de Cinefonía."
   },
   {
     "slug": "julian-enriquez",
-    "name": "Julián Enríquez",
+    "name": "Julián Enríquez Díaz",
     "role": "Dirección Musical / Flauta",
     "instrument": "Flauta Traversa",
     "image": "/images/artists/Flauta_Julian_Enriquez.jpeg",
     "imagePlaceholder": "/images/artists/Flauta_Julian_Enriquez.jpeg",
-    "bio": "Flautista destacado especializado en arreglos musicales para bandas sonoras. Dirige la ejecución instrumental y el ritmo dramático.",
-    "trajectory": "Especialista en flauta traversa y pedagogía musical. Ha colaborado con orquestas sinfónicas regionales y ha desarrollado adaptaciones de compositores de cine como Ennio Morricone y Joe Hisaishi."
+    "bio": "Flautista colombiano radicado en Madrid, concertista, docente y difusor del repertorio latinoamericano.",
+    "trajectory": "Máster en Interpretación Solista por el Centro Superior Katarina Gurska (España) y egresado de la Universidad del Valle (Colombia). Ha colaborado con la Orquesta Metropolitana de Madrid, la Orquesta Filarmónica de Cali y la Banda Departamental del Valle del Cauca. Actualmente es profesor de flauta en escuelas municipales de Madrid y desarrolla su actividad artística junto a CoRú Dúo."
   },
   {
-    "slug": "lucho-vera",
-    "name": "Lucho Vera",
+    "slug": "luis-vera-acosta",
+    "name": "Luis Vera Acosta",
     "role": "Violinista I",
     "instrument": "Violín I",
     "image": "/images/artists/Violin_Luis_Vera_Acosta.jpg",
     "imagePlaceholder": "/images/artists/Violin_Luis_Vera_Acosta.jpg",
-    "bio": "Primer violín del ensamble, responsable de los pasajes líricos y melódicos de mayor intensidad emotiva en escena.",
-    "trajectory": "Músico concertista con amplia trayectoria. Integrante frecuente de agrupaciones filarmónicas y festivales de música clásica contemporánea."
+    "bio": "Violinista peruano con formación en Perú y Brasil, director musical y docente especializado en interpretación orquestal.",
+    "trajectory": "Formado en el Conservatorio Dramático y Musical 'Dr. Carlos de Campos' de Tatuí (São Paulo, Brasil). Ha recibido clases magistrales de reconocidos violinistas nacionales e internacionales. Actualmente es director musical del proyecto Sinfoni, docente de la Escuela Municipal de Cultura de Arequipa (EMCA) y desarrolla una activa labor como intérprete y formador."
   },
   {
     "slug": "mijael-jesus-cuarite-caceres",
@@ -36,8 +36,8 @@
     "instrument": "Viola",
     "image": "/images/artists/Viola-Mijael_Cuarite_Cáceres.png",
     "imagePlaceholder": "/images/artists/Viola-Mijael_Cuarite_Cáceres.png",
-    "bio": "Músico de viola con amplia versatilidad, aportando la calidez y el rango medio fundamental para la armonía del quinteto.",
-    "trajectory": "Especializado en violín y viola en proyectos orquestales. Su formación destaca en la interpretación estilística de ensambles de cuerda para música dramática."
+    "bio": "Violista arequipeño integrante de reconocidos ensambles de cámara y músico invitado de la Orquesta Sinfónica de Arequipa.",
+    "trajectory": "Inició su formación musical a los 10 años y actualmente cursa la Escuela Profesional de Artes bajo la tutela de la maestra Stephanie Arenas Pérez. Ha recibido clases magistrales de destacados violinistas y ha participado como músico invitado de la Orquesta Sinfónica de Arequipa. Actualmente integra el Cuarteto Ayni y el Cuarteto Sinfoni."
   },
   {
     "slug": "ederson-maquito-velarde",
@@ -46,7 +46,17 @@
     "instrument": "Violonchelo",
     "image": "/images/artists/Violoncello_Ederson_Maquito_Velarde.jpeg",
     "imagePlaceholder": "/images/artists/Violoncello_Ederson_Maquito_Velarde.jpeg",
-    "bio": "Violonchelista con experiencia en música sinfónica y orquestas de cámara. Provee el soporte y la profundidad de los bajos del concierto.",
-    "trajectory": "Violonchelista con estudios superiores en cuerdas frotadas. Ha colaborado en grabaciones de bandas sonoras y conciertos temáticos en teatros peruanos."
+    "bio": "Violonchelista, director de banda sinfónica y educador con amplia experiencia en proyectos orquestales nacionales e internacionales.",
+    "trajectory": "Formado en la Universidad Nacional de San Agustín y alumno del maestro Iván Pierantozzi Fuchs. Es integrante de la Orquesta Sinfónica de Arequipa, director de la Banda Sinfónica del Club Internacional y educador del programa Orquestando del Ministerio de Educación. Ha participado en festivales y encuentros orquestales en diversos países de América y actualmente cursa una maestría en Educación Superior."
+  },
+  {
+    "slug": "roberto-palacios-torres",
+    "name": "Roberto Palacios Torres",
+    "role": "Actor y Narrador",
+    "instrument": "Narración",
+    "image": "/images/artists/Actuación-Roberto Palacios Torres.JPG.jpeg",
+    "imagePlaceholder": "/images/artists/Actuación-Roberto Palacios Torres.JPG.jpeg",
+    "bio": "Actor, director teatral, gestor cultural y docente con más de quince años de trayectoria artística.",
+    "trajectory": "Fundador y director artístico de la Asociación Cultural Teatrando. Ha participado en más de 30 producciones escénicas, así como en diversas películas y cortometrajes, obteniendo el premio a Mejor Actor en el Festival Cortos Casa Blanca. Su trabajo integra la interpretación, la dirección escénica y el desarrollo de proyectos culturales de impacto social."
   }
 ]
