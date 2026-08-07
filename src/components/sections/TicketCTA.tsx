@@ -87,16 +87,16 @@ export default function TicketCTA() {
                     <motion.a
                         whileHover={{ scale: 1.04, translateY: -3 }}
                         whileTap={{ scale: 0.98 }}
-                        href="https://www.joinnus.com"
+                        href={process.env.NEXT_PUBLIC_JOINNUS_URL || "https://www.joinnus.com"}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center space-x-3 px-8 py-4.5 bg-[#8A1C36] hover:bg-[#5E0B1F] text-white font-bold tracking-[0.2em] uppercase text-xs transition-all duration-300 shadow-lg border border-[#8A1C36]/50 group"
                     >
                         <Ticket className="h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
                         <span>Comprar entradas en</span>
-                        <div className="relative w-16 h-4.5 overflow-hidden filter brightness-100 group-hover:brightness-110 transition-all ml-1.5 flex items-center">
+                        <div className="relative w-48 h-11 overflow-hidden filter brightness-100 group-hover:brightness-110 transition-all ml-1.5 flex items-center">
                             <Image
-                                src="/images/brands/joinnus.svg"
+                                src="/images/brands/joinnus.png"
                                 alt="Joinnus"
                                 fill
                                 style={{ objectFit: "contain" }}

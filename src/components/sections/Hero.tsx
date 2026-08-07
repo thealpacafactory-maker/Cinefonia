@@ -159,15 +159,15 @@ export default function Hero() {
             <motion.a
               whileHover={{ scale: 1.04, translateY: -2 }}
               whileTap={{ scale: 0.98 }}
-              href="https://joinnus.com"
+              href={process.env.NEXT_PUBLIC_JOINNUS_URL || "https://joinnus.com"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center space-x-3 px-7 py-4 bg-[#8A1C36] hover:bg-[#5E0B1F] text-white font-bold tracking-widest uppercase text-[10px] sm:text-xs transition-all duration-300 shadow-copper-glow rounded-none group"
             >
               <span>ENTRADAS EN</span>
-              <div className="relative w-16 h-4.5 overflow-hidden filter brightness-100 group-hover:brightness-110 transition-all">
+              <div className="relative w-36 h-9 overflow-hidden filter brightness-100 group-hover:brightness-110 transition-all">
                 <Image
-                  src="/images/brands/joinnus.svg"
+                  src="/images/brands/joinnus.png"
                   alt="Joinnus Logo"
                   fill
                   style={{ objectFit: "contain" }}
