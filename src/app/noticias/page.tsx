@@ -1,15 +1,54 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
-import { ArrowLeft, Clock, ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
+import { Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import noticiasData from "@/data/noticias.json";
+import JsonLd from "@/components/seo/JsonLd";
+
+// 1. Metadatos de Servidor para SEO
+export const metadata: Metadata = {
+  title: "Noticias Oficiales y Notas de Prensa | CINEFONÍA Nights",
+  description: "Entérate de las últimas novedades, ensayos y comunicados de prensa oficiales sobre el estreno del concierto de música de cámara y cine en Arequipa.",
+  alternates: {
+    canonical: "/noticias",
+  },
+  openGraph: {
+    title: "Noticias Oficiales y Notas de Prensa | CINEFONÍA Nights",
+    description: "Novedades y notas de prensa sobre la temporada 2026 de CINEFONÍA Nights.",
+    url: "/noticias",
+    type: "website",
+  },
+};
 
 export default function NoticiasPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+
+  // Esquema BreadcrumbList
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": siteUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Noticias",
+        "item": `${siteUrl}/noticias`
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen py-16 bg-[#FAF9F5] text-gray-800 relative">
+      {/* Inyección de Esquemas Estructurados */}
+      <JsonLd data={breadcrumbSchema} />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Navigation Breadcrumb */}
@@ -38,14 +77,10 @@ export default function NoticiasPage() {
 
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {noticiasData.map((news, idx) => (
-            <motion.div
+          {noticiasData.map((news) => (
+            <div
               key={news.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white border border-brand-gold/20 p-6 flex flex-col justify-between group hover:border-brand-gold/45 transition-all duration-300 shadow-sm"
+              className="bg-white border border-brand-gold/20 p-6 flex flex-col justify-between group hover:border-brand-gold/45 transition-all duration-300 shadow-sm hover:-translate-y-1"
             >
               <div>
                 {/* Visual Header */}
@@ -73,25 +108,41 @@ export default function NoticiasPage() {
                   {news.title}
                 </h3>
 
-                <p className="text-gray-650 text-xs font-light leading-relaxed mb-6 font-sans">
+                <p className="text-gray-655 text-xs font-light leading-relaxed mb-6 font-sans">
                   {news.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-gray-150">
+              <div className="pt-4 border-t border-gray-150 font-sans">
                 <Link
                   href={`/noticias/${news.slug}`}
-                  className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-widest text-[#8A1C36] hover:underline transition-colors font-sans"
+                  className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-widest text-[#8A1C36] hover:underline transition-colors"
                 >
                   <span>LEER COMUNICADO</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
       </div>
     </div>
+  );
+}
+
+// Inline replacement helper for ArrowLeft icon to avoid extra file imports
+function ArrowLeft({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className={className}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+    </svg>
   );
 }

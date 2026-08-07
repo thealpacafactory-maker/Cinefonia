@@ -75,22 +75,49 @@ export const metadata: Metadata = {
 
 const orgSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${siteUrl}/#organization`,
-  "name": "CINEFONÍA",
-  "url": siteUrl,
-  "logo": `${siteUrl}/images/logo.png`,
-  "sameAs": [
-    "https://facebook.com",
-    "https://instagram.com",
-    "https://youtube.com"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "contacto@cinefonia-nights.pe",
-    "contactType": "customer support",
-    "areaServed": "PE"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": "CINEFONÍA",
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "@id": `${siteUrl}/#logo`,
+        "url": `${siteUrl}/images/logo.png`,
+        "caption": "CINEFONÍA"
+      },
+      "sameAs": [
+        "https://facebook.com",
+        "https://instagram.com",
+        "https://youtube.com"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contacto@cinefonia-nights.pe",
+        "contactType": "customer support",
+        "areaServed": "PE"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "CINEFONÍA Nights",
+      "description": "Plataforma dedicada a la experiencia cinematográfica y recitales de música de cámara",
+      "publisher": {
+        "@id": `${siteUrl}/#organization`
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${siteUrl}/blog?search={search_term_string}`
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
 };
 
 export default function RootLayout({

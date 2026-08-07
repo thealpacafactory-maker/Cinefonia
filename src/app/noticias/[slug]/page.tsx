@@ -1,29 +1,140 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import noticiasData from "@/data/noticias.json";
+import JsonLd from "@/components/seo/JsonLd";
+import { parseSpanishDate } from "@/lib/utils";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// 1. Generación de Metadatos Dinámicos (Open Graph y Twitter Cards)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+  const noticia = noticiasData.find((n) => n.slug === slug);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+
+  if (!noticia) {
+    return {
+      title: "Comunicado de Prensa no encontrado",
+      description: "La noticia o nota de prensa solicitada no está disponible en la plataforma.",
+    };
+  }
+
+  const ogImage = noticia.image.startsWith("http") ? noticia.image : `${siteUrl}${noticia.image}`;
+
+  return {
+    title: `${noticia.title} | Noticias`,
+    description: noticia.description.slice(0, 155),
+    alternates: {
+      canonical: `${siteUrl}/noticias/${slug}`,
+    },
+    openGraph: {
+      title: noticia.title,
+      description: noticia.description,
+      url: `${siteUrl}/noticias/${slug}`,
+      type: "article",
+      publishedTime: noticia.date,
+      authors: ["CINEFONÍA"],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: noticia.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: noticia.title,
+      description: noticia.description,
+      images: [ogImage],
+    },
+  };
+}
+
+// 2. Renderizado de la Página con Esquemas JSON-LD
 export default async function NoticiaDetallePage({ params }: Props) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  
   const noticia = noticiasData.find((n) => n.slug === slug) || {
     slug,
     title: slug.replace(/-/g, " "),
     category: "Noticias",
-    date: "08 MAY 2025",
+    date: "2026-08-01",
     readTime: "4 min",
     description: "Comunicado oficial de prensa sobre CINEFONÍA Nights.",
     image: "/images/placeholders/news-placeholder.jpg",
     content: "CINEFONÍA NIGHTS — Música de Cine en Concierto reunirá un sexteto instrumental, narración en vivo y proyecciones audiovisuales en el Teatro Municipal de Arequipa el próximo 22 de agosto de 2026."
   };
 
+  // Esquema NewsArticle
+  const newsArticleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/noticias/${slug}`
+    },
+    "headline": noticia.title,
+    "description": noticia.description,
+    "image": noticia.image.startsWith("http") ? noticia.image : `${siteUrl}${noticia.image}`,
+    "datePublished": parseSpanishDate(noticia.date),
+    "author": {
+      "@type": "Organization",
+      "name": "CINEFONÍA",
+      "url": siteUrl
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CINEFONÍA",
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/images/logo.png`
+      }
+    }
+  };
+
+  // Esquema BreadcrumbList
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": siteUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Noticias",
+        "item": `${siteUrl}/noticias`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": noticia.title,
+        "item": `${siteUrl}/noticias/${slug}`
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-screen py-16 bg-[#FAF9F5] text-gray-850 relative">
+    <div className="min-h-screen py-16 bg-[#FAF9F5] text-gray-855 relative">
+      {/* Marcados estructurados */}
+      <JsonLd data={newsArticleSchema} />
+      <JsonLd data={breadcrumbSchema} />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Navigation Breadcrumb */}
@@ -39,7 +150,7 @@ export default async function NoticiaDetallePage({ params }: Props) {
 
           {/* Header */}
           <div className="space-y-4 border-b border-gray-150 pb-8">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8A1C36] font-sans">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#8A1C36] font-sans">
               {noticia.category} • Comunicado Oficial
             </span>
             <h1 className="font-serif text-2xl sm:text-4xl font-semibold text-gray-855 leading-tight">
@@ -65,16 +176,16 @@ export default async function NoticiaDetallePage({ params }: Props) {
               fill
               priority
               sizes="(max-width: 1200px) 100vw, 80vw"
-              className="object-cover"
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
           </div>
 
           {/* Article Body */}
-          <div className="space-y-6 text-sm text-gray-650 font-light leading-relaxed">
-            <p className="font-semibold text-gray-800 text-base font-sans">
+          <div className="space-y-6 text-sm text-gray-650 font-light leading-relaxed font-sans">
+            <p className="font-semibold text-gray-800 text-base">
               {noticia.description}
             </p>
-            <p className="font-sans">
+            <p>
               {noticia.content}
             </p>
             <blockquote className="border-l-4 border-[#8A1C36] bg-[#FAF9F5] p-6 italic text-gray-705 font-serif text-sm sm:text-base">

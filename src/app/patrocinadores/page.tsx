@@ -1,24 +1,62 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowLeft, Check, Crown, Award } from "lucide-react";
 import Link from "next/link";
 import patrocinadoresData from "@/data/patrocinadores.json";
+import JsonLd from "@/components/seo/JsonLd";
+
+// 1. Metadatos de Servidor para SEO
+export const metadata: Metadata = {
+  title: "Alianzas Culturales y Auspicios | CINEFONÍA Nights",
+  description: "Conoce las marcas aliadas y los niveles de patrocinio disponibles para Cinefonía en Arequipa. Cinco niveles de participación corporativa para integrar su marca.",
+  alternates: {
+    canonical: "/patrocinadores",
+  },
+  openGraph: {
+    title: "Alianzas Culturales y Auspicios | CINEFONÍA Nights",
+    description: "Únete a las marcas aliadas que hacen posible Cinefonía en el Teatro Municipal.",
+    url: "/patrocinadores",
+    type: "website",
+  },
+};
 
 export default function PatrocinadoresPage() {
   const tiers = patrocinadoresData.tiers || [];
   const palcoFeatures = patrocinadoresData.palcoVipFeatures || [];
   const sponsors = patrocinadoresData.sponsorsList || [];
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+
+  // Esquema BreadcrumbList
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": siteUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Patrocinadores",
+        "item": `${siteUrl}/patrocinadores`
+      }
+    ]
+  };
 
   return (
     <div className="min-h-screen py-16 bg-[#FAF9F5] text-gray-800 relative">
+      {/* Inyección de Esquemas Estructurados */}
+      <JsonLd data={breadcrumbSchema} />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Navigation Breadcrumb */}
         <div className="mb-8 pt-10">
-          <Link href="/" className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:underline transition-colors">
+          <Link href="/" className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:underline transition-colors font-sans">
             <ArrowLeft className="h-4 w-4" />
             <span>Volver al Inicio</span>
           </Link>
@@ -34,7 +72,7 @@ export default function PatrocinadoresPage() {
             <span className="text-brand-gold text-xs font-serif">✦</span>
             <div className="w-12 h-[1px] bg-brand-gold/30" />
           </div>
-          <p className="max-w-2xl mx-auto text-sm text-gray-600 font-light leading-relaxed">
+          <p className="max-w-2xl mx-auto text-sm text-gray-600 font-light leading-relaxed font-sans">
             No todas las marcas necesitan la misma presencia. Cinco niveles de participación para integrar su marca a una experiencia cultural memorable.
           </p>
         </div>
@@ -42,111 +80,105 @@ export default function PatrocinadoresPage() {
         {/* Official Sponsors Showcase Section */}
         <div className="mb-20 bg-white border border-brand-gold/20 p-8 sm:p-12 shadow-md">
           <div className="text-center mb-10">
-            <span className="text-[10px] font-bold tracking-[0.25em] text-brand-gold uppercase block mb-2 flex items-center justify-center">
+            <span className="text-[10px] font-bold tracking-[0.25em] text-brand-gold uppercase block mb-2 flex items-center justify-center font-sans">
               <Award className="h-4 w-4 mr-2" /> NUESTROS ALIANZAS Y PATROCINADORES ACTUALES
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-normal text-gray-800 animate-fade-in">
+            <h2 className="font-serif text-2xl sm:text-3xl font-normal text-gray-800">
               Marcas e Instituciones Comprometidas con la Cultura
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-sans">
             {sponsors.map((sponsor, idx) => (
-              <motion.div
+              <div
                 key={sponsor.id || idx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-[#FAF9F5] border border-gray-200 p-6 flex flex-col items-center justify-between text-center rounded-none group hover:border-brand-gold transition-colors shadow-sm"
+                className="bg-white border border-gray-200/80 p-6 flex flex-col items-between justify-between text-center aspect-[4/3] shadow-xs hover:border-[#8A1C36]/30 transition-all duration-300 group hover:-translate-y-1 overflow-hidden"
               >
-                <div className="relative w-full h-24 mb-4 flex items-center justify-center bg-white p-4 border border-gray-150">
+                <div className="relative w-full h-16 sm:h-20 my-auto flex items-center justify-center">
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
                     fill
-                    sizes="240px"
-                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                    sizes="200px"
+                    className="object-contain p-1 opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
-                <div>
-                  <h3 className="font-serif text-sm font-bold text-gray-800 uppercase mb-1">
+                <div className="pt-3 border-t border-gray-100 w-full">
+                  <span className="font-serif text-xs font-bold uppercase tracking-wider text-gray-850 block line-clamp-1">
                     {sponsor.name}
-                  </h3>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand-gold">
+                  </span>
+                  <span className="text-[8px] text-[#8A1C36] font-semibold tracking-widest uppercase block mt-1">
                     {sponsor.tag}
                   </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* 5 Tiers Matrix Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
-          {tiers.map((tier) => (
-            <motion.div
-              key={tier.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`bg-white border p-6 flex flex-col justify-between relative shadow-sm ${tier.recommended ? "border-brand-gold ring-1 ring-brand-gold" : "border-gray-200"
+        {/* Five levels matrix from Page 4 of Memoria Descriptiva */}
+        <div className="space-y-12">
+          <div className="text-center max-w-xl mx-auto">
+            <h2 className="font-serif text-2xl sm:text-4xl font-normal text-gray-800">Niveles de Participación</h2>
+            <p className="text-xs text-gray-500 font-light mt-2 font-sans">Propuestas flexibles diseñadas para ajustarse a los objetivos y presupuestos de cada marca.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch font-sans">
+            {tiers.map((tier) => (
+              <div
+                key={tier.name}
+                className={`bg-white border p-6 flex flex-col justify-between shadow-xs transition-all duration-300 hover:-translate-y-1 ${
+                  tier.recommended ? "border-brand-gold/60 ring-1 ring-brand-gold/20" : "border-gray-200"
                 }`}
-            >
-              {tier.recommended && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gold text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1">
-                  RECOMENDADO
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
+                    <span className="font-serif font-bold text-xs uppercase tracking-wide text-gray-800">
+                      {tier.name}
+                    </span>
+                    {tier.recommended && (
+                      <span className="bg-brand-gold/15 text-brand-gold text-[8px] font-bold uppercase tracking-wider px-2 py-0.5 border border-brand-gold/30">
+                        Recomendado
+                      </span>
+                    )}
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-xl font-bold text-[#8A1C36] font-serif">{tier.price}</span>
+                    <span className="text-[9px] text-gray-400 block uppercase tracking-wider">Valor estimado</span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 font-light leading-relaxed mb-6">
+                    {tier.description}
+                  </p>
                 </div>
-              )}
 
-              <div>
-                <h3 className="font-serif text-base font-bold text-gray-800 mb-2 text-center">
-                  {tier.name}
-                </h3>
-                <div className="text-center my-4 py-2 border-y border-brand-gold/15">
-                  <span className="font-serif text-xl font-bold text-brand-gold block">{tier.price}</span>
-                </div>
-                <p className="text-[11px] text-gray-600 leading-relaxed font-light mb-6">
-                  {tier.description}
-                </p>
-
-                <ul className="space-y-2 text-[11px] text-gray-650 border-t border-gray-150 pt-4">
-                  <li className="flex justify-between">
-                    <span className="text-gray-500">Invitaciones:</span>
-                    <span className="font-semibold text-gray-800">{tier.totalInvitations}</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-500">Accesos Palco VIP:</span>
-                    <span className="font-semibold text-gray-800">{tier.palcoAccess}</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-550">Exclusividad:</span>
+                <div className="space-y-2 pt-4 border-t border-gray-50 text-[10px] text-gray-650 font-sans">
+                  <div className="flex justify-between border-b border-gray-100/40 pb-1">
+                    <span className="text-gray-400">Exclusividad:</span>
                     <span className="font-semibold text-gray-800">{tier.exclusivity}</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-550">Hospitality:</span>
-                    <span className="font-semibold text-gray-800">{tier.hospitality}</span>
-                  </li>
-                </ul>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-100/40 pb-1">
+                    <span className="text-gray-400">Invitaciones:</span>
+                    <span className="font-semibold text-gray-800">{tier.totalInvitations}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-100/40 pb-1">
+                    <span className="text-gray-400">Acceso Palco:</span>
+                    <span className="font-semibold text-gray-800">{tier.palcoAccess}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Networking:</span>
+                    <span className="font-semibold text-gray-800">{tier.networking}</span>
+                  </div>
+                </div>
               </div>
-
-              <div className="mt-8 pt-4 border-t border-gray-150">
-                <Link
-                  href="/quiero-auspiciar"
-                  className="w-full text-center block py-2.5 border border-brand-gold/50 text-[10px] font-bold tracking-widest uppercase text-brand-gold hover:bg-brand-gold hover:text-white transition-colors"
-                >
-                  SOLICITAR
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Palco VIP / Palco Cinefonía Section */}
-        <div className="bg-white border border-[#8A1C36]/15 p-8 sm:p-12 mb-16 shadow-md">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-gold uppercase block mb-2">HOSPITALIDAD Y VALOR</span>
+        {/* Theatrical VIP Box Experience from Page 5 of Memoria Descriptiva */}
+        <div className="mt-20 bg-white border border-[#8A1C36]/15 p-8 sm:p-12 shadow-sm font-sans">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8">
+              <span className="text-[10px] font-bold tracking-[0.25em] text-[#8A1C36] uppercase block mb-2">HOSPITALIDAD CORPORATIVA</span>
               <h2 className="font-serif text-2xl sm:text-3xl font-normal text-gray-800 mb-4 font-bold">
                 El mejor lugar del evento no es solo una butaca.
               </h2>
@@ -167,7 +199,7 @@ export default function PatrocinadoresPage() {
               </div>
             </div>
 
-            <div className="bg-[#FAF9F5] p-8 border border-gray-200 text-center">
+            <div className="lg:col-span-4 bg-[#FAF9F5] p-8 border border-gray-200 text-center">
               <Crown className="h-12 w-12 text-brand-gold mx-auto mb-4 stroke-[1]" />
               <h4 className="font-serif text-lg font-bold text-gray-800 mb-2 uppercase">EXPERIENCIA EXCLUSIVA</h4>
               <p className="text-xs text-gray-600 font-light leading-relaxed mb-6">
