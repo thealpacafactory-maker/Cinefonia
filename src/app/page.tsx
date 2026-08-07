@@ -5,8 +5,10 @@ import Experience from "@/components/sections/Experience";
 import FeaturedArtists from "@/components/sections/FeaturedArtists";
 import HistoriasRevivir from "@/components/sections/HistoriasRevivir";
 import FaqSection from "@/components/sections/FaqSection";
+import ComoLlegar from "@/components/sections/ComoLlegar";
 import Sponsors from "@/components/sections/Sponsors";
 import LatestNews from "@/components/sections/LatestNews";
+import TicketCTA from "@/components/sections/TicketCTA";
 import JsonLd from "@/components/seo/JsonLd";
 
 export default function Home() {
@@ -91,11 +93,17 @@ export default function Home() {
       {/* Preguntas Frecuentes */}
       <FaqSection />
 
+      {/* Ubicación / Cómo llegar */}
+      <ComoLlegar />
+
       {/* 5. Patrocinadores & Formulario Alianza */}
       <Sponsors />
 
       {/* 6. Noticias y Blog */}
       <LatestNews />
+
+      {/* Ticket Purchase CTA (arriba del footer) */}
+      <TicketCTA />
     </>
   );
 }

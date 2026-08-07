@@ -36,7 +36,7 @@ export default function HistoriasRevivir() {
                 </div>
 
                 {/* Stories Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
                     {historiasData.map((item, idx) => (
                         <motion.div
                             key={item.id}
@@ -45,34 +45,34 @@ export default function HistoriasRevivir() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: idx * 0.1 }}
                             whileHover={{ y: -6 }}
-                            className="bg-white border border-gray-200/80 p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-[#8A1C36]/30 transition-all duration-300 group"
+                            className="bg-white border border-gray-200/80 p-3 sm:p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-[#8A1C36]/30 transition-all duration-300 group"
                         >
                             <div>
                                 {/* Movie Poster Image Box */}
-                                <div className="aspect-[2/3] w-full bg-[#FAF9F5] mb-5 overflow-hidden relative border border-gray-150 group-hover:border-[#8A1C36]/25 transition-colors">
+                                <div className="aspect-[2/3] w-full bg-[#FAF9F5] mb-3 sm:mb-5 overflow-hidden relative border border-gray-150 group-hover:border-[#8A1C36]/25 transition-colors">
                                     <Image
                                         src={item.image}
                                         alt={item.movie}
                                         fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
-                                    <div className="absolute top-2 left-2 bg-[#8A1C36] px-2 py-0.5 text-[8px] font-bold uppercase tracking-widest text-white z-10 flex items-center space-x-1 font-sans">
-                                        <Film className="h-2.5 w-2.5" />
+                                    <div className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-[#8A1C36] px-1.5 py-0.5 sm:px-2 text-[6px] sm:text-[8px] font-bold uppercase tracking-widest text-white z-10 flex items-center space-x-0.5 sm:space-x-1 font-sans">
+                                        <Film className="h-1.5 w-1.5 sm:h-2.5 sm:w-2.5" />
                                         <span>CINEFONÍA SELECCIÓN</span>
                                     </div>
                                 </div>
 
-                                <span className="text-[10px] font-bold tracking-widest text-brand-gold uppercase block mb-1.5 font-sans">
+                                <span className="text-[8px] sm:text-[10px] font-bold tracking-widest text-brand-gold uppercase block mb-1 sm:mb-1.5 font-sans">
                                     {item.movie}
                                 </span>
 
-                                <h3 className="font-serif text-lg font-bold text-gray-805 mb-2 leading-snug group-hover:text-[#8A1C36] transition-colors">
+                                <h3 className="font-serif text-xs sm:text-lg font-bold text-gray-850 mb-1 sm:mb-2 leading-snug group-hover:text-[#8A1C36] transition-colors">
                                     {item.title}
                                 </h3>
                             </div>
 
-                            <div className="pt-4 mt-6 border-t border-gray-100 flex items-center justify-between text-xs text-gray-450 font-sans">
+                            <div className="pt-2 sm:pt-4 mt-3 sm:mt-6 border-t border-gray-100 flex items-center justify-between text-[8px] sm:text-xs text-gray-450 font-sans">
                                 <span>Versión Ensamble</span>
                                 <span className="text-[#8A1C36] font-semibold">En Vivo</span>
                             </div>
