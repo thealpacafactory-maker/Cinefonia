@@ -9,7 +9,7 @@ import artistasData from "@/data/artistas.json";
 
 export default function FeaturedArtists() {
   // Display the 5 main instrumental ensemble members
-  const featured = artistasData.slice(0, 5);
+  const featured = artistasData.slice(0, 6);
 
   return (
     <section className="py-24 bg-[#FAF9F5] text-gray-800 relative border-t border-[#8A1C36]/15 overflow-hidden">
@@ -37,7 +37,7 @@ export default function FeaturedArtists() {
         </div>
 
         {/* 5 Cards Grid con animaciones dinámicas - 2 columnas en móvil */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-6 mb-16">
           {featured.map((artist, idx) => (
             <motion.div
               key={artist.name}
