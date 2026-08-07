@@ -46,8 +46,10 @@ export async function submitToSheet(data: SponsorFormData) {
 
   try {
     // 4. Formatear la clave privada para soportar saltos de línea (\n)
-    const formattedPrivateKey = privateKey.replace(/\\n/g, "\n");
-
+    //const formattedPrivateKey = privateKey.replace(/\\n/g, "\n");
+    const formattedPrivateKey = privateKey
+        .replace(/\\n/g, "\n")
+        .replace(/^"(.*)"$/s, "$1");
     // 5. Inicializar la autenticación con JWT (Service Account)
     const auth = new google.auth.JWT({
       email: clientEmail,
