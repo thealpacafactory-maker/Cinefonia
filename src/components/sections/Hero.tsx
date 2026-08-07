@@ -6,10 +6,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, Building, Sparkles } from "lucide-react";
 import CountdownTimer from "@/components/ui/CountdownTimer";
-
+import { Bodoni_Moda} from "next/font/google";
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400", "500"]
+});
 export default function Hero() {
   const mainEventIsoDate = "2026-08-22T19:30:00-05:00";
-
   return (
     <section className="relative min-h-screen w-full bg-[#FAF9F5] overflow-hidden flex items-center">
 
@@ -92,7 +95,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-[#1D0A0E] mb-6 uppercase leading-none text-glow-gold"
+            className={`${bodoni.className} text-5xl sm:text-7xl lg:text-8xl font-normal tracking-[0.12em] text-[#1D0A0E] mb-6 uppercase leading-none text-glow-gold`}
           >
             CINEFONÍA <br className="hidden sm:inline" />
             <span className="text-gradient-gold">Nights</span>
