@@ -22,7 +22,7 @@ export async function sendSponsorshipEmail(data: SponsorFormData) {
   const { companyName, contactName, email, phone, sponsorLevel, proposal } = validationResult.data;
   
   // 2. Definir destinatario del correo
-  const contactEmail = process.env.CONTACT_EMAIL || "contacto@cinefonia-nights.pe";
+  const contactEmail = process.env.CONTACT_EMAIL || "hola@cinefonianights.com";
   const apiKeyPresent = Boolean(process.env.RESEND_API_KEY);
 
   // 3. Simulación para desarrollo local en caso no haya una API Key configurada
@@ -145,7 +145,7 @@ export async function sendContactEmail(data: ContactFormData) {
 
   const { name, email, subject, message } = validationResult.data;
   
-  const contactEmail = process.env.CONTACT_EMAIL || "contacto@cinefonia-nights.pe";
+  const contactEmail = process.env.CONTACT_EMAIL || "hola@cinefonianights.com";
   const apiKeyPresent = Boolean(process.env.RESEND_API_KEY);
 
   // Simulación para desarrollo

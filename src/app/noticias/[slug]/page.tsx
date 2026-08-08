@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   const noticia = noticiasData.find((n) => n.slug === slug);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
 
   if (!noticia) {
     return {
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function NoticiaDetallePage({ params }: Props) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
   
   const noticia = noticiasData.find((n) => n.slug === slug) || {
     slug,

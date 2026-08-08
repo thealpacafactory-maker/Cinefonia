@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
 
   // Esquema BreadcrumbList
   const breadcrumbSchema = {

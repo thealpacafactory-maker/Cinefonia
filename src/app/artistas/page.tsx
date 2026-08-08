@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default function ArtistasPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
 
   // Esquema ItemList de artistas (Schema.org)
   const artistsListSchema = {

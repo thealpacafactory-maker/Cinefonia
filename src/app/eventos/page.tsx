@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function EventosPage() {
   const aqpEvent = eventosData.find((e) => e.id === "aqp-2026") || eventosData[0];
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
 
   // Esquema MusicEvent (Schema.org)
   const musicEventSchema = {

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactoPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
 
   // Esquema BreadcrumbList
   const breadcrumbSchema = {
@@ -113,8 +113,8 @@ export default function ContactoPage() {
               <Mail className="h-5 w-5 text-brand-gold flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-bold text-gray-800 text-xs uppercase tracking-wider mb-0.5">Correo Electrónico</p>
-                <a href="mailto:hola@cinefoniashow.com" className="text-xs text-gray-600 hover:text-brand-gold transition-colors font-semibold">
-                  hola@cinefoniashow.com
+                <a href="mailto:hola@cinefonianights.com" className="text-xs text-gray-600 hover:text-brand-gold transition-colors font-semibold">
+                  hola@cinefonianights.com
                 </a>
               </div>
             </div>

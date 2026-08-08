@@ -19,7 +19,7 @@ const geistSans = Geist({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -94,7 +94,7 @@ const orgSchema = {
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "contacto@cinefonia-nights.pe",
+        "email": "hola@cinefonianights.com",
         "contactType": "customer support",
         "areaServed": "PE"
       }

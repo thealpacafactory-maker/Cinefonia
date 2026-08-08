@@ -3,7 +3,7 @@ import noticiasData from "@/data/noticias.json";
 import blogData from "@/data/blog.json";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
 
   // 1. Rutas Estáticas de la Plataforma
   const staticRoutes = [

@@ -78,7 +78,7 @@ export default function PoliticaPrivacidadPage() {
               4. Tus Derechos (ARCO)
             </h2>
             <p>
-              Tienes el derecho de acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales. Para ejercer estos derechos, puedes remitir una solicitud formal al correo electrónico oficial: **contacto@cinefonia-nights.pe**, adjuntando la información correspondiente para validar tu identidad titular.
+              Tienes el derecho de acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales. Para ejercer estos derechos, puedes remitir una solicitud formal al correo electrónico oficial: **hola@cinefonianights.com**, adjuntando la información correspondiente para validar tu identidad titular.
             </p>
           </div>
         </div>

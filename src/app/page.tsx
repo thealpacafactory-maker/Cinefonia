@@ -12,7 +12,7 @@ import TicketCTA from "@/components/sections/TicketCTA";
 import JsonLd from "@/components/seo/JsonLd";
 
 export default function Home() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cinefonia-nights.pe";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cinefoniashow.com";
 
   // Schema.org Event para el concierto
   const eventSchema = {

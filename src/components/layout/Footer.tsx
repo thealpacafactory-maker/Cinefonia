@@ -70,7 +70,7 @@ export default function Footer() {
               <a href="#" className="w-8 h-8 rounded-full border-gray-300 hover:border-[#8A1C36] flex items-center justify-center text-gray-500 hover:text-[#8A1C36] transition-colors" aria-label="Canal">
                 <Video className="h-4 w-4" />
               </a>
-              <a href="mailto:hola@cinefoniashow.com" className="w-8 h-8 rounded-full border-gray-300 hover:border-[#8A1C36] flex items-center justify-center text-gray-500 hover:text-[#8A1C36] transition-colors" aria-label="Correo">
+              <a href="mailto:hola@cinefonianights.com" className="w-8 h-8 rounded-full border-gray-300 hover:border-[#8A1C36] flex items-center justify-center text-gray-500 hover:text-[#8A1C36] transition-colors" aria-label="Correo">
                 <Mail className="h-4 w-4" />
               </a>
             </div>
@@ -139,8 +139,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-[#8A1C36] flex-shrink-0" />
-                <a href="mailto:hola@cinefoniashow.com" className="hover:text-[#8A1C36] transition-colors">
-                  hola@cinefoniashow.com
+                <a href="mailto:hola@cinefonianights.com" className="hover:text-[#8A1C36] transition-colors">
+                  hola@cinefonianights.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
